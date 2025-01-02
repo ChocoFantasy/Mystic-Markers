@@ -8,7 +8,7 @@ const basename =
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename={basename}>
+    <BrowserRouter basename="/repo-name">
       <App />
     </BrowserRouter>
   </React.StrictMode>
