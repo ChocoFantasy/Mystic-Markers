@@ -8,7 +8,7 @@ const basename =
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/repo-name">
+    <BrowserRouter basename="/Mystic-Markers">
       <App />
     </BrowserRouter>
   </React.StrictMode>
