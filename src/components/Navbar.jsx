@@ -53,7 +53,7 @@ function Navbar() {
         {/* LOGO 圖標 */}
         <Link to="/">
           <div className="logo">
-            <img src="./images/LOGO.svg" alt="神秘座標LOGO" />
+            <img src="images/LOGO.svg" alt="神秘座標LOGO" />
             <h3 className="logoText">Mystic Markers</h3>
           </div>
         </Link>
