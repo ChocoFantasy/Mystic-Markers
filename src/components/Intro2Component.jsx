@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "../../css/style.css";
-import SectionTitle from "./SectionTitle";
+
 
 const Intro2Component = () => {
     const targetRef = useRef(null);
