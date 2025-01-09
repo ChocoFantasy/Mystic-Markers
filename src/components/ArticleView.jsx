@@ -136,6 +136,7 @@ const ArticleView = () => {
         <div className="category-nav">
           <span className="category">{article.category}</span>
           <Link to="/Forum" className="back-link">
+            <img src={`${"images/Forum/pajamas_go-back.svg"}`} alt="回到文章符號" />
             回到文章列表
           </Link>
         </div>
