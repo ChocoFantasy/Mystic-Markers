@@ -2,6 +2,7 @@ import "./style.scss";
 // import "../css/style.css";
 import Navbar from "./components/Navbar";
 import { Link, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Story from "./pages/Story";
 import Map from "./pages/Map";
 import Gallerypage from "./pages/Gallerypage";
