@@ -4177,9 +4177,11 @@ button:hover #custom-cursor::after {
 // 文章內瀏覽頁
 .article-view {
   margin: 0 115px;
+  padding-top: 100px; // 確保和 Navbar 的高度一致或稍大
   padding: 2rem;
   color: #ffffff;
   background-color: $deep;
+  padding-top: 130px !important; // 強制應用樣式
 
   .article-header {
     display: flex;
@@ -4283,11 +4285,12 @@ button:hover #custom-cursor::after {
     }
 
     .article-image {
-      margin: 1rem 0;
-      width: 100%;
-      max-height: 500px;
-      object-fit: cover;
+      margin: 1rem auto;
+      max-width: 50%;
+      height: auto;
       border-radius: 8px;
+      display: block;
+      object-fit: contain;
     }
   }
 

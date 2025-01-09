@@ -2,7 +2,6 @@ import "./style.scss";
 // import "../css/style.css";
 import Navbar from "./components/Navbar";
 import { Link, Route, Routes } from "react-router-dom";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Story from "./pages/Story";
 import Map from "./pages/Map";
 import Gallerypage from "./pages/Gallerypage";
@@ -347,12 +346,12 @@ const App = () => {
           }
         />
 
-        <Route path="/Story" element={<Story />} />
+        <Route path="/Story/*" element={<Story />} />
         <Route path="/Map" element={<Map />} />
         <Route path="/page/:pageId" element={<Gallerypage />} />
         <Route path="/Forum" element={<Forum />} />
         <Route path="/Contact" element={<Contact />} />
-        <Route path="/article/:articleId" element={<ArticleView />} />
+        <Route path="/Forum/article/:articleId/*" element={<ArticleView />} />
 
       </Routes>
     </>

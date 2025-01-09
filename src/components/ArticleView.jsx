@@ -17,7 +17,7 @@ const ArticleView = () => {
     "好奇寶寶",
     "探險家",
   ];
-  const defaultAvatar = "/images/Forum/Message-avatar.jpg"; // 預設頭像
+  const defaultAvatar = "images/Forum/Message-avatar.jpg"; // 預設頭像
   const [isFavorite, setIsFavorite] = useState(false); // 初始化 isFavorite
 
   useEffect(() => {
@@ -145,7 +145,7 @@ const ArticleView = () => {
             <h1 className="article-title">{article.title}</h1>
             <div className="meta-info">
               <img
-                src={`/${article.authorAvatar}`}
+                src={`${article.authorAvatar}`}
                 alt="作者頭像"
                 className="author-avatar"
               />
@@ -159,7 +159,7 @@ const ArticleView = () => {
       <div className="article-content">
         <p className="article-text">{article.preview}</p>
         <img
-          src={`/${article.articleImage}`}
+          src={`${article.articleImage}`}
           alt="文章圖片"
           className="article-image"
         />
@@ -240,7 +240,7 @@ const ArticleView = () => {
           }}
         >
           <img
-            src={`/${"images/Forum/ic_outline-share.png"}`}
+            src={`${"images/Forum/ic_outline-share.png"}`}
             alt="分享"
             className="share-icon"
           />

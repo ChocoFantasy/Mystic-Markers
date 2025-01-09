@@ -85,7 +85,7 @@ const getCommentCountFromArticleView = (articleId) => {
             {/* 文章內容 */}
             <div className="article-Graphics-text">
               <Link
-                to={`/article/${article.id}`}
+                to={`article/${article.id}`}
                 className="styled-article-link"
               >
                 <div className="left">
