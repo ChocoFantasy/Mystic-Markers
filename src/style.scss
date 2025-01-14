@@ -1,6 +1,6 @@
 @use "reset";
-@use "variables"as *;
-@use "function"as *;
+@use "variables" as *;
+@use "function" as *;
 @use "keyframes";
 
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Handjet:wght@100..900&family=Mina&family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zen+Maru+Gothic&display=swap");
@@ -643,7 +643,7 @@ a {
           background: none;
           writing-mode: vertical-lr;
           border-right: none;
-          cursor:none;
+          cursor: none;
 
 
         }
@@ -1453,7 +1453,7 @@ a {
         .notice {
 
           display: inline-flex;
-          width: 100% ;
+          width: 100%;
           background-color: $primary-green;
           border-radius: 5px;
           align-items: center;
@@ -1471,7 +1471,7 @@ a {
 
             svg {
               margin-right: 8px;
-              color:$deep;
+              color: $deep;
               width: 24px;
               height: 24px;
             }
@@ -4173,688 +4173,768 @@ button:hover #custom-cursor::after {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          z-index: 1000;
-          background: white;
+          width: 90%;
+          max-width: 600px;
+          max-height: 90vh; // 限制高度為視窗的 90%
+          background-color: #1a1a1a; // 深色背景
           border-radius: 8px;
-          padding: 20px;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+          z-index: 990;
+          overflow: hidden; // 防止內容溢出彈窗邊界
+
           .modal-content {
-            display: flex;
-            flex-direction: column;
-        
+            padding: 20px;
+            color: #fff;
+            height: 100%; // 讓內容填滿彈窗高度
+
+            .close-btn {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              color: #fff;
+              font-size: 20px;
+              cursor: pointer;
+            }
+
+            .form-header {
+              display: flex;
+              align-items: center;
+              margin-bottom: 20px;
+
+              .avatar {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin-right: 10px;
+              }
+
+              .author-name {
+                background: transparent;
+                border: none;
+                color: #fff;
+                font-size: 16px;
+                outline: none;
+              }
+            }
+
             .form-group {
               margin-bottom: 16px;
-        
+
               label {
                 display: block;
                 margin-bottom: 8px;
                 font-weight: bold;
+                color: #ccc;
               }
-        
+
               input,
               textarea,
               select {
-                width: 100%;
-                padding: 8px;
-                border: 1px solid #ddd;
+                width: 90%;
+                padding: 10px;
+                border: 1px solid #444;
+                background-color: #333;
+                color: #fff;
                 border-radius: 4px;
+                outline: none;
+              }
+
+              textarea {
+                height: 100px;
+              }
+
+              .image-upload-group {
+                display: flex;
+                justify-content: space-between;
+                gap: 10px;
+
+                div {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+
+                  input[type="file"] {
+                    width: 100%;
+                    max-width: 120px;
+                  }
+
+                  .preview-image {
+                    margin-top: 5px;
+                    width: 50px; // 預覽圖片寬度
+                    height: 50px; // 預覽圖片高度
+                    object-fit: cover;
+                    border-radius: 4px;
+                  }
+
+                  span {
+                    margin-top: 5px;
+                    font-size: 12px;
+                    color: #ccc;
+                  }
+                }
               }
             }
-        
-            .form-actions {
-              display: flex;
-              justify-content: flex-end;
-        
-              button {
-                padding: 8px 16px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-        
-                &:first-child {
-                  background: #f0f0f0;
-                }
-        
-                &:last-child {
-                  background: #007bff;
-                  color: white;
+              .form-actions {
+                display: flex;
+                justify-content: space-between; // 按鈕兩端對齊
+                margin-top: 20px;
+
+                button {
+                  padding: 10px 20px;
+                  font-size: 16px;
+                  border: none;
+                  border-radius: 4px;
+                  cursor: pointer;
+
+                  &:first-child {
+                    background-color: #6c757d; // 灰色背景
+                    color: white;
+                  }
+
+                  &:last-child {
+                    background-color: $primary-green; // 藍色背景
+                    color: #1a1a1a;
+                  }
+
+                  &:hover {
+                    opacity: 0.9;
+                  }
                 }
               }
             }
-          }
-        }
-      }
-    }
-  }
-}
 
-// 文章內瀏覽頁
-.article-view {
-  margin: 0 115px;
-  padding-top: 100px; // 確保和 Navbar 的高度一致或稍大
-  padding: 2rem;
-  color: #ffffff;
-  background-color: $deep;
-  padding-top: 130px !important; // 強制應用樣式
-
-  .article-header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    /* 文字靠左對齊 */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 1rem;
-
-    .category-nav {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      /* 區塊填滿寬度 */
-      align-items: center !important; // 確保垂直居中
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1); //水平線
-
-      .category {
-        font-size: 1rem;
-        color: #ffffff;
-        display: flex;
-        align-items: center;
-
-        &::before {
-          content: "🗂 ";
-          margin-right: 0.5rem;
-        }
-      }
-
-      .back-link {
-        color: $primary-green;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        font-size: 0.9rem;
-
-        img {
-          width: 20px;
-          height: auto;
-          margin: 8px;
-        }
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-
-    .author-info {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-
-      .author-avatar {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-      }
-
-      .author-details {
-        display: flex;
-        flex-direction: column;
-
-        .article-title {
-          font-size: 1.75rem;
-          margin-bottom: 0.5rem;
-          color: $primary-green;
-          font-weight: 600;
-        }
-
-        .meta-info {
-          display: flex;
-          gap: 1rem;
-          color: #808080;
-          font-size: 0.9rem;
-
-          .author-name {
-            font-weight: 500;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-          }
-
-          .post-date {
-            margin-left: 15px;
-            display: flex;
-            align-items: center;
           }
         }
       }
     }
   }
 
-  .article-content {
-    margin-bottom: 2rem;
-
-    .article-text {
-      line-height: 1.8;
-      margin-bottom: 2rem;
-      white-space: pre-line;
-      color: #e0e0e0;
-    }
-
-    .article-image {
-      margin: 1rem auto;
-      max-width: 50%;
-      height: auto;
-      border-radius: 8px;
-      display: block;
-      object-fit: contain;
-    }
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-bottom: 2rem;
-
-    .tag {
-      color: $primary-purple;
-      padding: 0.5rem 0.5rem;
-      border-radius: 5px;
-      font-size: 0.9rem;
-      border: 1px solid $primary-purple;
-
-      &:hover {
-        background-color: rgba(69, 41, 95, 0.4);
-      }
-    }
-  }
-
-  .interaction-bar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-    /* 控制每個圖標之間的間距 */
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 1rem;
-
-    .interaction-items {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .interaction-items a {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      /* 圖標和數字的間距 */
-    }
-
-    .interaction-item img {
-      width: 24px;
-      /* 圖標大小 */
-      height: 24px;
-      /* 圖標大小 */
-    }
-
-    .interaction-item span {
-      font-size: 16px;
-      /* 調整文字大小 */
-      color: #ffffff;
-    }
-
-  }
-
-  .comments-section {
-    margin-bottom: 100px;
-
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      color: $primary-green;
-    }
-
-    .comment-item {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      padding: 1rem;
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-
-      .comment-avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-      }
-
-      .comment-content {
-        flex: 1;
-
-        .comment-header {
-          display: flex;
-          gap: 1rem;
-          margin-bottom: 0.5rem;
-          color: #808080;
-          font-size: 0.9rem;
-
-          .comment-user {
-            font-weight: 500;
-            color: #ffffff;
-          }
-
-          .comment-floor {
-            color: $primary-green;
-          }
-        }
-
-        .comment-text {
-          margin-bottom: 0.75rem;
-          line-height: 1.5;
-          color: #e0e0e0;
-        }
-
-        .comment-actions {
-          .like-button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #808080;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-
-            img {
-              width: 20px;
-              height: 20px;
-            }
-
-            &.liked {
-              color: $primary-green;
-            }
-
-            &:hover {
-              background-color: rgba(255, 255, 255, 0.05);
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .comment-input {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #1a1a1a;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1rem;
-    transition: all 0.3s ease;
-
-    &.expanded {
-      padding: 1.5rem;
-    }
-
-    .input-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      gap: 1rem;
-
-      input {
-        flex: 1;
-        padding: 0.75rem 1rem;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
-        background-color: #2a2a2a;
-        color: #ffffff;
-
-        &:focus {
-          outline: none;
-          border-color: $primary-green;
-        }
-      }
-
-      button {
-        background-color: $primary-green;
-        color: white;
-        border: none;
-        padding: 0.75rem 1.5rem;
-        border-radius: 4px;
-        cursor: pointer;
-
-        &:hover {
-          background-color: $primary-green;
-        }
-      }
-    }
-  }
-}
-
-// .article-view RWD
-@media (max-width: 768px) {
+  // 文章內瀏覽頁
   .article-view {
-    padding: 1rem;
+    margin: 0 115px;
+    padding-top: 100px; // 確保和 Navbar 的高度一致或稍大
+    padding: 2rem;
+    color: #ffffff;
+    background-color: $deep;
+    padding-top: 130px !important; // 強制應用樣式
 
     .article-header {
+      display: flex;
       flex-direction: column;
-      gap: 1rem;
+      align-items: flex-start;
+      /* 文字靠左對齊 */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1rem;
 
-      .article-title {
-        font-size: 1.5rem;
+      .category-nav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        /* 區塊填滿寬度 */
+        align-items: center !important; // 確保垂直居中
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); //水平線
+
+        .category {
+          font-size: 1rem;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+
+          &::before {
+            content: "🗂 ";
+            margin-right: 0.5rem;
+          }
+        }
+
+        .back-link {
+          color: $primary-green;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          font-size: 0.9rem;
+
+          img {
+            width: 20px;
+            height: auto;
+            margin: 8px;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .author-info {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        .author-avatar {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+        }
+
+        .author-details {
+          display: flex;
+          flex-direction: column;
+
+          .article-title {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: $primary-green;
+            font-weight: 600;
+          }
+
+          .meta-info {
+            display: flex;
+            gap: 1rem;
+            color: #808080;
+            font-size: 0.9rem;
+
+            .author-name {
+              font-weight: 500;
+              color: #ffffff;
+              display: flex;
+              align-items: center;
+            }
+
+            .post-date {
+              margin-left: 15px;
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+
+    .article-content {
+      margin-bottom: 2rem;
+
+      .article-text {
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        white-space: pre-line;
+        color: #e0e0e0;
+      }
+
+      .article-image {
+        margin: 1rem auto;
+        max-width: 50%;
+        height: auto;
+        border-radius: 8px;
+        display: block;
+        object-fit: contain;
+      }
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+
+      .tag {
+        color: $primary-purple;
+        padding: 0.5rem 0.5rem;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        border: 1px solid $primary-purple;
+
+        &:hover {
+          background-color: rgba(69, 41, 95, 0.4);
+        }
       }
     }
 
     .interaction-bar {
-      flex-wrap: wrap;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
       gap: 1rem;
+      /* 控制每個圖標之間的間距 */
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 1rem;
 
-      .share-button {
-        width: 100%;
-        margin-top: 1rem;
+      .interaction-items {
+        display: flex;
+        gap: 1rem;
       }
+
+      .interaction-items a {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        /* 圖標和數字的間距 */
+      }
+
+      .interaction-item img {
+        width: 24px;
+        /* 圖標大小 */
+        height: 24px;
+        /* 圖標大小 */
+      }
+
+      .interaction-item span {
+        font-size: 16px;
+        /* 調整文字大小 */
+        color: #ffffff;
+      }
+
     }
-  }
-}
 
+    .comments-section {
+      margin-bottom: 100px;
 
-// RWD 
-
-@media (max-width: 991px) {
-  .forum-layout {
-    flex-direction: column;
-  }
-
-  .sidebar,
-  .main-content {
-    width: 100%;
-  }
-
-  .search-bar {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .article-card {
-    flex-direction: column;
-  }
-
-  .article-image {
-    width: 100%;
-    height: auto;
-  }
-}
-
-
-/* 常見問題 */
-
-.contact-body {
-  padding-top: 180px;
-  position: relative;
-  z-index: 0;
-  background: url("images/Contact/Noise3.png") repeat;
-  overflow: hidden;
-
-  .faq-contact {
-    padding: 100px 20px;
-
-    .faq-section,
-    .contact-section {
-      max-width: 1200px;
-      margin: 0 auto 50px;
-      text-align: center;
-      position: relative;
-      /* 確保可以使用絕對定位 */
-      z-index: 2;
-      /* 層級設置，確保在 footer 上層 */
-
-      h1 {
-        font-size: 2rem;
-        font-weight: 600;
-        margin-bottom: 20px;
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
         color: $primary-green;
       }
-    }
 
-    /* FAQ Section */
-    .faq-section {
-      .faq-buttons {
+      .comment-item {
         display: flex;
-        justify-content: center;
-        gap: 10px;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
 
-        button {
-          padding: 12px 26px;
-          font-size: 1rem;
-          background-color: transparent;
-          color: white;
-          border: 1px solid $primary-green;
-          cursor: pointer;
-          transition: all 0.3s;
-          border-radius: 30px;
-
-          &:hover {
-            background-color: $primary-green;
-            color: black;
-          }
+        .comment-avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
         }
-      }
 
-      .faq-items {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        .comment-content {
+          flex: 1;
 
-        .faq-item {
-          details {
+          .comment-header {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+            color: #808080;
+            font-size: 0.9rem;
 
-            border-bottom: 1px solid $primary-green;
-            padding: 10px;
+            .comment-user {
+              font-weight: 500;
+              color: #ffffff;
+            }
 
-            summary {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              font-size: 1.2rem;
-              color: white;
+            .comment-floor {
+              color: $primary-green;
+            }
+          }
+
+          .comment-text {
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+            color: #e0e0e0;
+          }
+
+          .comment-actions {
+            .like-button {
+              background: none;
+              border: none;
               cursor: pointer;
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              color: #808080;
+              padding: 0.25rem 0.5rem;
+              border-radius: 4px;
 
               img {
                 width: 20px;
-                margin-left: 10px;
+                height: 20px;
+              }
+
+              &.liked {
+                color: $primary-green;
+              }
+
+              &:hover {
+                background-color: rgba(255, 255, 255, 0.05);
               }
             }
-
-            p {
-              margin-top: 10px;
-              padding: 10px;
-              color: white;
-              border-radius: 3px;
-            }
           }
         }
       }
     }
 
-    /* 聯絡我們 */
-    .contact-section {
-      position: relative;
-      margin-top: 100px;
-      bottom: 0%;
-      padding: 50px 15px;
-      overflow: visible;
-      /* 防止元素影響滾動條 */
+    .comment-input {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #1a1a1a;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      transition: all 0.3s ease;
 
-      /* 確保佔滿可視區高度 */
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      &.expanded {
+        padding: 1.5rem;
+      }
 
-      .contact-content {
+      .input-container {
+        max-width: 1200px;
+        margin: 0 auto;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 20px;
+        gap: 1rem;
 
-        .contact-bubble {
-          position: absolute;
-          top: 145px;
-          left: 200px;
-          /* 微調位置 */
-          z-index: 3;
-          overflow: visible;
-          flex: 1 1 300px;
-          width: 300px;
-
-          img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            /* 確保圖片居中 */
-            z-index: 1;
-            opacity: 0.9;
-            width: 100%;
-            margin: 0 auto 10px;
-          }
-
-          .bubble-text {
-            position: relative;
-            /* 設置文字區塊為相對定位 */
-            z-index: 2;
-            /* 設置文字區塊層級高於圖片 */
-            padding: 20px;
-            border-radius: 15px;
-            color: white;
-          }
-        }
-
-        /* 人物圖片 */
-        .person-image {
-          position: absolute;
-          /* 絕對定位 */
-          bottom: -80%;
-          /* 設定到 footer 下方一層 */
-          left: 0%;
-          z-index: 1;
-          /* 層級設置低於 footer */
-          width: 400px;
-          /* 圖片大小 */
-          opacity: 0.9;
-
-        }
-
-        .contact-form {
+        input {
           flex: 1;
-          padding: 0 30px;
-          max-width: 40%;
-          justify-content: center;
-          align-items: center;
+          padding: 0.75rem 1rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 4px;
+          background-color: #2a2a2a;
+          color: #ffffff;
 
-          p {
-            margin-bottom: 5px;
-            color: white;
+          &:focus {
+            outline: none;
+            border-color: $primary-green;
           }
+        }
 
-          input,
-          textarea {
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 10px 0;
-            background-color: $deep;
-            color: $light;
-            border: 1px solid $primary-green;
-            border-radius: 20px;
-          }
+        button {
+          background-color: $primary-green;
+          color: white;
+          border: none;
+          padding: 0.75rem 1.5rem;
+          border-radius: 4px;
+          cursor: pointer;
 
-          button {
-            width: 100%;
-            margin-top: 40px;
-            padding: 10px;
+          &:hover {
             background-color: $primary-green;
-            color: $deep;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-
-            &:hover {
-              background-color: $light;
-              color: $deep;
-            }
           }
         }
       }
     }
   }
-}
 
-footer {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  height: 350px;
-  background: url("/images/footer-paper.png");
-  isolation: isolate;
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: 99;
-  align-items: flex-end;
-  flex-shrink: 0;
-  margin: 0;
-  padding: 0;
+  // .article-view RWD
+  @media (max-width: 768px) {
+    .article-view {
+      padding: 1rem;
+
+      .article-header {
+        flex-direction: column;
+        gap: 1rem;
+
+        .article-title {
+          font-size: 1.5rem;
+        }
+      }
+
+      .interaction-bar {
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .share-button {
+          width: 100%;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
 
 
-  .content {
-    display: flex;
-    justify-content: space-between;
+  // RWD 
 
-    padding: 30px 135px 0 135px;
-    width: 100%;
+  @media (max-width: 991px) {
+    .forum-layout {
+      flex-direction: column;
+    }
+
+    .sidebar,
+    .main-content {
+      width: 100%;
+    }
+
+    .search-bar {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .article-card {
+      flex-direction: column;
+    }
+
+    .article-image {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+
+  /* 常見問題 */
+
+  .contact-body {
+    padding-top: 180px;
+    position: relative;
+    z-index: 0;
+    background: url("images/Contact/Noise3.png") repeat;
     overflow: hidden;
 
-    img {
-      margin-top: 70px;
-      margin-right: 5%;
-      display: block;
-      width: 300px;
-      min-width: 300px;
-      mix-blend-mode: exclusion;
-    }
+    .faq-contact {
+      padding: 100px 20px;
 
-    .left {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      .faq-section,
+      .contact-section {
+        max-width: 1200px;
+        margin: 0 auto 50px;
+        text-align: center;
+        position: relative;
+        /* 確保可以使用絕對定位 */
+        z-index: 2;
+        /* 層級設置，確保在 footer 上層 */
 
-      small {
-        color: #6c5387;
-        margin-left: 60px;
+        h1 {
+          font-size: 2rem;
+          font-weight: 600;
+          margin-bottom: 20px;
+          color: $primary-green;
+        }
       }
 
-      .link {
-        display: flex;
-        flex-direction: row;
+      /* FAQ Section */
+      .faq-section {
+        .faq-buttons {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
 
-        li {
-          margin-top: 40px;
-          margin-left: 60px;
-
-          a {
-            color: #ffffff;
-            @include font-style($font-regular-16);
+          button {
+            padding: 12px 26px;
+            font-size: 1rem;
+            background-color: transparent;
+            color: white;
+            border: 1px solid $primary-green;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 30px;
 
             &:hover {
-              color: $primary-purple;
+              background-color: $primary-green;
+              color: black;
+            }
+          }
+        }
+
+        .faq-items {
+          margin-top: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .faq-item {
+            details {
+
+              border-bottom: 1px solid $primary-green;
+              padding: 10px;
+
+              summary {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.2rem;
+                color: white;
+                cursor: pointer;
+
+                img {
+                  width: 20px;
+                  margin-left: 10px;
+                }
+              }
+
+              p {
+                margin-top: 10px;
+                padding: 10px;
+                color: white;
+                border-radius: 3px;
+              }
+            }
+          }
+        }
+      }
+
+      /* 聯絡我們 */
+      .contact-section {
+        position: relative;
+        margin-top: 100px;
+        bottom: 0%;
+        padding: 50px 15px;
+        overflow: visible;
+        /* 防止元素影響滾動條 */
+
+        /* 確保佔滿可視區高度 */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .contact-content {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 20px;
+
+          .contact-bubble {
+            position: absolute;
+            top: 145px;
+            left: 200px;
+            /* 微調位置 */
+            z-index: 3;
+            overflow: visible;
+            flex: 1 1 300px;
+            width: 300px;
+
+            img {
+              position: absolute;
+              top: 0;
+              left: 0;
+              /* 確保圖片居中 */
+              z-index: 1;
+              opacity: 0.9;
+              width: 100%;
+              margin: 0 auto 10px;
+            }
+
+            .bubble-text {
+              position: relative;
+              /* 設置文字區塊為相對定位 */
+              z-index: 2;
+              /* 設置文字區塊層級高於圖片 */
+              padding: 20px;
+              border-radius: 15px;
+              color: white;
+            }
+          }
+
+          /* 人物圖片 */
+          .person-image {
+            position: absolute;
+            /* 絕對定位 */
+            bottom: -80%;
+            /* 設定到 footer 下方一層 */
+            left: 0%;
+            z-index: 1;
+            /* 層級設置低於 footer */
+            width: 400px;
+            /* 圖片大小 */
+            opacity: 0.9;
+
+          }
+
+          .contact-form {
+            flex: 1;
+            padding: 0 30px;
+            max-width: 40%;
+            justify-content: center;
+            align-items: center;
+
+            p {
+              margin-bottom: 5px;
+              color: white;
+            }
+
+            input,
+            textarea {
+              width: 100%;
+              margin-bottom: 10px;
+              padding: 10px 0;
+              background-color: $deep;
+              color: $light;
+              border: 1px solid $primary-green;
+              border-radius: 20px;
+            }
+
+            button {
+              width: 100%;
+              margin-top: 40px;
+              padding: 10px;
+              background-color: $primary-green;
+              color: $deep;
+              border: none;
+              border-radius: 20px;
+              cursor: pointer;
+              transition: all 0.3s;
+
+              &:hover {
+                background-color: $light;
+                color: $deep;
+              }
             }
           }
         }
       }
     }
   }
-}
+
+  footer {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 350px;
+    background: url("/images/footer-paper.png");
+    isolation: isolate;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 99;
+    align-items: flex-end;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+
+      padding: 30px 135px 0 135px;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        margin-top: 70px;
+        margin-right: 5%;
+        display: block;
+        width: 300px;
+        min-width: 300px;
+        mix-blend-mode: exclusion;
+      }
+
+      .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        small {
+          color: #6c5387;
+          margin-left: 60px;
+        }
+
+        .link {
+          display: flex;
+          flex-direction: row;
+
+          li {
+            margin-top: 40px;
+            margin-left: 60px;
+
+            a {
+              color: #ffffff;
+              @include font-style($font-regular-16);
+
+              &:hover {
+                color: $primary-purple;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

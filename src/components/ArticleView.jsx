@@ -11,6 +11,8 @@ const ArticleView = () => {
   const [commentCount, setCommentCount] = useState(article.commentCount || 0); // 留言數
   const [isCommentExpanded, setIsCommentExpanded] = useState(false);
   const [interactions, setInteractions] = useState([]);
+  const storedArticles = JSON.parse(localStorage.getItem("articlesData")) || []; //獲取文章
+  const allArticles = [...articlesData, ...storedArticles]; // 合併靜態與動態文章資料
   const randomNames = [
     "神秘訪客",
     "都市探險家",
@@ -157,10 +159,11 @@ const ArticleView = () => {
       setIsFavorite(article.isFavorite || false); // 確保 isFavorite 初始化
     }
   }, [article]);
-
+  // 防呆
   if (!article) {
     return <p>文章不存在！</p>;
   }
+
   // 文章按讚功能
   const handleInteractionClick = (interactionIndex) => {
     setInteractions((prevInteractions) =>

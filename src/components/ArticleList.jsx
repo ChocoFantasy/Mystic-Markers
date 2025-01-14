@@ -5,6 +5,8 @@ import "../style.scss";
 // ArticleList 組件
 const ArticleList = ({ articles, onFavorite }) => {
   const [interactions, setInteractions] = useState([]);
+  const storedArticles = JSON.parse(localStorage.getItem("articlesData")) || []; //獲取文章資料
+  const allArticles = [...articles, ...storedArticles]; // 合併靜態與動態文章資料
 
   useEffect(() => {
     // 初始化文章的留言數據和內容

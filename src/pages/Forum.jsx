@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
-import { useParams } from "react-router-dom"; // 確保引入 useParams
+import { useParams,useLocation } from "react-router-dom"; // 確保引入 useParams
 import Navbar from "../components/Navbar"; //Navbar
 import "../style.scss";
 import ArticleList from "../components/ArticleList"; // 文章列表
@@ -20,6 +20,22 @@ const Forum = () => {
   const [currentCategory, setCurrentCategory] = useState("所有看板"); // 狀態：當前分類
   const [isModalOpen, setModalOpen] = useState(false); // 狀態：發文彈窗是否開啟
   const [searchTriggered, setSearchTriggered] = useState(false); // 記錄是否已觸發搜尋
+
+  const location = useLocation(); //帳戶名稱
+  const userName = location.state?.userName || "匿名用戶";
+
+
+  useEffect(() => {
+    // [撰寫新文章]加載靜態數據和 localStorage 中的數據
+    const storedArticles = JSON.parse(localStorage.getItem("articlesData")) || [];
+    setArticles([...storedArticles, ...articlesData]);
+  }, []);
+
+    // [撰寫新文章]提交新文章時添加到文章列表
+    const handleNewArticle = (newArticle) => {
+      setArticles([newArticle, ...articles]); // 新文章加到最上面
+      setModalOpen(false); // 關閉彈窗
+    };
 
   // 首頁路由器更新用
   useEffect(() => {
@@ -94,12 +110,6 @@ const Forum = () => {
           : article
       )
     );
-  };
-
-  // [撰寫新文章]提交新文章時添加到文章列表
-  const handleNewArticle = (newArticle) => {
-    setArticles([newArticle, ...articles]); // 新文章加到最上面
-    setModalOpen(false); // 關閉彈窗
   };
 
   return (
@@ -235,9 +245,10 @@ const Forum = () => {
                           <PostModal
                             isOpen={isModalOpen}
                             onClose={() => setModalOpen(false)}
-                            onNewArticle={(newArticle) => {
-                              setArticles([newArticle, ...articles]); // 新增文章置頂
+                            onNewArticle={(handleNewArticle) => {
+                              setArticles([handleNewArticle, ...articles]); // 新增文章置頂
                             }}
+                            userName={userName} // 傳遞使用者名稱給 PostModal
                           />
                         </div>
                       </div>
@@ -247,15 +258,6 @@ const Forum = () => {
                     <ArticleList
                       articles={sortedArticles} // 排序並篩選後的文章資料
                       onFavorite={handleArticleFavorite} //傳遞收藏功能
-                    />
-
-                    {/* 發文彈窗 */}
-                    <PostModal
-                      isOpen={isModalOpen}
-                      onClose={() => setModalOpen(false)}
-                      onNewArticle={(newArticle) =>
-                        setArticles([newArticle, ...articles])
-                      }
                     />
                   </div>
                 </div>

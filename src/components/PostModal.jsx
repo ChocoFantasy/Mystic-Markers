@@ -1,16 +1,31 @@
 import React, { useState } from "react";
 import "../style.scss";
 
-const PostModal = ({ isOpen, onClose, onNewArticle }) => {
+const PostModal = ({ isOpen, onClose, onNewArticle, userName }) => {
   if (!isOpen) return null;
 
   // 本地狀態管理表單輸入
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [category, setCategory] = useState("都市傳說");
-  const [authorName, setAuthorName] = useState("匿名用戶");
-  const [authorAvatar, setAuthorAvatar] = useState("images/Forum/default-avatar.svg");
-  const [articleImage, setArticleImage] = useState("images/Forum/default-image.svg");
+  const [authorName, setAuthorName] = useState(userName || "匿名用戶");
+  const [authorAvatar, setAuthorAvatar] = useState("");
+  const [articleImage, setArticleImage] = useState("");
+
+  // 圖片處理
+  const handleAvatarUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setAuthorAvatar(URL.createObjectURL(file));
+    }
+  };
+
+  const handleArticleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setArticleImage(URL.createObjectURL(file));
+    }
+  };
 
   // 提交新文章
   const handleSubmit = () => {
@@ -20,11 +35,11 @@ const PostModal = ({ isOpen, onClose, onNewArticle }) => {
       comments: [],
       category,
       authorName,
-      authorAvatar,
+      authorAvatar: authorAvatar || "images/Forum/default-avatar.svg",
       title,
       preview: content.substring(0, 100), // 預覽文字
       isFavorite: false,
-      articleImage,
+      articleImage: articleImage || "images/Forum/default-image.svg",
       interactions: [
         {
           icon: "images/Forum/Forum_ghost.svg",
@@ -46,7 +61,13 @@ const PostModal = ({ isOpen, onClose, onNewArticle }) => {
       ],
     };
 
-    onNewArticle(newArticle); // 傳回新文章至父組件
+    // 更新 localStorage
+    const storedArticles =
+      JSON.parse(localStorage.getItem("articlesData")) || [];
+    const updatedArticles = [newArticle, ...storedArticles];
+    localStorage.setItem("articlesData", JSON.stringify(updatedArticles));
+
+    onNewArticle(newArticle); // 通知父組件更新狀態
     onClose(); // 關閉彈窗
   };
 
@@ -57,9 +78,25 @@ const PostModal = ({ isOpen, onClose, onNewArticle }) => {
           &times;
         </span>
         <h2>新增文章</h2>
+        <div className="form-header">
+          <img
+            src={authorAvatar || "images/Forum/light.svg"}
+            alt="頭像"
+            className="avatar"
+          />
+          <input
+            type="text"
+            className="author-name"
+            value={authorName}
+            readOnly
+          />
+        </div>
         <div className="form-group">
-          <label>分類看板</label>
-          <select value={category} onChange={(e) => setCategory(e.target.value)}>
+          <label>選擇發文看板</label>
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
             <option value="都市傳說">都市傳說</option>
             <option value="廢墟探險">廢墟探險</option>
             <option value="恐怖獵奇">恐怖獵奇</option>
@@ -68,34 +105,7 @@ const PostModal = ({ isOpen, onClose, onNewArticle }) => {
           </select>
         </div>
         <div className="form-group">
-          <label>作者名稱</label>
-          <input
-            type="text"
-            value={authorName}
-            onChange={(e) => setAuthorName(e.target.value)}
-            placeholder="請輸入作者名稱"
-          />
-        </div>
-        <div className="form-group">
-          <label>作者頭像 URL</label>
-          <input
-            type="text"
-            value={authorAvatar}
-            onChange={(e) => setAuthorAvatar(e.target.value)}
-            placeholder="請輸入作者頭像的圖片連結"
-          />
-        </div>
-        <div className="form-group">
-          <label>文章圖片 URL</label>
-          <input
-            type="text"
-            value={articleImage}
-            onChange={(e) => setArticleImage(e.target.value)}
-            placeholder="請輸入文章圖片的圖片連結"
-          />
-        </div>
-        <div className="form-group">
-          <label>標題</label>
+          <label>文章標題</label>
           <input
             type="text"
             value={title}
@@ -111,9 +121,36 @@ const PostModal = ({ isOpen, onClose, onNewArticle }) => {
             placeholder="撰寫您的文章內容..."
           />
         </div>
+        <div className="form-group">
+          <label>上傳圖片</label>
+          <div className="image-upload-group">
+            <div>
+              <input type="file" onChange={handleAvatarUpload} />
+              <span>頭像</span>
+              {authorAvatar && (
+                <img
+                  src={authorAvatar}
+                  alt="預覽頭像"
+                  className="preview-image"
+                />
+              )}
+            </div>
+            <div>
+              <input type="file" onChange={handleArticleImageUpload} />
+              <span>文章圖片</span>
+              {articleImage && (
+                <img
+                  src={articleImage}
+                  alt="預覽文章圖片"
+                  className="preview-image"
+                />
+              )}
+            </div>
+          </div>
+        </div>
         <div className="form-actions">
           <button onClick={onClose}>取消</button>
-          <button onClick={handleSubmit}>送出</button>
+          <button onClick={handleSubmit}>發布</button>
         </div>
       </div>
     </div>
