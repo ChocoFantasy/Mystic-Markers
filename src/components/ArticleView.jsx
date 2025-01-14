@@ -23,7 +23,14 @@ const ArticleView = () => {
     "迷霧探險者",
     "深淵凝視者",
   ];
-  const defaultAvatar = "images/Forum/Message-avatar.jpg"; // 預設頭像
+
+  const avatars = [ // 預設隨機頭像
+    "images/Forum/lost-cat.svg",
+    "images/Forum/light.svg",
+    "images/Forum/Lillian.svg",
+    "images/Forum/Night-Explorer.svg",
+  ];
+
   const [isFavorite, setIsFavorite] = useState(false); // 初始化 isFavorite
 
   useEffect(() => {
@@ -72,39 +79,74 @@ const ArticleView = () => {
     });
   };
 
+  // 更新留言數
+  const updateCommentCount = () => {
+    articlesData.forEach((item) => {
+      if (item.id === article.id) {
+        item.commentCount += 1;
+        item.interactions.forEach((interaction) => {
+          if (interaction.altText === "message") {
+            interaction.count = comments.length + 1; // 更新留言數
+          }
+        });
+      }
+    });
+  };
+
   // 新增留言
   const handleAddComment = () => {
     if (newComment.trim()) {
       // 隨機匿名訪客
       const randomName =
         randomNames[Math.floor(Math.random() * randomNames.length)];
+
+      // 隨機選擇頭像  
+      const randomAvatar =
+        avatars[Math.floor(Math.random() * avatars.length)]; 
       setComments((prevComments) => [
         ...prevComments,
         {
           text: newComment,
           likes: 0,
           floor: `B${prevComments.length + 1}`,
-          avatar: defaultAvatar, // 使用預設頭像
+          avatar: randomAvatar, // 使用隨機頭像
           userName: randomName,
           time: new Date().toLocaleString(),
           isLiked: false,
         },
       ]);
       setNewComment("");
+      updateCommentCount(); // 調用更新的留言數
 
-      // 更新 articlesData 的 commentCount
-      articlesData.forEach((item) => {
-        if (item.id === article.id) {
-          item.commentCount += 1; // 增加留言數
-          item.interactions.forEach((interaction) => {
-            if (interaction.altText === "message") {
-              interaction.count += 1; // 更新 interactions 中的留言數
-            }
-          });
-        }
-      });
+      // // 更新 articlesData 的 commentCount
+      // articlesData.forEach((item) => {
+      //   if (item.id === article.id) {
+      //     item.commentCount += 1; // 增加留言數
+      //     item.interactions.forEach((interaction) => {
+      //       if (interaction.altText === "message") {
+      //         interaction.count += 1; // 更新 interactions 中的留言數
+      //       }
+      //     });
+      //   }
+      // });
     }
   };
+
+//儲存每篇文章的留言記錄
+  useEffect(() => {
+    const storedComments = JSON.parse(
+      localStorage.getItem(`comments-${article.id}`)
+    );
+    if (storedComments) {
+      setComments(storedComments);
+    }
+  }, [article]);
+  
+  useEffect(() => {
+    localStorage.setItem(`comments-${article.id}`, JSON.stringify(comments));
+  }, [comments]);
+
+
   //留言區的按讚標籤
   const handleLikeComment = (index) => {
     setComments((prevComments) =>

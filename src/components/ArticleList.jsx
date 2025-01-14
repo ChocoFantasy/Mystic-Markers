@@ -17,7 +17,7 @@ const ArticleList = ({ articles, onFavorite }) => {
               ...interaction,
               count:
                 interaction.altText === "message"
-                  ? article.commentCount // 使用 commentCount 更新
+                  ? article.commentCount // 更新為最新的留言數
                   : interaction.count, // 更新留言數
               isLiked: false, // 初始按讚狀態
             }))
