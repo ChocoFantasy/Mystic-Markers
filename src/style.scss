@@ -4049,125 +4049,181 @@ button:hover #custom-cursor::after {
         }
 
         /* 撰寫文章  */
-        #postModal {
-          display: none; // 預設隱藏
+        // #postModal {
+        //   display: none; // 預設隱藏
+        //   position: fixed;
+        //   top: 0;
+        //   left: 0;
+        //   width: 100%;
+        //   height: 100%;
+        //   background: rgba(0, 0, 0, 0.6);
+        //   display: flex; // 修正顯示時要用 flex 排版
+        //   justify-content: center;
+        //   align-items: center;
+
+        //   .modal-content {
+        //     background: $deep;
+        //     padding: 20px;
+        //     border-radius: 8px;
+        //     width: 400px;
+        //     position: relative;
+        //     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        //     text-align: left;
+
+        //     .close-btn {
+        //       position: absolute;
+        //       top: 10px;
+        //       right: 15px;
+        //       font-size: 24px;
+        //       color: #aaa;
+        //       cursor: pointer;
+
+        //       &:hover {
+        //         color: #000;
+        //       }
+        //     }
+
+        //     .user-info {
+        //       display: flex;
+        //       align-items: center;
+        //       margin-bottom: 15px;
+
+        //       .avatar {
+        //         width: 40px;
+        //         height: 40px;
+        //         border-radius: 50%;
+        //         margin-right: 10px;
+        //       }
+
+        //       #userName {
+        //         font-size: 16px;
+        //         font-weight: bold;
+        //       }
+        //     }
+
+        //     #board-bar {
+        //       display: flex;
+
+        //       #boardSelect {
+        //         width: 100%;
+        //         padding: 5px;
+        //         margin-bottom: 15px;
+        //         font-size: 14px;
+        //       }
+
+        //     }
+
+
+
+        //     #postTitle,
+        //     #postContent {
+        //       width: 100%;
+        //       margin-bottom: 15px;
+        //       padding: 8px;
+        //       font-size: 14px;
+        //       box-sizing: border-box;
+
+        //       &#postContent {
+        //         height: 120px;
+        //         resize: none;
+        //       }
+        //     }
+
+        //     .media-buttons {
+        //       display: flex;
+        //       justify-content: space-between;
+        //       margin-bottom: 15px;
+
+        //       button {
+        //         padding: 8px 12px;
+        //         background-color: #007bff;
+        //         color: #fff;
+        //         border: none;
+        //         border-radius: 5px;
+        //         cursor: pointer;
+
+        //         &:hover {
+        //           background-color: #0056b3;
+        //         }
+        //       }
+        //     }
+
+        //     .action-buttons {
+        //       display: flex;
+        //       justify-content: space-between;
+
+        //       button {
+        //         padding: 8px 12px;
+        //         background-color: #007bff;
+        //         color: #fff;
+        //         border: none;
+        //         border-radius: 5px;
+        //         cursor: pointer;
+
+        //         &:hover {
+        //           background-color: #0056b3;
+        //         }
+        //       }
+        //     }
+        //   }
+        // }
+
+        .post-modal {
           position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.6);
-          display: flex; // 修正顯示時要用 flex 排版
-          justify-content: center;
-          align-items: center;
-
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 1000;
+          background: white;
+          border-radius: 8px;
+          padding: 20px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        
           .modal-content {
-            background: $deep;
-            padding: 20px;
-            border-radius: 8px;
-            width: 400px;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: left;
-
-            .close-btn {
-              position: absolute;
-              top: 10px;
-              right: 15px;
-              font-size: 24px;
-              color: #aaa;
-              cursor: pointer;
-
-              &:hover {
-                color: #000;
-              }
-            }
-
-            .user-info {
-              display: flex;
-              align-items: center;
-              margin-bottom: 15px;
-
-              .avatar {
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                margin-right: 10px;
-              }
-
-              #userName {
-                font-size: 16px;
+            display: flex;
+            flex-direction: column;
+        
+            .form-group {
+              margin-bottom: 16px;
+        
+              label {
+                display: block;
+                margin-bottom: 8px;
                 font-weight: bold;
               }
-            }
-
-            #board-bar {
-              display: flex;
-
-              #boardSelect {
+        
+              input,
+              textarea,
+              select {
                 width: 100%;
-                padding: 5px;
-                margin-bottom: 15px;
-                font-size: 14px;
-              }
-
-            }
-
-
-
-            #postTitle,
-            #postContent {
-              width: 100%;
-              margin-bottom: 15px;
-              padding: 8px;
-              font-size: 14px;
-              box-sizing: border-box;
-
-              &#postContent {
-                height: 120px;
-                resize: none;
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
               }
             }
-
-            .media-buttons {
+        
+            .form-actions {
               display: flex;
-              justify-content: space-between;
-              margin-bottom: 15px;
-
+              justify-content: flex-end;
+        
               button {
-                padding: 8px 12px;
-                background-color: #007bff;
-                color: #fff;
+                padding: 8px 16px;
                 border: none;
-                border-radius: 5px;
+                border-radius: 4px;
                 cursor: pointer;
-
-                &:hover {
-                  background-color: #0056b3;
+        
+                &:first-child {
+                  background: #f0f0f0;
                 }
-              }
-            }
-
-            .action-buttons {
-              display: flex;
-              justify-content: space-between;
-
-              button {
-                padding: 8px 12px;
-                background-color: #007bff;
-                color: #fff;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-
-                &:hover {
-                  background-color: #0056b3;
+        
+                &:last-child {
+                  background: #007bff;
+                  color: white;
                 }
               }
             }
           }
         }
-
       }
     }
   }

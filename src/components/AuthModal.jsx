@@ -10,6 +10,7 @@ const AuthModal = ({ isOpen, onClose, initialView }) => {
     email: "",
     password: "",
   });
+  
   // 添加 Google 登入功能
   const handleGoogleLogin = async () => {
     try {

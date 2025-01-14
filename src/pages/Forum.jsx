@@ -1,4 +1,4 @@
-import React, { useState, useMemo,useEffect } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { useParams } from "react-router-dom"; // 確保引入 useParams
 import Navbar from "../components/Navbar"; //Navbar
 import "../style.scss";
@@ -13,7 +13,7 @@ import Story from "./Story";
 import Map from "./Map";
 
 const Forum = () => {
-   const { category } = useParams(); // 接收首頁路由中的分類名稱
+  const { category } = useParams(); // 接收首頁路由中的分類名稱
   const [articles, setArticles] = useState(articlesData); // 狀態：所有文章
   const [searchValue, setSearchValue] = useState(""); // 搜尋欄位
   const [ascending, setAscending] = useState(true); // 排序狀態
@@ -27,7 +27,7 @@ const Forum = () => {
       setCurrentCategory(decodeURIComponent(category)); // 動態更新分類
     }
   }, [category]);
-  
+
   // [搜尋]過濾功能，只有在按下搜尋按鈕後才觸發
   const filteredArticles_search = useMemo(() => {
     if (searchTriggered) {
@@ -50,7 +50,6 @@ const Forum = () => {
 
   // [熱門]根據按讚數進行排序
   const sortedArticles = useMemo(() => {
-    
     return filteredArticles_category.sort((a, b) => {
       const aLikes = a.interactions.find((i) => i.altText === "like").count;
       const bLikes = b.interactions.find((i) => i.altText === "like").count;
@@ -68,8 +67,8 @@ const Forum = () => {
     setAscending((prevState) => !prevState); // 切換升冪和降冪
   };
 
-   // [搜尋]按鈕觸發搜尋和排序
-   const handleSearchButtonClick = () => {
+  // [搜尋]按鈕觸發搜尋和排序
+  const handleSearchButtonClick = () => {
     setSearchTriggered(true); // 觸發搜尋
     toggleSortOrder(); // 切換排序
   };
@@ -81,7 +80,7 @@ const Forum = () => {
     );
   };
 
-  // [分類]點擊分類按鈕時更改當前分類 
+  // [分類]點擊分類按鈕時更改當前分類
   const handleCategoryClick = (category) => {
     setCurrentCategory(category);
   };
@@ -172,7 +171,7 @@ const Forum = () => {
                           {
                             icon: "mingcute_fire-fill",
                             label: "熱門",
-                            onClick:toggleSortOrder,
+                            onClick: toggleSortOrder,
                           },
                           {
                             icon: "emojione-monotone_new-button",
@@ -236,6 +235,9 @@ const Forum = () => {
                           <PostModal
                             isOpen={isModalOpen}
                             onClose={() => setModalOpen(false)}
+                            onNewArticle={(newArticle) => {
+                              setArticles([newArticle, ...articles]); // 新增文章置頂
+                            }}
                           />
                         </div>
                       </div>

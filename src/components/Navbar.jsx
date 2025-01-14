@@ -70,7 +70,10 @@ function Navbar() {
             <div className="auth-buttons">
               <a
                 href="#"
-                onClick={() => setIsAuthOpen(true)}
+                onClick={() => {
+                  setAuthType("login"); // 設置視圖為登入
+                  setIsAuthOpen(true); // 打開彈窗
+                }}
                 className="auth-btn"
               >
                 登入
@@ -78,7 +81,10 @@ function Navbar() {
               |
               <a
                 href="#"
-                onClick={() => setIsAuthOpen(true)}
+                onClick={() => {
+                  setAuthType("register"); // 設置視圖為註冊
+                  setIsAuthOpen(true); // 打開彈窗
+                }}
                 className="auth-btn"
               >
                 註冊
