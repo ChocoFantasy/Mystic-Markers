@@ -16,6 +16,12 @@ const ArticleView = () => {
     "夜遊者",
     "好奇寶寶",
     "探險家",
+    "夜行者",
+    "暗夜低語者",
+    "幽影追隨者",
+    "荒廢詠嘆者",
+    "迷霧探險者",
+    "深淵凝視者",
   ];
   const defaultAvatar = "images/Forum/Message-avatar.jpg"; // 預設頭像
   const [isFavorite, setIsFavorite] = useState(false); // 初始化 isFavorite
