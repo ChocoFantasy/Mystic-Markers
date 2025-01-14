@@ -208,7 +208,7 @@ const ArticleView = () => {
               }}
             >
               <img
-                src={`/${isFavorite
+                src={`${isFavorite
                   ? article.interactions[2].filledIcon // 使用 interactions[2] 的已收藏圖案
                   : article.interactions[2].icon // 使用 interactions[2] 的未收藏圖案
                   }`}
