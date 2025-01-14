@@ -270,7 +270,7 @@ const ArticleView = () => {
                   onClick={() => handleLikeComment(index)}
                 >
                   <img
-                    src={`/${comment.isLiked
+                    src={`${comment.isLiked
                         ? "images/Forum/solar_ghost-outline.svg"
                         : "images/Forum/Forum_ghost.svg"
                       }`}
