@@ -188,7 +188,7 @@ const ArticleView = () => {
                 }}
               >
                 <img
-                  src={`/${interaction.isLiked
+                  src={`${interaction.isLiked
                     ? interaction.filledIcon
                     : interaction.icon
                     }`}
