@@ -143,7 +143,7 @@ const articles = [
     title: "鬼月半夜騎機車遇到「多出來的手」",
     preview: "鬼月的時候我習慣早點回家，不過那天有點晚了，得一個人騎機車從偏僻的山路回家。騎到一半，突然覺得肩膀一沉，像是多了什麼重量。我心裡一驚，不敢回頭，繼續硬著頭皮騎。可是越騎越不對勁，總感覺有「手」從我腰間慢慢攀上來，像是要抱住我。回到家之後，我嚇到渾身冒冷汗，回頭看機車後座，什麼都沒有。聽說鬼月的時候騎車真的會遇到這種事，不知道有沒有人也有過類似經歷？怎麼防範啊？",
     isFavorite: false, // 是否收藏
-    articleImage: "/images/Forum/at/6.png",
+    articleImage: "images/Forum/at/6.png",
     interactions: [
       {
         icon: "images/Forum/Forum_ghost.svg",
@@ -169,7 +169,7 @@ const articles = [
     title: "公司廁所半夜傳來的低語聲……",
     preview: "我在一間科技公司上班，平常加班到很晚。幾天前晚上十一點左右，整層辦公室只剩我一人。我去廁所洗手，忽然聽到一種微弱的低語聲，像是有人在隔壁隔間自言自語。我還以為是別的同事沒回去，就隨口問了一句：「還沒下班啊？」但隔壁的聲音立刻停了下來，一片死寂。當時有種異樣的恐懼從背後升起，我連水都沒關就逃出去了。後來問同事們，沒人那晚留下來過。大家有聽過公司廁所鬧鬼的故事嗎？這會不會是什麼不好的預兆？",
     isFavorite: false, // 是否收藏
-    articleImage: "/images/Forum/at/7.png",
+    articleImage: "images/Forum/at/7.png",
     interactions: [
       {
         icon: "images/Forum/Forum_ghost.svg",
@@ -247,7 +247,7 @@ const articles = [
     title: "親身經歷！那晚在荒廢的工廠聽見奇怪的低語聲",
     preview: "第一次發文，想跟大家分享我上週在嘉義一間廢棄工廠探險的恐怖經歷...",
     isFavorite: false, // 是否收藏
-    articleImage: "/images/Forum/at/10.png",
+    articleImage: "images/Forum/at/10.png",
     interactions: [
       {
         icon: "images/Forum/Forum_ghost.svg",
