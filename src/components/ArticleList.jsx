@@ -6,6 +6,19 @@ import "../style.scss";
 const ArticleList = ({ articles, onFavorite }) => {
   const [interactions, setInteractions] = useState([]);
 
+  useEffect(() => {
+    // 初始化文章的留言數據和內容
+    articles.forEach((article) => {
+      const storedComments = JSON.parse(
+        localStorage.getItem(`comments-${article.id}`)
+      );
+      if (storedComments) {
+        article.commentCount = storedComments.length; // 同步留言數
+        article.comments = storedComments; // 同步留言內容
+      }
+    });
+  }, [articles]);
+
   // 追蹤每個 interaction 的狀態
   // 當 articles 改變時重新初始化 interactions
   useEffect(() => {
@@ -27,13 +40,13 @@ const ArticleList = ({ articles, onFavorite }) => {
   }, [articles]);
 
   // 獲取留言數方法
-const getCommentCountFromArticleView = (articleId) => {
-  const articleInView = articles.find((a) => a.id === articleId);
-  if (articleInView && articleInView.commentCount) {
-    return articleInView.commentCount;
-  }
-  return 0; // 預設值
-};
+  const getCommentCountFromArticleView = (articleId) => {
+    const articleInView = articles.find((a) => a.id === articleId);
+    if (articleInView && articleInView.commentCount) {
+      return articleInView.commentCount;
+    }
+    return 0; // 預設值
+  };
 
   const handleInteractionClick = (articleIndex, interactionIndex) => {
     setInteractions((prevInteractions) =>
@@ -99,7 +112,7 @@ const getCommentCountFromArticleView = (articleId) => {
                         className="interaction-item"
                         key={`${interaction.altText}`}
                       >
-                        <Link 
+                        <Link
                           to="#"
                           onClick={(e) => {
                             e.preventDefault(); // 防止頁面跳轉

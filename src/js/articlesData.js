@@ -2,13 +2,14 @@ const articles = [
   {
     id: 1,
     commentCount: 0,
+    comments: [], // 留言內容初始化為空
     category: "都市傳說",
-    authorName: "模糊獵人",
-    authorAvatar: "images/Forum/blur-hunter.svg",
-    title: "親身經歷！那晚在荒廢的工廠聽見奇怪的低語聲",
-    preview: "第一次發文，想跟大家分享我上週在嘉義一間廢棄工廠探險的恐怖經歷...",
+    authorName: "韭把刀",
+    authorAvatar: "images/Story/Polygon 1.png",
+    title: "那些年，一起追我們的女孩",
+    preview: "我們高中時期那片校園，有著綠意盎然的操場、隨風搖曳的櫻花道、破舊的教室樓，和一片漆黑的後山小徑。說是漆黑，並非真的因為陰暗，實際上那裡的路燈早已壞掉，但總有人說，即使是白晝，那片小徑也讓人不寒而慄。高三那一年，我們幾個臭味相投的好友，總是聚在一起取笑學妹，也喜歡一起挑戰校園的各種禁忌。畢竟是最後一年，青春就是要留下些讓人回想起來會心一笑的回憶，不是嗎？其中，最讓我們津津樂道的，便是班上那位安靜內向的女孩——綺婷。綺婷是一個瘦弱的女生，皮膚蒼白，幾乎不發一語，永遠坐在教室角落。每當放學後，其他人都回家了，她總會獨自留在教室裡，低著頭不知道在寫些什麼。我們這些心性未熟的男生見她這般奇怪，便將她當成班上的「幽靈」戲稱，並開始有意無意地捉弄她。有一天傍晚，我們忍不住好奇心，偷偷跑進教室，想一探她到底在寫什麼。桌上散亂的日記本映入眼簾，頁面上密密麻麻的筆跡寫滿了我們的名字，反覆地寫著，逐漸轉成歪曲的字體，夾雜著奇異的話語：「我會找到你們的……」「你們跑不掉……」那一刻，寒氣從腳底竄起，日記本被我們慌忙推倒，卻發現後面壓著一張泛黃的照片——那是我們與綺婷的合照，背後標註了「永別」。自從那天之後，我們這群人再也不敢單獨留下，總覺得身後有什麼東西追隨著自己。夜晚放學的時候，總覺得從教室角落有雙眼睛注視著我們，甚至在某些夜晚，我們各自的夢裡，總會夢見那條漆黑小徑的盡頭，站著一個模糊的影子——她朝著我們微笑，蒼白的臉上卻帶著詭異的扭曲。那年畢業後，班上流傳著綺婷不再來學校的傳言。有人說她已經轉學，有人說她只是厭倦了學校，但我們幾個人心裡都知道，她在我們身邊——只是已經不再是那個活生生的女孩。多年後，我們回到母校重聚，卻驚愕地在走廊盡頭的公告板上，見到當年那張泛黃的照片，依舊貼在角落，而照片中的我們，眼神變得空洞，彷彿靈魂已經隨著某個夜晚的記憶一同消失。我們每個人都知道，無論時光如何流逝，綺婷依舊在我們身後，冷冷地注視著，等待著那遲到的悔意。",
     isFavorite: false, // 是否收藏
-    articleImage: "images/Forum/hunter-article-picture.svg",
+    articleImage: "images/Forum/at/1.jpg",
     interactions: [
       {
         icon: "images/Forum/Forum_ghost.svg",
@@ -27,6 +28,7 @@ const articles = [
   {
     id: 2,
     commentCount: 0,
+    comments: [], 
     category: "廢墟探險",
     authorName: "藤森月子",
     authorAvatar: "images/Forum/Tsukiko-Fujimori.svg",
@@ -34,7 +36,7 @@ const articles = [
     preview:
       "最近看到電影「民雄鬼屋」的影評和預告，覺得很感興趣，其實很多華人的靈異故事，都是從一口古宅的井開始說起，再加上地點位在民雄鄉義檢山墳場附近，",
     isFavorite: false,
-    articleImage: "images/Forum/Tsukiko-Fujimori-text.svg",
+    articleImage: "images/Forum/at/2.png",
     interactions: [
       {
         icon: "images/Forum/Forum_ghost.svg",
@@ -53,6 +55,7 @@ const articles = [
   {
     id: 3,
     commentCount: 0,
+    comments: [], 
     category: "恐怖獵奇",
     authorName: "光",
     authorAvatar: "images/Forum/light.svg",
@@ -79,6 +82,7 @@ const articles = [
   {
     id: 4,
     commentCount: 465,
+    comments: [], 
     category: "恐怖作品",
     authorName: "轉空",
     authorAvatar: "images/Forum/Turn-short.svg",
@@ -105,6 +109,7 @@ const articles = [
   {
     id: 5,
     commentCount: 0,
+    comments: [], 
     category: "驅邪收驚",
     authorName: "迷路的貓",
     authorAvatar: "images/Forum/lost-cat.svg",
@@ -112,7 +117,7 @@ const articles = [
     preview:
       "第一次發文，各位，我最近好像遇到不乾淨的東西……事情發生在上個月，我去南部的民宿住了一晚。半夜突然醒來，發現動不了，感覺像有人壓在我身上，耳邊還聽到低沉的呼吸聲！我以為是鬼壓床，逼自己冷靜下來，終於過了幾分鐘才恢復行動，但奇怪的是，回家後這種現象卻不斷發生。每次都是半夜三點左右，感覺房間裡有個影子，甚至還會隨著我移動。想問問大家，我這是被跟上了嗎？該怎麼處理？。那天晚上我和兩個朋友決定去看看網上流傳的這間鬧鬼工廠。據說這裡以前發生過意外，之後工廠就荒廢了，很多人說夜晚時能聽到不尋常的聲音。我們大概晚上11點左右到達，手電筒微弱的光照著破損的牆壁和散落的機械零件，氣氛異常詭異。才剛走進去沒多久，我們就聽到一種低沉的聲音，像是有人在悄悄說話，又像是風吹過斷裂的金屬片。聲音忽遠忽近，聽起來像是咒語，我朋友嚇得立刻拉住我想走，但我還是想確認一下。我們鼓起勇氣往聲音傳來的方向走，直到發現一堵牆上畫滿了符號。那些符號像是某種道教的符咒，字跡歪歪扭扭，雖然看起來有點久遠但看得出有些是用紅色顏料寫的。看到這場景的那一瞬間，我們全都愣住了，寒意從腳底竄上背脊。我不知道那些符號是誰畫的，也不敢確定它們是否真有驅邪或招靈的作用。當時我們不敢再多做停留，立刻逃出了工廠。事後越想越不對勁，現在還在猶豫該不該去查查那些符號的意義……有沒有人也去過那裡？是否有見過那些奇怪的符號？希望有懂符咒的大大可以分享一些見解。",
     isFavorite: false, // 是否收藏
-    articleImage: "images/Forum/Turn-empty-article.svg",
+    articleImage: "images/Forum/at/5.png",
     interactions: [
       {
         icon: "images/Forum/Forum_ghost.svg",
@@ -131,13 +136,14 @@ const articles = [
   {
     id: 6,
     commentCount: 0,
+    comments: [], 
     category: "都市傳說",
     authorName: "莉莉安",
     authorAvatar: "images/Forum/Lillian.svg",
     title: "鬼月半夜騎機車遇到「多出來的手」",
     preview: "鬼月的時候我習慣早點回家，不過那天有點晚了，得一個人騎機車從偏僻的山路回家。騎到一半，突然覺得肩膀一沉，像是多了什麼重量。我心裡一驚，不敢回頭，繼續硬著頭皮騎。可是越騎越不對勁，總感覺有「手」從我腰間慢慢攀上來，像是要抱住我。回到家之後，我嚇到渾身冒冷汗，回頭看機車後座，什麼都沒有。聽說鬼月的時候騎車真的會遇到這種事，不知道有沒有人也有過類似經歷？怎麼防範啊？",
     isFavorite: false, // 是否收藏
-    articleImage: "images/Forum/Lillian-article.svg",
+    articleImage: "/images/Forum/at/6.png",
     interactions: [
       {
         icon: "images/Forum/Forum_ghost.svg",
@@ -156,13 +162,14 @@ const articles = [
   {
     id: 7,
     commentCount: 0,
+    comments: [], 
     category: "都市傳說",
     authorName: "暗影守望者",
     authorAvatar: "images/Forum/Night-Walker.svg",
     title: "公司廁所半夜傳來的低語聲……",
     preview: "我在一間科技公司上班，平常加班到很晚。幾天前晚上十一點左右，整層辦公室只剩我一人。我去廁所洗手，忽然聽到一種微弱的低語聲，像是有人在隔壁隔間自言自語。我還以為是別的同事沒回去，就隨口問了一句：「還沒下班啊？」但隔壁的聲音立刻停了下來，一片死寂。當時有種異樣的恐懼從背後升起，我連水都沒關就逃出去了。後來問同事們，沒人那晚留下來過。大家有聽過公司廁所鬧鬼的故事嗎？這會不會是什麼不好的預兆？",
     isFavorite: false, // 是否收藏
-    articleImage: "images/Forum/Night-Walker-Articles.svg",
+    articleImage: "/images/Forum/at/7.png",
     interactions: [
       {
         icon: "images/Forum/Forum_ghost.svg",
@@ -181,6 +188,7 @@ const articles = [
   {
     id: 8,
     commentCount: 0,
+    comments: [], 
     category: "都市傳說",
     authorName: "黑夜行者",
     authorAvatar: "images/Forum/shadowwatcher.svg",
@@ -206,6 +214,7 @@ const articles = [
   {
     id: 9,
     commentCount: 0,
+    comments: [], 
     category: "都市傳說",
     authorName: "暗夜守望者",
     authorAvatar: "images/Forum/Night-Explorer.svg",
@@ -231,13 +240,14 @@ const articles = [
   {
     id: 10,
     commentCount: 0,
+    comments: [], 
     category: "都市傳說",
     authorName: "模糊獵人",
     authorAvatar: "images/Forum/blur-hunter3.svg",
     title: "親身經歷！那晚在荒廢的工廠聽見奇怪的低語聲",
     preview: "第一次發文，想跟大家分享我上週在嘉義一間廢棄工廠探險的恐怖經歷...",
     isFavorite: false, // 是否收藏
-    articleImage: "images/Forum/hunter-article-picture.svg",
+    articleImage: "/images/Forum/at/10.png",
     interactions: [
       {
         icon: "images/Forum/Forum_ghost.svg",
@@ -256,6 +266,7 @@ const articles = [
   {
     id: 11,
     commentCount: 0,
+    comments: [], 
     category: "廢墟探險",
     authorName: "暗影探險家",
     authorAvatar: "images/Forum/blur-hunter.svg",
@@ -281,6 +292,7 @@ const articles = [
   {
     id: 12,
     commentCount: 0,
+    comments: [], 
     category: "廢墟探險",
     authorName: "遺跡獵人",
     authorAvatar: "../images/Forum/Tsukiko-Fujimori.svg",
@@ -307,6 +319,7 @@ const articles = [
   {
     id: 13,
     commentCount: 0,
+    comments: [], 
     category: "都市傳說",
     authorName: "幻影追尋者",
     authorAvatar: "../images/Forum/shadowwatcher.svg",
@@ -332,6 +345,7 @@ const articles = [
   {
     id: 14,
     commentCount: 0,
+    comments: [], 
     category: "廢墟探險",
     authorName: "迷失旅人",
     authorAvatar: "images/Forum/light.svg",
@@ -357,6 +371,7 @@ const articles = [
   {
     id: 15,
     commentCount: 0,
+    comments: [], 
     category: "恐怖獵奇",
     commentCount: 465,
     authorName: "靈異蒐集家",
@@ -364,7 +379,7 @@ const articles = [
     title: "消失的左腳鞋：都市傳說還是真實事件？",
     preview:
       "你是否聽過「消失的左腳鞋」這個故事？據說在一些被認為不乾淨的地方，人們經常會發現散落的左腳鞋，卻怎麼也找不到右腳鞋。有人認為，這些鞋是死者的遺物，被某種無法解釋的力量丟棄在那裡，也有人說，這其實是惡靈的警告，叫人不要靠近。我親身經歷過一次類似的事件。在一個老舊的地下室裡，我和朋友發現了十幾雙左腳鞋堆積在角落，其中一些鞋款甚至可以追溯到幾十年前。當我們準備拍照時，我的相機竟然自動關機，手機也無法使用。更詭異的是，當我們走出地下室後，我竟然發現自己的左腳鞋鞋帶鬆了，好像有人特意解開了一樣。這件事後，我對這些都市傳說多了一層敬畏，或許它們並不是純粹的虛構，而是背後隱藏著一些尚未解明的真相。",
-    articleImage: "images/Forum/Turn-empty-article.svg",
+    articleImage: "images/Forum/at/15.png",
     interactions: [
       {
         icon: "images/Forum/Forum_ghost.svg",
@@ -383,13 +398,14 @@ const articles = [
   {
     id: 16,
     commentCount: 0,
+    comments: [], 
     category: "恐怖獵奇",
     authorName: "黑暗檔案",
     authorAvatar: "images/Forum/lost-cat.svg",
     title: "死亡時鐘：能預測死亡的詭異裝置",
     preview:
       "在某些靈異論壇上流傳著「死亡時鐘」的故事。據說這種裝置可以準確預測一個人的死亡時間，有人聲稱它是來自不明來源的詛咒物品，使用者必須付出相應的代價。我的朋友阿哲曾經親眼見過這樣的時鐘。他說，在一次跳蚤市場上，有位老人低價出售一個古老的鐘錶，並聲稱它能「看見未來」。出於好奇，阿哲買下了它，並將它放在自己的書房裡。奇怪的是，每當他注視這個時鐘的指針時，耳邊就會聽到低聲的呢喃。幾天後，他發現時鐘上竟然出現了一串日期與時間，而這個時間與他的一位好友意外身亡的時間完全吻合。後來，阿哲害怕繼續使用這個詭異的時鐘，便將它扔進了河裡，但有傳言說，這種時鐘永遠無法被銷毀，總會以某種形式回到人們的手中。你會願意冒險去找這樣的裝置嗎？",
-    articleImage: "images/Forum/Turn-empty-article.svg",
+    articleImage: "images/Forum/at/16.png",
     interactions: [
       {
         icon: "images/Forum/Forum_ghost.svg",
@@ -409,6 +425,7 @@ const articles = [
   {
     id: 17,
     commentCount: 0,
+    comments: [], 
     category: "恐怖作品",
     authorName: "午夜書迷",
     authorAvatar: "images/Forum/Lillian.svg",
@@ -433,6 +450,7 @@ const articles = [
   {
     id: 18,
     commentCount: 0,
+    comments: [], 
     category: "都市傳說",
     authorName: "迷霧觀察者",
     authorAvatar: "images/Forum/shadowwatcher.svg",
@@ -457,12 +475,13 @@ const articles = [
   {
     id: 19,
     commentCount: 0,
+    comments: [], 
     category: "恐怖作品",
     authorName: "黑暗電影人",
     authorAvatar: "images/Forum/Night-Walker.svg",
     title: "不容錯過的恐怖電影《深夜來電》",
     preview: "如果你喜歡帶有心理懸疑的恐怖片，那麼《深夜來電》絕對能滿足你的需求。這部電影的劇情圍繞著一位獨居的年輕女子展開，她某天晚上接到了一通陌生電話，對方聲稱是她的「未來自我」，並警告她千萬不要離開家門。電影的恐怖點在於逐漸揭示的真相，以及電話另一頭聲音的不自然音質，讓人不寒而慄。尤其是當主角無法抵擋好奇心而走出家門時，觀眾會隨之陷入一場驚悚的漩渦。結局令人意想不到，但又令人細思極恐——它挑戰了觀眾對時間和現實的認知。如果你是心理驚悚的愛好者，這部電影絕對不要錯過！",
-    articleImage: "images/Forum/Night-Walker-Articles.svg",
+    articleImage: "images/Forum/at/19.png",
     interactions: [
       {
         icon: "images/Forum/Forum_ghost.svg",
@@ -481,6 +500,7 @@ const articles = [
   {
     id: 20,
     commentCount: 0,
+    comments: [], 
     category: "驅邪收驚",
     authorName: "古法守護者",
     authorAvatar: "images/Forum/shadowwatcher.svg",
@@ -505,12 +525,13 @@ const articles = [
   {
     id: 21,
     commentCount: 0,
+    comments: [], 
     category: "都市傳說",
     authorName: "暗夜行者",
     authorAvatar: "images/Forum/blur-hunter3.svg",
     title: "神秘的「午夜巴士」",
     preview: "「午夜巴士」的傳說在許多城市中都有不同的版本，但我想分享的是我親身經歷的一次怪事，至今讓我對深夜搭乘公車感到恐懼。那是幾年前的某個深夜，我因為加班錯過了最後一班正常公車，只能等待所謂的「深夜特班車」。當時我在一個人煙稀少的公車站等候，沒多久，一輛老舊的巴士緩緩駛來。奇怪的是，這輛車沒有路線號碼，車窗也被霧氣覆蓋，看不清裡面的情況。我猶豫了一下，還是上了車。一進車廂，我立刻感到一股寒意。車裡坐著幾個低頭不語的乘客，他們的表情僵硬，彷彿不屬於這個世界。我選了一個靠窗的座位坐下，試圖避免和其他人眼神接觸。巴士駛過了幾站，但奇怪的是，每次停靠時，只有車門開了，卻沒有人上下車。更令人不安的是，窗外的街景似乎在重複，像是我們一直在原地打轉。最終，我鼓起勇氣問司機：「這輛車到底開去哪裡？」司機沉默了一會，然後用低沉的聲音回答：「有些地方，你不該問。」這句話讓我全身發冷。幸運的是，當車子經過一個熟悉的地點時，我果斷按了下車鈴，衝下了車。站在路邊，我回頭望去，卻發現巴士消失在了濃霧中，彷彿從未存在過。後來，我聽人說過「午夜巴士」的傳說，據說它專門載著一些無法「安息」的靈魂，在城市的邊緣徘徊。我慶幸自己能夠全身而退，但那夜的記憶，成為我心中永遠的陰影。",
-    articleImage: "images/Forum/hunter-article-picture.svg",
+    articleImage: "images/Forum/at/21.png",
     interactions: [
       {
         icon: "images/Forum/Forum_ghost.svg",
@@ -529,12 +550,13 @@ const articles = [
   {
     id: 22,
     commentCount: 0,
+    comments: [], 
     category: "驅邪收驚",
     authorName: "靈符傳人",
     authorAvatar: "images/Forum/Night-Explorer.svg",
     title: "驅邪儀式的細節解析與親身經歷",
     preview: "驅邪這個詞在許多靈異愛好者的耳中已經不陌生了。它是傳統民間信仰中，為了解決人們遭遇到邪物侵擾、壞運氣纏身的情況而進行的儀式。這種儀式不僅涉及到宗教的信仰，更多時候還反映了人們對未知事物的恐懼與渴望掌控的心理。我第一次參與驅邪儀式，是因為朋友家中連續發生了許多怪事：深夜裡莫名其妙的敲門聲，家裡的植物無緣無故枯死，甚至小孩突然生病，醫生卻查不出原因。最後，他們請來了一位知名的驅邪師傅。儀式是在晚上九點開始的，師傅先是在大廳中央擺了一張供桌，上面放著供品、香爐和一道紅色的符咒。師傅口中唸唸有詞，隨後開始以柳枝沾著淨水在房間的每個角落撒灑。他還用雞血畫了一個「驅邪符」在門框上，據說這是用來阻擋外邪再次入侵的關鍵手段。最讓人感到毛骨悚然的是，儀式進行到一半時，家中的小孩突然開始無緣無故大哭，甚至喊出一些奇怪的話語，像是「離開我的房間」。師傅當時神情嚴肅地拿出一把銅錢劍，快速揮舞在孩子周圍，並大聲喝令「邪靈速退！」孩子瞬間安靜下來，似乎真的擺脫了什麼東西。儀式結束後，朋友家中的怪事就再也沒有發生過了。這次經歷讓我對驅邪儀式有了新的理解，或許它不僅僅是形式上的安慰，也可能真的有某種無法解釋的力量在運作。無論你是否相信，這些古老的習俗其實也承載了我們對生命與未知世界的敬畏。",
-    articleImage: "images/Forum/Night-Explorer-Articles",
+    articleImage: "images/Forum/at/22.png",
     interactions: [
       {
         icon: "images/Forum/Forum_ghost.svg",
@@ -553,12 +575,13 @@ const articles = [
   {
     id: 23,
     commentCount: 0,
+    comments: [], 
     category: "驅邪收驚",
     authorName: "老街神秘人",
     authorAvatar: "images/Forum/blur-hunter3.svg",
     title: "祖傳收驚術：一次神奇的重拾平靜",
     preview: "收驚作為驅邪的一部分，在民間一直扮演著重要角色。特別是對於容易受驚的孩子或經歷恐怖事件的成年人來說，這是一種有效且簡單的安撫方式。今天想分享的是我親眼見證的一次祖傳收驚術，這次經歷徹底顛覆了我對這些傳統習俗的看法。故事的主角是我的鄰居小梅，她在一次深夜外出時，因為目睹一場車禍，從此變得精神恍惚，總是感覺背後有人跟著她，甚至連睡覺都不安穩。她的家人試過看醫生，也請心理輔導，但效果有限。最後，她的奶奶決定試試家傳的收驚術。儀式在家中進行，奶奶先是在地上鋪了紅布，並準備了三炷香、一碗米、一面鏡子和一把剪刀。她將小梅叫到紅布中央坐下，並開始用手中的米繞著小梅的頭轉三圈，嘴裡唸著一些我聽不懂的方言咒語。接著，奶奶拿出鏡子，對著小梅的臉照了一下，然後迅速轉向門外，據說這是用來將驚嚇的魂魄「引回來」。最後，她用剪刀在紅布上比劃了幾下，象徵剪斷與邪物的連結。整個儀式大約進行了20分鐘，氣氛詭異但也讓人感到一絲莊重。儀式完成後，奶奶讓小梅喝了一口用香灰和淨水調製的「平安水」，並叮囑她當天晚上不能照鏡子。奇妙的是，第二天小梅就告訴我們，她感覺背後的陰影消失了，晚上也睡得很安穩。這次的經歷讓我開始思考，這些祖傳的習俗可能不僅僅是心理安慰，而是一種與自然或靈界溝通的特殊方式。它們雖然無法用科學解釋，但卻能在特定情況下，帶來讓人難以忽視的效果。",
-    articleImage: "images/Forum/hunter-article-picture.svg",
+    articleImage: "images/Forum/at/23.png",
     interactions: [
       {
         icon: "images/Forum/Forum_ghost.svg",

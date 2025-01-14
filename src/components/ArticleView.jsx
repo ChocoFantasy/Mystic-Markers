@@ -4,10 +4,11 @@ import articlesData from "../js/articlesData";
 import "../style.scss";
 
 const ArticleView = () => {
-  const { articleId } = useParams();
+  const { articleId } = useParams(); // 從路由參數獲取 articleId
   const article = articlesData.find((item) => item.id === parseInt(articleId));
-  const [comments, setComments] = useState([]);
-  const [newComment, setNewComment] = useState("");
+  const [comments, setComments] = useState([]); // 儲存留言內容
+  const [newComment, setNewComment] = useState(""); // 新留言
+  const [commentCount, setCommentCount] = useState(article.commentCount || 0); // 留言數
   const [isCommentExpanded, setIsCommentExpanded] = useState(false);
   const [interactions, setInteractions] = useState([]);
   const randomNames = [
@@ -24,12 +25,122 @@ const ArticleView = () => {
     "深淵凝視者",
   ];
 
-  const avatars = [ // 預設隨機頭像
+  const avatars = [
+    // 預設隨機頭像
     "images/Forum/lost-cat.svg",
     "images/Forum/light.svg",
     "images/Forum/Lillian.svg",
     "images/Forum/Night-Explorer.svg",
   ];
+
+  // 初始化留言內容與留言數
+  useEffect(() => {
+    const storedComments = JSON.parse(
+      localStorage.getItem(`comments-${article.id}`)
+    );
+    if (storedComments) {
+      setComments(storedComments); // 加載本地留言內容
+      setCommentCount(storedComments.length); // 更新留言數
+    }
+  }, [article]);
+
+  // 將留言內容與數據保存到 localStorage
+  useEffect(() => {
+    localStorage.setItem(`comments-${article.id}`, JSON.stringify(comments));
+  }, [comments]);
+
+  // 更新留言數
+  const updateCommentCount = () => {
+    articlesData.forEach((item) => {
+      if (item.id === article.id) {
+        item.commentCount += 1;
+        item.interactions.forEach((interaction) => {
+          if (interaction.altText === "message") {
+            interaction.count = comments.length + 1; // 更新留言數
+          }
+        });
+      }
+    });
+  };
+
+  // 新增留言並保存
+  const handleAddComment = () => {
+    if (newComment.trim()) {
+      // 隨機匿名訪客
+      const randomName =
+        randomNames[Math.floor(Math.random() * randomNames.length)];
+      // 隨機選擇頭像
+      const randomAvatar = avatars[Math.floor(Math.random() * avatars.length)];
+      const newCommentData = {
+        text: newComment,
+        likes: 0,
+        floor: `B${comments.length + 1}`,
+        avatar: randomAvatar,
+        userName: randomName,
+        time: new Date().toLocaleString(),
+        isLiked: false,
+      };
+  
+      // 更新本地留言數據
+      setComments((prevComments) => {
+        const updatedComments = [...prevComments, newCommentData];
+        // 保存到 localStorage
+        localStorage.setItem(
+          `comments-${article.id}`,
+          JSON.stringify(updatedComments)
+        ); 
+        return updatedComments;
+      });
+  
+      setNewComment("");
+  
+      // 更新留言數到全域文章數據
+      articlesData.forEach((item) => {
+        if (item.id === article.id) {
+          item.commentCount += 1; // 更新留言數
+          item.interactions.forEach((interaction) => {
+            if (interaction.altText === "message") {
+              interaction.count += 1; // 同步更新留言數
+            }
+          });
+
+          item.comments = JSON.parse(
+            localStorage.getItem(`comments-${article.id}`)
+          ); // 同步留言內容
+        }
+      });
+    }
+  };
+
+  //留言區的按讚標籤
+  const handleLikeComment = (index) => {
+    setComments((prevComments) =>
+      prevComments.map((comment, idx) =>
+        idx === index
+          ? {
+              ...comment,
+              likes: comment.isLiked ? comment.likes - 1 : comment.likes + 1,
+              isLiked: !comment.isLiked,
+            }
+          : comment
+      )
+    );
+  };
+
+  // 新增留言數
+  const handleNewComment = (newComment) => {
+    setArticle((prevArticle) => ({
+      ...prevArticle,
+      comments: [...prevArticle.comments, newComment],
+      commentCount: prevArticle.commentCount + 1, // 更新本地留言數
+    }));
+
+    // 同步更新 articlesData.js
+    const updatedArticles = articles.map((a) =>
+      a.id === article.id ? { ...a, commentCount: a.commentCount + 1 } : a
+    );
+    setArticles(updatedArticles);
+  };
 
   const [isFavorite, setIsFavorite] = useState(false); // 初始化 isFavorite
 
@@ -56,12 +167,12 @@ const ArticleView = () => {
       prevInteractions.map((interaction, idx) =>
         idx === interactionIndex
           ? {
-            ...interaction,
-            isLiked: !interaction.isLiked,
-            count: interaction.isLiked
-              ? interaction.count - 1 // 若已按讚，數字減 1
-              : interaction.count + 1, // 若未按讚，數字加 1
-          }
+              ...interaction,
+              isLiked: !interaction.isLiked,
+              count: interaction.isLiked
+                ? interaction.count - 1 // 若已按讚，數字減 1
+                : interaction.count + 1, // 若未按讚，數字加 1
+            }
           : interaction
       )
     );
@@ -79,103 +190,7 @@ const ArticleView = () => {
     });
   };
 
-  // 更新留言數
-  const updateCommentCount = () => {
-    articlesData.forEach((item) => {
-      if (item.id === article.id) {
-        item.commentCount += 1;
-        item.interactions.forEach((interaction) => {
-          if (interaction.altText === "message") {
-            interaction.count = comments.length + 1; // 更新留言數
-          }
-        });
-      }
-    });
-  };
-
-  // 新增留言
-  const handleAddComment = () => {
-    if (newComment.trim()) {
-      // 隨機匿名訪客
-      const randomName =
-        randomNames[Math.floor(Math.random() * randomNames.length)];
-
-      // 隨機選擇頭像  
-      const randomAvatar =
-        avatars[Math.floor(Math.random() * avatars.length)]; 
-      setComments((prevComments) => [
-        ...prevComments,
-        {
-          text: newComment,
-          likes: 0,
-          floor: `B${prevComments.length + 1}`,
-          avatar: randomAvatar, // 使用隨機頭像
-          userName: randomName,
-          time: new Date().toLocaleString(),
-          isLiked: false,
-        },
-      ]);
-      setNewComment("");
-      updateCommentCount(); // 調用更新的留言數
-
-      // // 更新 articlesData 的 commentCount
-      // articlesData.forEach((item) => {
-      //   if (item.id === article.id) {
-      //     item.commentCount += 1; // 增加留言數
-      //     item.interactions.forEach((interaction) => {
-      //       if (interaction.altText === "message") {
-      //         interaction.count += 1; // 更新 interactions 中的留言數
-      //       }
-      //     });
-      //   }
-      // });
-    }
-  };
-
-//儲存每篇文章的留言記錄
-  useEffect(() => {
-    const storedComments = JSON.parse(
-      localStorage.getItem(`comments-${article.id}`)
-    );
-    if (storedComments) {
-      setComments(storedComments);
-    }
-  }, [article]);
   
-  useEffect(() => {
-    localStorage.setItem(`comments-${article.id}`, JSON.stringify(comments));
-  }, [comments]);
-
-
-  //留言區的按讚標籤
-  const handleLikeComment = (index) => {
-    setComments((prevComments) =>
-      prevComments.map((comment, idx) =>
-        idx === index
-          ? {
-            ...comment,
-            likes: comment.isLiked ? comment.likes - 1 : comment.likes + 1,
-            isLiked: !comment.isLiked,
-          }
-          : comment
-      )
-    );
-  };
-
-  // 新增留言數
-  const handleNewComment = (newComment) => {
-    setArticle((prevArticle) => ({
-      ...prevArticle,
-      comments: [...prevArticle.comments, newComment],
-      commentCount: prevArticle.commentCount + 1, // 更新本地留言數
-    }));
-
-    // 同步更新 articlesData.js
-    const updatedArticles = articles.map((a) =>
-      a.id === article.id ? { ...a, commentCount: a.commentCount + 1 } : a
-    );
-    setArticles(updatedArticles);
-  };
 
   return (
     <div className="article-view">
@@ -184,7 +199,10 @@ const ArticleView = () => {
         <div className="category-nav">
           <span className="category">{article.category}</span>
           <Link to="/Forum" className="back-link">
-            <img src={`${"images/Forum/pajamas_go-back.svg"}`} alt="回到文章符號" />
+            <img
+              src={`${"images/Forum/pajamas_go-back.svg"}`}
+              alt="回到文章符號"
+            />
             回到文章列表
           </Link>
         </div>
@@ -236,10 +254,11 @@ const ArticleView = () => {
                 }}
               >
                 <img
-                  src={`${interaction.isLiked
-                    ? interaction.filledIcon
-                    : interaction.icon
-                    }`}
+                  src={`${
+                    interaction.isLiked
+                      ? interaction.filledIcon
+                      : interaction.icon
+                  }`}
                   alt={interaction.altText}
                 />
                 <span>{interaction.count}</span>
@@ -256,11 +275,11 @@ const ArticleView = () => {
               }}
             >
               <img
-                src={`${isFavorite
-                  ? article.interactions[2].filledIcon // 使用 interactions[2] 的已收藏圖案
-                  : article.interactions[2].icon // 使用 interactions[2] 的未收藏圖案
-                  }`}
-
+                src={`${
+                  isFavorite
+                    ? article.interactions[2].filledIcon // 使用 interactions[2] 的已收藏圖案
+                    : article.interactions[2].icon // 使用 interactions[2] 的未收藏圖案
+                }`}
                 alt={isFavorite ? "已收藏" : "收藏"}
               />
             </a>
@@ -318,10 +337,11 @@ const ArticleView = () => {
                   onClick={() => handleLikeComment(index)}
                 >
                   <img
-                    src={`${comment.isLiked
+                    src={`${
+                      comment.isLiked
                         ? "images/Forum/solar_ghost-outline.svg"
                         : "images/Forum/Forum_ghost.svg"
-                      }`}
+                    }`}
                     alt="like"
                   />
                   <span>{comment.likes}</span>
