@@ -59,6 +59,7 @@ const PostModal = ({ isOpen, onClose, onNewArticle, userName }) => {
           altText: "label",
         },
       ],
+      isUserCreated: true, // 標記為用戶自己新增的文章
     };
 
     // 更新 localStorage

@@ -3985,6 +3985,28 @@ button:hover #custom-cursor::after {
                     border-radius: 50%;
                   }
                 }
+
+                .delete-button {
+                  background-color: #808080;
+                  color: white;
+                  border: none;
+                  border-radius: 4px;
+                  padding: 5px 10px;
+                  cursor: pointer;
+                  font-size: 14px;
+                
+                  &:hover {
+                    background-color: #808080;
+                  }
+                }
+                
+                .article-header .delete-button {
+                  display: inline-block;
+                }
+                
+                .article-header .delete-button[hidden] {
+                  display: none; // 隱藏非用戶新增文章的刪除按鈕
+                }
               }
 
               .article-Graphics-text {

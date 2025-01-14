@@ -36,6 +36,18 @@ const Forum = () => {
       setArticles([newArticle, ...articles]); // 新文章加到最上面
       setModalOpen(false); // 關閉彈窗
     };
+    //刪除文章
+    const handleDeleteArticle = (id) => {
+      // 從本地 state 中刪除
+      const updatedArticles = articles.filter(
+        (article) => article.id !== id || !article.isUserCreated
+      );
+    
+      // 同步更新 localStorage
+      localStorage.setItem("articlesData", JSON.stringify(updatedArticles));
+
+      setArticles(updatedArticles);
+    };
 
   // 首頁路由器更新用
   useEffect(() => {
@@ -258,6 +270,7 @@ const Forum = () => {
                     <ArticleList
                       articles={sortedArticles} // 排序並篩選後的文章資料
                       onFavorite={handleArticleFavorite} //傳遞收藏功能
+                      onDelete={handleDeleteArticle} // 傳遞刪除功能
                     />
                   </div>
                 </div>

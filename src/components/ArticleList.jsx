@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../style.scss";
 
 // ArticleList 組件
-const ArticleList = ({ articles, onFavorite }) => {
+const ArticleList = ({ articles, onFavorite, onDelete }) => {
   const [interactions, setInteractions] = useState([]);
   const storedArticles = JSON.parse(localStorage.getItem("articlesData")) || []; //獲取文章資料
   const allArticles = [...articles, ...storedArticles]; // 合併靜態與動態文章資料
@@ -85,6 +85,15 @@ const ArticleList = ({ articles, onFavorite }) => {
                 />
                 <span className="author-name">{article.authorName}</span>
               </div>
+              {/* 僅顯示用戶新增文章的刪除按鈕 */}
+              {article.isUserCreated && (
+                <button
+                  className="delete-button"
+                  onClick={() => onDelete(article.id)}
+                >
+                  刪除
+                </button>
+              )}
               {/* 更多選項(待更新) */}
               {/* <button type="button" aria-label="更多選項">
                 <svg
