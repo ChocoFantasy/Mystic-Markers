@@ -3949,6 +3949,13 @@ button:hover #custom-cursor::after {
               }
             }
 
+            .PostModal-bar{
+              display: flex;
+              align-items: center;
+                width: 35px;
+                height: 35px;
+              
+            }
 
           }
 
@@ -4071,126 +4078,6 @@ button:hover #custom-cursor::after {
             }
           }
         }
-
-        /* 撰寫文章  */
-        // #postModal {
-        //   display: none; // 預設隱藏
-        //   position: fixed;
-        //   top: 0;
-        //   left: 0;
-        //   width: 100%;
-        //   height: 100%;
-        //   background: rgba(0, 0, 0, 0.6);
-        //   display: flex; // 修正顯示時要用 flex 排版
-        //   justify-content: center;
-        //   align-items: center;
-
-        //   .modal-content {
-        //     background: $deep;
-        //     padding: 20px;
-        //     border-radius: 8px;
-        //     width: 400px;
-        //     position: relative;
-        //     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        //     text-align: left;
-
-        //     .close-btn {
-        //       position: absolute;
-        //       top: 10px;
-        //       right: 15px;
-        //       font-size: 24px;
-        //       color: #aaa;
-        //       cursor: pointer;
-
-        //       &:hover {
-        //         color: #000;
-        //       }
-        //     }
-
-        //     .user-info {
-        //       display: flex;
-        //       align-items: center;
-        //       margin-bottom: 15px;
-
-        //       .avatar {
-        //         width: 40px;
-        //         height: 40px;
-        //         border-radius: 50%;
-        //         margin-right: 10px;
-        //       }
-
-        //       #userName {
-        //         font-size: 16px;
-        //         font-weight: bold;
-        //       }
-        //     }
-
-        //     #board-bar {
-        //       display: flex;
-
-        //       #boardSelect {
-        //         width: 100%;
-        //         padding: 5px;
-        //         margin-bottom: 15px;
-        //         font-size: 14px;
-        //       }
-
-        //     }
-
-
-
-        //     #postTitle,
-        //     #postContent {
-        //       width: 100%;
-        //       margin-bottom: 15px;
-        //       padding: 8px;
-        //       font-size: 14px;
-        //       box-sizing: border-box;
-
-        //       &#postContent {
-        //         height: 120px;
-        //         resize: none;
-        //       }
-        //     }
-
-        //     .media-buttons {
-        //       display: flex;
-        //       justify-content: space-between;
-        //       margin-bottom: 15px;
-
-        //       button {
-        //         padding: 8px 12px;
-        //         background-color: #007bff;
-        //         color: #fff;
-        //         border: none;
-        //         border-radius: 5px;
-        //         cursor: pointer;
-
-        //         &:hover {
-        //           background-color: #0056b3;
-        //         }
-        //       }
-        //     }
-
-        //     .action-buttons {
-        //       display: flex;
-        //       justify-content: space-between;
-
-        //       button {
-        //         padding: 8px 12px;
-        //         background-color: #007bff;
-        //         color: #fff;
-        //         border: none;
-        //         border-radius: 5px;
-        //         cursor: pointer;
-
-        //         &:hover {
-        //           background-color: #0056b3;
-        //         }
-        //       }
-        //     }
-        //   }
-        // }
 
         .post-modal {
           position: fixed;
@@ -4406,8 +4293,8 @@ button:hover #custom-cursor::after {
       gap: 1.5rem;
 
       .author-avatar {
-        width: 48px;
-        height: 48px;
+        width: 32px !important;
+        height: 32px !important;
         border-radius: 50%;
       }
 
@@ -4635,53 +4522,75 @@ button:hover #custom-cursor::after {
   }
 
   .comment-input {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #1a1a1a;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1rem;
-    transition: all 0.3s ease;
-
-    &.expanded {
-      padding: 1.5rem;
-    }
-
+    background: #333; /* 背景色 */
+    border-radius: 8px;
+    display: flex;
+    align-items: stretch; /* 子元素高度一致 */
+    margin: 0; /* 移除外部間隔 */
+    padding: 0; /* 移除內部間隔 */
+    width: 100%; /* 確保寬度占滿容器 */
+  
     .input-container {
-      max-width: 1200px;
-      margin: 0 auto;
       display: flex;
-      gap: 1rem;
+      align-items: stretch; /* 子元素高度一致 */
+      flex: 1; /* 讓輸入框和按鈕可以自適應寬度 */
+      margin: 0; /* 移除外部間隔 */
+      padding: 0; /* 移除內部間隔 */
+      gap: 0; /* 移除子項目間距 */
 
-      input {
-        flex: 1;
-        padding: 0.75rem 1rem;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
-        background-color: #2a2a2a;
-        color: #ffffff;
+      .user-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $primary-green; /* 頭像區背景色 */
+        flex: 0 0 120px; /* 固定寬度讓區塊更大 */
+        padding: 0 1rem; /* 左右填充 */
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        margin: 0; /* 移除外邊距 */
 
-        &:focus {
-          outline: none;
-          border-color: $primary-green;
+        .user-avatar {
+          width: 30px; /* 頭像大小 */
+          height: 30px;
+          border-radius: 50%; /* 圓形頭像 */
+          margin-right: 0.5rem;
+        }
+  
+        .user-name {
+          color: #000; /* 名稱文字顏色 */
+          font-size: 16px;
+          font-weight: bold;
+          margin: 0; /* 確保名稱文字無外邊距 */
         }
       }
-
+  
+      input {
+        flex: 1; /* 占滿剩餘空間 */
+        padding: 0.5rem;
+        font-size: 16px;
+        border: none; /* 移除邊框 */
+        border-radius: 0; /* 去掉圓角 */
+        color: #ffffff; /* 輸入文字顏色 */
+        background: #444; /* 輸入框背景色 */
+        margin: 0; /* 移除間隔 */
+        border: none; /* 移除邊框 */
+      }
+  
       button {
-        background-color: $primary-green;
-        color: white;
+        background-color: $primary-green; /* 送出按鈕背景色 */
+        color: #000; /* 按鈕文字顏色 */
         border: none;
-        padding: 0.75rem 1.5rem;
-        border-radius: 4px;
+        padding: 0 1.5rem; /* 左右填充 */
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        font-size: 16px;
         cursor: pointer;
+        margin: 0; /* 移除間隔 */
 
-        &:hover {
-          background-color: $primary-green;
-        }
       }
     }
   }
+  
 }
 
 // .article-view RWD
@@ -4799,7 +4708,7 @@ button:hover #custom-cursor::after {
         flex-direction: column;
         gap: 10px;
 
-        .faq-item {
+       
           details {
 
             border-bottom: 1px solid $primary-green;
@@ -4812,9 +4721,9 @@ button:hover #custom-cursor::after {
               font-size: 1.2rem;
               color: white;
               cursor: pointer;
-
+            
               img {
-                width: 20px;
+                width: 30px !important; /* 增大圖片大小 */
                 margin-left: 10px;
               }
             }
@@ -4827,8 +4736,8 @@ button:hover #custom-cursor::after {
             }
           }
         }
-      }
     }
+    
 
     /* 聯絡我們 */
     .contact-section {

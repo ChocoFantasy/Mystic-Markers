@@ -97,7 +97,7 @@ const Contact = () => {
                     <summary>
                       {/* 問題 */}
                       {item.question}
-                      <img src="images/Contact/arrow2.svg" alt="下拉符號" />
+                      <img src="images/Contact/arrow-2.svg" alt="下拉符號" />
                     </summary>
                     {/* 答案 */}
                     <p>{item.answer}</p>

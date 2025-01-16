@@ -69,7 +69,7 @@ const ArticleView = () => {
   const formatRelativeDate = (dateString) => {
     const now = new Date();
     const commentDate = new Date(dateString);
-  
+
     // 去掉時間的細節，只保留年月日部分進行比較
     const nowDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     const commentDateOnly = new Date(
@@ -77,9 +77,9 @@ const ArticleView = () => {
       commentDate.getMonth(),
       commentDate.getDate()
     );
-  
+
     const diffDays = (nowDate - commentDateOnly) / (1000 * 60 * 60 * 24);
-  
+
     // 判斷日期差，返回對應的格式
     if (diffDays === 0) {
       return `今天 ${commentDate.getHours().toString().padStart(2, "0")}:${commentDate
@@ -100,12 +100,12 @@ const ArticleView = () => {
       return `${(commentDate.getMonth() + 1)
         .toString()
         .padStart(2, "0")}/${commentDate
-        .getDate()
-        .toString()
-        .padStart(2, "0")} ${commentDate.getHours().toString().padStart(2, "0")}:${commentDate
-        .getMinutes()
-        .toString()
-        .padStart(2, "0")}`;
+          .getDate()
+          .toString()
+          .padStart(2, "0")} ${commentDate.getHours().toString().padStart(2, "0")}:${commentDate
+            .getMinutes()
+            .toString()
+            .padStart(2, "0")}`;
     }
   };
 
@@ -123,10 +123,10 @@ const ArticleView = () => {
         floor: `B${comments.length + 1}`,
         avatar: randomAvatar,
         userName: randomName,
-        time:  new Date().toISOString(), // 時間格式
+        time: new Date().toISOString(), // 時間格式
         isLiked: false,
       };
-  
+
       // 更新本地留言數據
       setComments((prevComments) => {
         const updatedComments = [...prevComments, newCommentData];
@@ -134,12 +134,12 @@ const ArticleView = () => {
         localStorage.setItem(
           `comments-${article.id}`,
           JSON.stringify(updatedComments)
-        ); 
+        );
         return updatedComments;
       });
-  
+
       setNewComment("");
-  
+
       // 更新留言數到全域文章數據
       articlesData.forEach((item) => {
         if (item.id === article.id) {
@@ -164,10 +164,10 @@ const ArticleView = () => {
       prevComments.map((comment, idx) =>
         idx === index
           ? {
-              ...comment,
-              likes: comment.isLiked ? comment.likes - 1 : comment.likes + 1,
-              isLiked: !comment.isLiked,
-            }
+            ...comment,
+            likes: comment.isLiked ? comment.likes - 1 : comment.likes + 1,
+            isLiked: !comment.isLiked,
+          }
           : comment
       )
     );
@@ -214,12 +214,12 @@ const ArticleView = () => {
       prevInteractions.map((interaction, idx) =>
         idx === interactionIndex
           ? {
-              ...interaction,
-              isLiked: !interaction.isLiked,
-              count: interaction.isLiked
-                ? interaction.count - 1 // 若已按讚，數字減 1
-                : interaction.count + 1, // 若未按讚，數字加 1
-            }
+            ...interaction,
+            isLiked: !interaction.isLiked,
+            count: interaction.isLiked
+              ? interaction.count - 1 // 若已按讚，數字減 1
+              : interaction.count + 1, // 若未按讚，數字加 1
+          }
           : interaction
       )
     );
@@ -237,7 +237,7 @@ const ArticleView = () => {
     });
   };
 
-  
+
 
   return (
     <div className="article-view">
@@ -247,7 +247,7 @@ const ArticleView = () => {
           <span className="category">{article.category}</span>
           <Link to="/Forum" className="back-link">
             <img
-                src="images/Forum/pajamas_go-back.svg"
+              src="images/Forum/pajamas_go-back.svg"
               alt="回到文章符號"
             />
             回到文章列表
@@ -301,11 +301,10 @@ const ArticleView = () => {
                 }}
               >
                 <img
-                  src={`${
-                    interaction.isLiked
-                      ? interaction.filledIcon
-                      : interaction.icon
-                  }`}
+                  src={`${interaction.isLiked
+                    ? interaction.filledIcon
+                    : interaction.icon
+                    }`}
                   alt={interaction.altText}
                 />
                 <span>{interaction.count}</span>
@@ -322,11 +321,10 @@ const ArticleView = () => {
               }}
             >
               <img
-                src={`${
-                  isFavorite
-                    ? article.interactions[2].filledIcon // 使用 interactions[2] 的已收藏圖案
-                    : article.interactions[2].icon // 使用 interactions[2] 的未收藏圖案
-                }`}
+                src={`${isFavorite
+                  ? article.interactions[2].filledIcon // 使用 interactions[2] 的已收藏圖案
+                  : article.interactions[2].icon // 使用 interactions[2] 的未收藏圖案
+                  }`}
                 alt={isFavorite ? "已收藏" : "收藏"}
               />
             </a>
@@ -377,21 +375,20 @@ const ArticleView = () => {
                 <span className="comment-floor">{comment.floor}</span>
                 <span className="comment-time">{formatRelativeDate(comment.time)}</span>
                 <div className="comment-actions">
-                <button
-                  className={`like-button ${comment.isLiked ? "liked" : ""}`}
-                  onClick={() => handleLikeComment(index)}
-                >
-                  <img
-                    src={`${
-                      comment.isLiked
+                  <button
+                    className={`like-button ${comment.isLiked ? "liked" : ""}`}
+                    onClick={() => handleLikeComment(index)}
+                  >
+                    <img
+                      src={`${comment.isLiked
                         ? "images/Forum/solar_ghost-outline.svg"
                         : "images/Forum/Forum_ghost.svg"
-                    }`}
-                    alt="like"
-                  />
-                  <span>{comment.likes}</span>
-                </button>
-              </div>
+                        }`}
+                      alt="like"
+                    />
+                    <span>{comment.likes}</span>
+                  </button>
+                </div>
               </div>
               <p className="comment-text">{comment.text}</p>
 
@@ -402,6 +399,16 @@ const ArticleView = () => {
       {/* 留言區塊 */}
       <div className={`comment-input ${isCommentExpanded ? "expanded" : ""}`}>
         <div className="input-container">
+          {/* 頭像與名稱 */}
+          <div className="user-info" style={{ backgroundColor: "#acff6c" }}>
+            <img
+              src="images/Forum/lost-cat.svg" // 預設匿名者頭像
+              alt="匿名者頭像"
+              className="user-avatar"
+            />
+            <span className="user-name">匿名者</span> {/* 預設名稱 */}
+          </div>
+          {/* 輸入框 */}
           <input
             type="text"
             placeholder="輸入留言..."
@@ -409,7 +416,13 @@ const ArticleView = () => {
             onChange={(e) => setNewComment(e.target.value)}
             onFocus={() => setIsCommentExpanded(true)}
           />
-          <button onClick={handleAddComment}>送出</button>
+          {/* 送出按鈕 */}
+          <button
+            onClick={handleAddComment}
+            style={{ backgroundColor: "#acff6c" }}
+          >
+            送出
+          </button>
         </div>
       </div>
     </div>
