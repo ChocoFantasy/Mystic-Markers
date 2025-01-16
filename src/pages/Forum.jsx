@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
-import { useParams,useLocation } from "react-router-dom"; // 確保引入 useParams
+import { useParams, useLocation } from "react-router-dom"; // 確保引入 useParams
 import Navbar from "../components/Navbar"; //Navbar
 import "../style.scss";
 import ArticleList from "../components/ArticleList"; // 文章列表
@@ -24,30 +24,30 @@ const Forum = () => {
   const location = useLocation(); //帳戶名稱
   const userName = location.state?.userName || "匿名用戶";
 
-
   useEffect(() => {
     // [撰寫新文章]加載靜態數據和 localStorage 中的數據
-    const storedArticles = JSON.parse(localStorage.getItem("articlesData")) || [];
+    const storedArticles =
+      JSON.parse(localStorage.getItem("articlesData")) || [];
     setArticles([...storedArticles, ...articlesData]);
   }, []);
 
-    // [撰寫新文章]提交新文章時添加到文章列表
-    const handleNewArticle = (newArticle) => {
-      setArticles([newArticle, ...articles]); // 新文章加到最上面
-      setModalOpen(false); // 關閉彈窗
-    };
-    //刪除文章
-    const handleDeleteArticle = (id) => {
-      // 從本地 state 中刪除
-      const updatedArticles = articles.filter(
-        (article) => article.id !== id || !article.isUserCreated
-      );
-    
-      // 同步更新 localStorage
-      localStorage.setItem("articlesData", JSON.stringify(updatedArticles));
+  // [撰寫新文章]提交新文章時添加到文章列表
+  const handleNewArticle = (newArticle) => {
+    setArticles([newArticle, ...articles]); // 新文章加到最上面
+    setModalOpen(false); // 關閉彈窗
+  };
+  //刪除文章
+  const handleDeleteArticle = (id) => {
+    // 從本地 state 中刪除
+    const updatedArticles = articles.filter(
+      (article) => article.id !== id || !article.isUserCreated
+    );
 
-      setArticles(updatedArticles);
-    };
+    // 同步更新 localStorage
+    localStorage.setItem("articlesData", JSON.stringify(updatedArticles));
+
+    setArticles(updatedArticles);
+  };
 
   // 首頁路由器更新用
   useEffect(() => {
