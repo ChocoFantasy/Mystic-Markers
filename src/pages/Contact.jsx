@@ -166,7 +166,7 @@ const Contact = () => {
                   <Link to="/Forum">鬼影探索</Link>
                 </li>
               </ul>
-              <small>&copy; 2024 Mystic Markers. All Rights Reserved.</small>
+              <small>&copy; 2024 Mystic Markers. All Rights Reserved.  本網站僅供學生練習用作品，無任何商業營利用途。</small>
             </div>
             <img src="images/LOGO_footer.svg" alt="神秘座標" />
           </div>
