@@ -332,11 +332,11 @@ const App = () => {
                         <Link to="/Forum">鬼影探索</Link>
                       </li>
                       <li>
-                        <Link to="/Contact">聯絡我們</Link>
+                        <Link to="/Contact">解謎之門</Link>
                       </li>
                     </ul>
                     <small>
-                      &copy; 2024 Mystic Markers. All Rights Reserved.
+                      &copy; 2024 Mystic Markers. All Rights Reserved.  本網站僅供學生練習用作品，無任何商業營利用途。
                     </small>
                   </div>
                   <img src="images/LOGO_footer.svg" alt="神秘座標" />
