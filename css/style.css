@@ -462,6 +462,33 @@ a {
 .Topbar .welcome-container span {
   color: white;
 }
+@media (max-width: 768px) {
+  .Topbar {
+    padding: 25px 0 50px 0;
+  }
+  .Topbar .nav-wrapper {
+    margin-right: 15px;
+  }
+  .Topbar .nav-wrapper #news,
+  .Topbar .nav-wrapper #Group {
+    margin-right: 8px;
+  }
+  .Topbar .Topbar-right {
+    margin-left: 15px;
+  }
+  .Topbar .Topbar-right .member {
+    display: none;
+  }
+  .Topbar .Topbar-right .logo {
+    width: auto;
+  }
+  .Topbar .Topbar-right .logo img {
+    margin: 0;
+  }
+  .Topbar .Topbar-right h3 {
+    display: none;
+  }
+}
 
 .member {
   display: flex;
@@ -2873,6 +2900,9 @@ a {
   .home .banner {
     height: 100vh;
   }
+  .home .banner .fog-area-p, .home .banner .fog-masked-g {
+    display: none;
+  }
   .home .intro .title {
     max-width: 100%;
     align-self: center;
@@ -2880,6 +2910,9 @@ a {
   }
   .home .intro #intro1 {
     margin-top: 60px;
+  }
+  .home .intro #intro1 .intro1fog-G {
+    display: none;
   }
   .home .intro #intro1 .door figure {
     left: 0;
@@ -2907,6 +2940,9 @@ a {
   }
   .home .intro #intro3 .map-area .map-intro div p {
     margin-bottom: 0px;
+  }
+  .home .intro #intro3 .intro3fog-P {
+    display: none;
   }
   .home .intro #intro4 div {
     display: flex;
@@ -2996,6 +3032,7 @@ a {
     font-family: "Noto Sans TC";
     font-weight: 500;
     font-size: 2rem;
+    padding: 0;
   }
   .home .intro .title h3 {
     font-family: "Noto Sans TC";
@@ -3007,17 +3044,120 @@ a {
   .home .banner .logoXL {
     margin: 60px;
   }
+  .home .intro #intro1 {
+    min-height: 10vh;
+    height: 100vh;
+  }
+  .home .intro #intro1 .door figure {
+    width: 100%;
+    left: -10%;
+    top: 20%;
+  }
+  .home .intro #intro1 .door #intro_Q {
+    top: -20%;
+    right: 0;
+    left: 50px;
+    width: 80%;
+    margin: 0;
+  }
+  .home .intro #intro1 .door #intro_Q p {
+    font-family: "Noto Sans TC";
+    font-weight: 300;
+    font-size: 1.125rem;
+    letter-spacing: 0.18rem;
+    line-height: 1.8;
+    width: 100%;
+  }
+  .home .intro #intro2 {
+    margin: 0;
+  }
+  .home .intro #intro2 .paper {
+    display: none;
+  }
+  .home .intro #intro3 .map-area .map-intro div {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    margin: 20px 0 0 0;
+    gap: 8px;
+  }
+  .home .intro #intro3 .map-area .map-intro div h4 {
+    width: auto;
+    text-align: center;
+    margin-bottom: 8px;
+    font-family: "Playfair Display";
+    font-weight: 500;
+    font-size: 2rem;
+    font-optical-sizing: auto;
+    font-style: italic;
+  }
+  .home .intro #intro3 .map-area .map-intro div p {
+    margin: 0px;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .home .intro #intro4 {
+    margin: 100px 0;
+  }
+  .home .intro #intro4 .title {
+    padding: 0 30px;
+  }
   .home .intro #intro4 .forum-gallery {
     flex-wrap: wrap;
   }
-  .home .intro #intro4 .forum-gallery #Legends .text-link,
-  .home .intro #intro4 .forum-gallery #Horror .text-link,
-  .home .intro #intro4 .forum-gallery #Exorcism .text-link,
-  .home .intro #intro4 .forum-gallery #Creeps .text-link,
-  .home .intro #intro4 .forum-gallery #Ruins .text-link {
+  .home .intro #intro4 .forum-gallery #Legends,
+  .home .intro #intro4 .forum-gallery #Horror,
+  .home .intro #intro4 .forum-gallery #Exorcism,
+  .home .intro #intro4 .forum-gallery #Creeps,
+  .home .intro #intro4 .forum-gallery #Ruins {
+    padding-bottom: 0;
+    height: 100px;
+    gap: 10px;
+  }
+  .home .intro #intro4 .forum-gallery #Legends .image-link,
+  .home .intro #intro4 .forum-gallery #Horror .image-link,
+  .home .intro #intro4 .forum-gallery #Exorcism .image-link,
+  .home .intro #intro4 .forum-gallery #Creeps .image-link,
+  .home .intro #intro4 .forum-gallery #Ruins .image-link {
+    height: 100%;
+  }
+  .home .intro #intro4 .forum-gallery #Legends .image-link .text-link,
+  .home .intro #intro4 .forum-gallery #Horror .image-link .text-link,
+  .home .intro #intro4 .forum-gallery #Exorcism .image-link .text-link,
+  .home .intro #intro4 .forum-gallery #Creeps .image-link .text-link,
+  .home .intro #intro4 .forum-gallery #Ruins .image-link .text-link {
     -webkit-writing-mode: horizontal-tb;
     writing-mode: horizontal-tb;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.2rem;
+  }
+  .home .intro #intro4 .forum-gallery #Legends .image-link img,
+  .home .intro #intro4 .forum-gallery #Horror .image-link img,
+  .home .intro #intro4 .forum-gallery #Exorcism .image-link img,
+  .home .intro #intro4 .forum-gallery #Creeps .image-link img,
+  .home .intro #intro4 .forum-gallery #Ruins .image-link img {
+    filter: blur(0px);
+  }
+  .home #carousel .next,
+  .home #carousel .prev,
+  .home #carousel .prevLeftSecond,
+  .home #carousel .nextRightSecond,
+  .home #carousel .prev {
+    display: none;
+  }
+  .home .buttons {
+    display: flex;
+    top: 450px;
+    flex-direction: row;
+    gap: 32px;
+  }
+  .home .buttons .icon-btn {
+    padding: 0;
+  }
+  .home .buttons .icon-btn .icon-img {
+    width: 32px;
+    height: 32px;
+    margin: 0;
   }
 }
 
@@ -3958,7 +4098,6 @@ button:hover #custom-cursor::after {
   border: 1.5px solid #B3B3B3;
   border-radius: 5px;
   padding: 20px;
-  /* 撰寫文章  */
 }
 .forum-body .forum-container .forum-layout .main-content .top-bar {
   display: flex;
@@ -4043,6 +4182,12 @@ button:hover #custom-cursor::after {
 }
 .forum-body .forum-container .forum-layout .main-content .top-bar .right-bar .search-bar .search-button:hover {
   background-color: #9fe75e;
+}
+.forum-body .forum-container .forum-layout .main-content .top-bar .right-bar .PostModal-bar {
+  display: flex;
+  align-items: center;
+  width: 35px;
+  height: 35px;
 }
 .forum-body .forum-container .forum-layout .main-content .article-list {
   display: flex;
@@ -4305,10 +4450,12 @@ button:hover #custom-cursor::after {
   text-decoration: underline;
 }
 .article-view .article-header .category-nav .back-link::before {
-  content: none !important; /* 移除可能的全局箭頭符號 */
+  content: none !important;
+  /* 移除可能的全局箭頭符號 */
 }
 .article-view .article-header .category-nav .back-link::after {
-  content: none !important; /* 移除可能的全局箭頭符號 */
+  content: none !important;
+  /* 移除可能的全局箭頭符號 */
 }
 .article-view .article-header .author-info {
   display: flex;
@@ -4316,8 +4463,8 @@ button:hover #custom-cursor::after {
   gap: 1.5rem;
 }
 .article-view .article-header .author-info .author-avatar {
-  width: 48px;
-  height: 48px;
+  width: 32px !important;
+  height: 32px !important;
   border-radius: 50%;
 }
 .article-view .article-header .author-info .author-details {
@@ -4508,46 +4655,95 @@ button:hover #custom-cursor::after {
   color: #e0e0e0;
 }
 .article-view .comment-input {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #1a1a1a;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  transition: all 0.3s ease;
-}
-.article-view .comment-input.expanded {
-  padding: 1.5rem;
+  background: #333;
+  /* 背景色 */
+  border-radius: 8px;
+  display: flex;
+  align-items: stretch;
+  /* 子元素高度一致 */
+  margin: 0;
+  /* 移除外部間隔 */
+  padding: 0;
+  /* 移除內部間隔 */
+  width: 100%;
+  /* 確保寬度占滿容器 */
 }
 .article-view .comment-input .input-container {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
-  gap: 1rem;
+  align-items: stretch;
+  /* 子元素高度一致 */
+  flex: 1;
+  /* 讓輸入框和按鈕可以自適應寬度 */
+  margin: 0;
+  /* 移除外部間隔 */
+  padding: 0;
+  /* 移除內部間隔 */
+  gap: 0;
+  /* 移除子項目間距 */
+}
+.article-view .comment-input .input-container .user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #acff6c;
+  /* 頭像區背景色 */
+  flex: 0 0 120px;
+  /* 固定寬度讓區塊更大 */
+  padding: 0 1rem;
+  /* 左右填充 */
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  margin: 0;
+  /* 移除外邊距 */
+}
+.article-view .comment-input .input-container .user-info .user-avatar {
+  width: 30px;
+  /* 頭像大小 */
+  height: 30px;
+  border-radius: 50%;
+  /* 圓形頭像 */
+  margin-right: 0.5rem;
+}
+.article-view .comment-input .input-container .user-info .user-name {
+  color: #000;
+  /* 名稱文字顏色 */
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  /* 確保名稱文字無外邊距 */
 }
 .article-view .comment-input .input-container input {
   flex: 1;
-  padding: 0.75rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  background-color: #2a2a2a;
+  /* 占滿剩餘空間 */
+  padding: 0.5rem;
+  font-size: 16px;
+  border: none;
+  /* 移除邊框 */
+  border-radius: 0;
+  /* 去掉圓角 */
   color: #ffffff;
-}
-.article-view .comment-input .input-container input:focus {
-  outline: none;
-  border-color: #acff6c;
+  /* 輸入文字顏色 */
+  background: #444;
+  /* 輸入框背景色 */
+  margin: 0;
+  /* 移除間隔 */
+  border: none;
+  /* 移除邊框 */
 }
 .article-view .comment-input .input-container button {
   background-color: #acff6c;
-  color: white;
+  /* 送出按鈕背景色 */
+  color: #000;
+  /* 按鈕文字顏色 */
   border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+  padding: 0 1.5rem;
+  /* 左右填充 */
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
-}
-.article-view .comment-input .input-container button:hover {
-  background-color: #acff6c;
+  margin: 0;
+  /* 移除間隔 */
 }
 
 @media (max-width: 768px) {
@@ -4645,11 +4841,11 @@ button:hover #custom-cursor::after {
   flex-direction: column;
   gap: 10px;
 }
-.contact-body .faq-contact .faq-section .faq-items .faq-item details {
+.contact-body .faq-contact .faq-section .faq-items details {
   border-bottom: 1px solid #acff6c;
   padding: 10px;
 }
-.contact-body .faq-contact .faq-section .faq-items .faq-item details summary {
+.contact-body .faq-contact .faq-section .faq-items details summary {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -4657,11 +4853,12 @@ button:hover #custom-cursor::after {
   color: white;
   cursor: pointer;
 }
-.contact-body .faq-contact .faq-section .faq-items .faq-item details summary img {
-  width: 20px;
+.contact-body .faq-contact .faq-section .faq-items details summary img {
+  width: 30px !important;
+  /* 增大圖片大小 */
   margin-left: 10px;
 }
-.contact-body .faq-contact .faq-section .faq-items .faq-item details p {
+.contact-body .faq-contact .faq-section .faq-items details p {
   margin-top: 10px;
   padding: 10px;
   color: white;
@@ -4822,4 +5019,24 @@ footer .content .left .link li a {
 }
 footer .content .left .link li a:hover {
   color: #B595FF;
+}
+@media (max-width: 768px) {
+  footer .content {
+    padding: 30px 35px 0 35px;
+    flex-direction: column;
+  }
+  footer .content .left {
+    width: 100%;
+  }
+  footer .content .left small {
+    display: none;
+  }
+  footer .content img {
+    margin-top: 0px;
+  }
+}
+@media (max-width: 600px) {
+  footer {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
