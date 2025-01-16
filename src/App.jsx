@@ -247,7 +247,7 @@ const App = () => {
                     className="title"
                     ref={(el) => slideTopRefs.current.push(el)}
                   >
-                    <SectionTitle originalText="怪奇博物館" className="title" />
+                    <SectionTitle originalText="怪談博物館" className="title" />
                     <h3>
                       精選靈異故事、都市傳說，帶你進入未知世界，享受身歷其境的驚悚與神秘氛圍。
                     </h3>
