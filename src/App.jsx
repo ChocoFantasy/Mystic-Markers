@@ -323,7 +323,7 @@ const App = () => {
                   <div className="left">
                     <ul className="link">
                       <li>
-                        <Link to="/Story">怪奇博物館</Link>
+                        <Link to="/Story">怪談博物館</Link>
                       </li>
                       <li>
                         <Link to="/Map">靈異導航</Link>

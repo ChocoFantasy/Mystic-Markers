@@ -518,16 +518,18 @@ a {
 }
 
 /* 回到頂部 */
+/* 回到頂部 */
 .totop {
   position: fixed;
   transition: "bottom 0.3s ease";
-  right: 50px;
-  width: 50px;
-  height: 50px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
   background: url("/images/gototop.svg");
   background-repeat: no-repeat;
-  background-size: 60px;
-  padding: 60px;
+  background-size: cover;
+  background-position: center;
+  margin: 60px;
   border: none;
   z-index: 999;
   box-shadow: rgba(0, 0, 0, 0.5);
@@ -542,6 +544,16 @@ a {
     transform: translateY(2px);
     filter: hue-rotate(150deg) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
     cursor: none;
+  }
+
+  @media (max-width:1440px) {
+    right: 0px;
+    margin: 40px;
+  }
+
+  @media (max-width:768px) {
+    width: 0px;
+    height: 0px;
   }
 }
 
@@ -624,6 +636,10 @@ a {
       width: 50%;
       display: flex;
       flex-direction: row;
+
+      @media(max-width:1440px) {
+        height: 60%;
+      }
 
 
       .btn-group {
@@ -998,9 +1014,16 @@ a {
             }
 
             .comments-num {
-              @include font-style($font-regular-13);
+              @include font-style($font-regular-12);
+              display: flex;
+              flex-direction: column;
               color: $grey;
               text-align: right;
+
+              p {
+                @include font-style($font-regular-12);
+                display: flex;
+              }
             }
 
             .marker-header {
@@ -1428,6 +1451,7 @@ a {
           }
         }
       }
+
     }
   }
 
@@ -1723,8 +1747,6 @@ a {
         }
       }
     }
-
-
   }
 
   .top-markers {
@@ -1740,6 +1762,7 @@ a {
         display: inline-block;
         width: fit-content;
       }
+
     }
 
     .top-list {
@@ -1761,16 +1784,17 @@ a {
           width: 200px;
 
           .img-wrapper {
-            display: inline-block;
-            width: 120px;
+            position: relative;
             height: 120px;
+            width: 120px;
+          }
 
-            overflow: hidden;
-
-            img {
-              width: 120px;
-              border-radius: 10px;
-            }
+          .img-wrapper img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
           }
 
 
@@ -1808,7 +1832,154 @@ a {
 
     }
   }
+
+  @media (max-width:1024px) {
+    .top-markers .top-list .row .top-item {
+      .img-wrapper {
+        width: 100%;
+
+      }
+
+      flex-direction: column;
+      align-items: center;
+
+      .top-discription {
+        width: auto;
+        margin: 16px 0;
+
+        p {}
+      }
+    }
+
+  }
+
+  @media (max-width:1439px) {
+    display: flex;
+    flex-direction: column;
+
+    .map-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      padding-top: 10%;
+
+      .map-left {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .btn-group {
+          flex-direction: row;
+          margin: 0 0 20px 0;
+          box-sizing: border-box;
+
+          button {
+            writing-mode: horizontal-tb;
+            border-radius: 5px 5px;
+            box-sizing: border-box;
+            padding: 5px 10px;
+          }
+        }
+
+        flex-direction: column;
+
+        .map-wrapper {
+          width: 80%;
+          height: 65vh;
+          min-width: 375px;
+          max-width: 80%;
+          border-radius: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .leaflet-container {
+            width: 100%;
+            height: 100%;
+          }
+
+          .leaflet-geosearch-bar {
+            display: none;
+          }
+
+          .leaflet-container {
+            width: 100% !important;
+            /* 使用 !important 來確保覆蓋其他樣式 */
+            height: 100% !important;
+            margin: 0 auto;
+            /* 讓地圖置中 */
+          }
+
+
+        }
+      }
+
+      .list-panel {
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+        height: auto;
+        max-width: 80%;
+      }
+    }
+
+
+
+  }
+
+
+  @media (max-width:768px) {
+    .map-content {
+      padding-top: 15%;
+    }
+
+    .top-markers .top-list .row {
+      gap: 10% 30px;
+
+      .top-item {
+        flex-direction: column;
+        align-items: center;
+
+        .top-discription {
+          width: auto;
+          margin: 16px 0;
+
+          p {
+            display: none;
+          }
+        }
+      }
+
+
+    }
+
+
+  }
+
+  @media (max-width:767px) {
+    .map-content .map-left .map-wrapper .leaflet-container .leaflet-left a {
+      display: none;
+    }
+  }
+
+  @media (max-width:600px) {
+    .map-content {
+      padding-top: 20%;
+
+      .map-left .map-wrapper {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    .top-markers .heading .everyone-search {
+      display: none;
+    }
+  }
 }
+
 
 
 
@@ -1906,9 +2077,6 @@ a {
         align-items: center;
         overflow: hidden;
 
-
-
-
         h1 {
           text-align: center;
           @include font-style($font-medium-36);
@@ -1952,7 +2120,8 @@ a {
               color: $grey;
               margin-top: 0px;
               margin-right: 20px;
-              @include font-style($font-regular-13)
+              @include font-style($font-regular-13);
+              overflow: hidden;
             }
           }
 
@@ -1960,11 +2129,19 @@ a {
 
         .comments-num {
           display: flex;
-          flex-direction: row;
-          justify-content: flex-end;
-          text-align: right;
+          flex-direction: column;
+
           color: $grey;
-          @include font-style($font-regular-13)
+
+          p {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            @include font-style($font-regular-12);
+            overflow: hidden;
+            text-align: right;
+          }
+
         }
       }
     }
@@ -2257,6 +2434,93 @@ a {
       }
     }
   }
+
+  @media (max-width:1440px) {
+    padding: 5% 10%;
+
+    .gallery-area {
+      height: 90vh
+    }
+  }
+
+  @media (max-width:768px) {
+    padding: 5% 15%;
+    flex-direction: column;
+
+    .location-info {
+      width: 100%;
+      min-width: 100%;
+
+      .cover-image {
+        width: 100%;
+        height: 50%;
+        padding: 0;
+      }
+
+      .info-area {
+        width: 100%;
+        height: 60vh;
+
+        .info-text {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          margin: 8px 0;
+
+          h1 {
+            overflow: hidden;
+            margin: 8px 0;
+            @include font-style($font-medium-26)
+          }
+
+          .user-rating {
+            overflow: hidden;
+
+            margin-bottom: 20px 0;
+
+            .comments-num {
+              flex-direction: row;
+
+            }
+          }
+
+        }
+
+        .comments-area {
+          padding: 20px;
+          height: calc(60vh - 100px);
+
+        }
+
+        .commentlist {
+          width: 100%;
+        }
+
+      }
+
+
+    }
+
+
+    .gallery-area {
+      align-items: center;
+      width: 100%;
+      margin: 30px 0;
+      border: $primary-purple 1.5px solid;
+      border-radius: 5px;
+    }
+
+  }
+
+  @media (max-width:600px) {
+    padding: 5% 5%;
+
+    .gallery-area {
+      width: 100%;
+    }
+
+  }
+
 }
 
 /*HOME  */
@@ -2264,12 +2528,14 @@ a {
 .home {
   position: relative;
   width: 100%;
+  max-width: 100%;
   height: 100%;
   background: url("/images/noise.jpg") repeat;
   background-size: auto;
   background-blend-mode: normal;
   z-index: 6;
   isolation: isolate;
+  overflow-x: hidden;
   cursor: none;
 
   .banner {
@@ -2417,12 +2683,12 @@ a {
     .title {
       @extend %box-center;
       flex-direction: column;
-
       position: relative;
       margin-top: 30px;
       left: 0px;
       margin-bottom: $interval-l;
       z-index: 10;
+      padding: 0 30px;
 
       h2 {
         @include font-style($font-medium-48);
@@ -2744,7 +3010,6 @@ a {
           .text-link {
             position: absolute;
             @include font-style($font-regular-16);
-            @include font-style($font-regular-16);
             margin: 0;
             padding: 0;
             text-align: center;
@@ -2758,7 +3023,181 @@ a {
       }
     }
   }
+
+  @media (max-width:1200px) {
+    .banner {
+      height: 100vh;
+
+    }
+
+    .intro {
+      .title {
+        max-width: 100%;
+        align-self: center;
+        padding: 0 60px;
+      }
+
+      #intro1 {
+        margin-top: 60px;
+
+        .door {
+          figure {
+            left: 0;
+          }
+
+          #intro_Q {
+            right: 10%;
+
+            img {
+              width: 80%;
+            }
+          }
+        }
+      }
+
+      #intro3 {
+
+        .map-area {
+          width: 100%;
+
+
+          img {
+            margin-left: 80px;
+          }
+
+          .map-intro {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+            div {
+              margin: 20px;
+
+              p {
+                margin-bottom: 0px;
+              }
+            }
+          }
+        }
+      }
+
+      #intro4 {
+
+        div {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto;
+        }
+
+        .title {
+          padding: 30px;
+          width: 80%;
+        }
+
+        .forum-gallery {
+          width: 100%;
+          height: auto;
+          display: flex;
+          padding: 5px 30px;
+          gap: 30px;
+
+          #Legends,
+          #Horror,
+          #Exorcism,
+          #Creeps,
+          #Ruins {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 50%;
+            margin: 0;
+            left: 0;
+
+            .image-link {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              margin: 0;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: blur(5px);
+              }
+
+              .text-link {
+                -webkit-writing-mode: vertical-lr;
+                writing-mode: vertical-lr;
+                letter-spacing: 0.5rem;
+              }
+
+              &:hover {
+                img {
+                  filter: blur(0px);
+                }
+
+                .text-link {
+                  @include font-style($font-medium-16);
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width:768px) {
+    .intro #intro3 .map-area img {
+      min-width: 95%;
+    }
+  }
+
+  @media (max-width:500px) {
+    .intro .title {
+      h2 {
+        @include font-style($font-medium-32);
+      }
+
+      h3 {
+        @include font-style($font-medium-18);
+      }
+
+    }
+
+    .banner .logoXL {
+      margin: 60px;
+    }
+
+    .intro #intro4 {
+      .forum-gallery {
+        flex-wrap: wrap;
+
+        #Legends,
+        #Horror,
+        #Exorcism,
+        #Creeps,
+        #Ruins {
+          .text-link {
+            -webkit-writing-mode: horizontal-tb;
+            writing-mode: horizontal-tb;
+            letter-spacing: 0.5rem;
+          }
+        }
+
+      }
+    }
+
+  }
 }
+
 
 /* 滑鼠 */
 #custom-cursor {

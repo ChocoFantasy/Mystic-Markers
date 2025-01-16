@@ -642,16 +642,18 @@ a {
 }
 
 /* 回到頂部 */
+/* 回到頂部 */
 .totop {
   position: fixed;
   transition: "bottom 0.3s ease";
-  right: 50px;
-  width: 50px;
-  height: 50px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
   background: url("/images/gototop.svg");
   background-repeat: no-repeat;
-  background-size: 60px;
-  padding: 60px;
+  background-size: cover;
+  background-position: center;
+  margin: 60px;
   border: none;
   z-index: 999;
   box-shadow: rgba(0, 0, 0, 0.5);
@@ -665,6 +667,18 @@ a {
   transform: translateY(2px);
   filter: hue-rotate(150deg) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
   cursor: none;
+}
+@media (max-width: 1440px) {
+  .totop {
+    right: 0px;
+    margin: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .totop {
+    width: 0px;
+    height: 0px;
+  }
 }
 
 /* 地圖照片頁 */
@@ -742,6 +756,11 @@ a {
   width: 50%;
   display: flex;
   flex-direction: row;
+}
+@media (max-width: 1440px) {
+  .map .map-content .map-left {
+    height: 60%;
+  }
 }
 .map .map-content .map-left .btn-group {
   display: flex;
@@ -856,6 +875,8 @@ a {
   font-family: "Noto Sans TC";
   font-weight: 400;
   font-size: 0.8125rem;
+  letter-spacing: 0rem;
+  line-height: 1.5;
 }
 .map .map-content .map-left .map-wrapper .leaflet-container .leaflet-control-geosearch form .glass,
 .map .map-content .map-left .map-wrapper .leaflet-container .leaflet-geosearch-bar form .glass {
@@ -878,6 +899,8 @@ a {
   font-family: "Noto Sans TC";
   font-weight: 400;
   font-size: 0.8125rem;
+  letter-spacing: 0rem;
+  line-height: 1.5;
 }
 .map .map-content .map-left .map-wrapper .leaflet-container .leaflet-control-geosearch form .results div,
 .map .map-content .map-left .map-wrapper .leaflet-container .leaflet-geosearch-bar form .results div {
@@ -1090,9 +1113,21 @@ a {
 .map .map-content .map-left .map-wrapper .leaflet-container .location-info .comments-num {
   font-family: "Noto Sans TC";
   font-weight: 400;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
+  letter-spacing: 0rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
   color: #B3B3B3;
   text-align: right;
+}
+.map .map-content .map-left .map-wrapper .leaflet-container .location-info .comments-num p {
+  font-family: "Noto Sans TC";
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0rem;
+  line-height: 1.5;
+  display: flex;
 }
 .map .map-content .map-left .map-wrapper .leaflet-container .location-info .marker-header {
   display: flex;
@@ -1235,6 +1270,8 @@ a {
   font-family: "Noto Sans TC";
   font-weight: 400;
   font-size: 0.8125rem;
+  letter-spacing: 0rem;
+  line-height: 1.5;
 }
 .map .map-content .map-left .map-wrapper .leaflet-container .location-info ::-webkit-scrollbar {
   border-right: #B595FF 1px solid;
@@ -1295,6 +1332,8 @@ a {
   font-family: "Noto Sans TC";
   font-weight: 400;
   font-size: 0.8125rem;
+  letter-spacing: 0rem;
+  line-height: 1.5;
 }
 .map .map-content .map-left .map-wrapper .leaflet-container .location-info .comments-area .commentform textarea:focus {
   border: #95e05c 2px solid;
@@ -1406,6 +1445,8 @@ a {
   font-family: "Noto Sans TC";
   font-weight: 400;
   font-size: 0.8125rem;
+  letter-spacing: 0rem;
+  line-height: 1.5;
   cursor: pointer;
 }
 .map .map-content .map-left .map-wrapper .leaflet-container .location-info .comments-area .commentlist .solocomment .preuser-data .preuser-info button:hover {
@@ -1460,6 +1501,8 @@ a {
   font-family: "Noto Sans TC";
   font-weight: 400;
   font-size: 0.8125rem;
+  letter-spacing: 0rem;
+  line-height: 1.5;
 }
 .map .list-panel {
   display: flex;
@@ -1583,6 +1626,8 @@ a {
   font-family: "Noto Sans TC";
   font-weight: 400;
   font-size: 0.8125rem;
+  letter-spacing: 0rem;
+  line-height: 1.5;
   border-radius: 5px;
   width: 100%;
   height: 100%;
@@ -1681,6 +1726,8 @@ a {
   font-family: "Noto Sans TC";
   font-weight: 400;
   font-size: 0.8125rem;
+  letter-spacing: 0rem;
+  line-height: 1.5;
   color: #B3B3B3;
 }
 .map .list-panel .marker-list .list-area .list-section .marker-list-item hr {
@@ -1733,13 +1780,15 @@ a {
   width: 200px;
 }
 .map .top-markers .top-list .row .top-item .img-wrapper {
-  display: inline-block;
-  width: 120px;
+  position: relative;
   height: 120px;
-  overflow: hidden;
+  width: 120px;
 }
 .map .top-markers .top-list .row .top-item .img-wrapper img {
-  width: 120px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 10px;
 }
 .map .top-markers .top-list .row .top-item .top-discription {
@@ -1772,6 +1821,117 @@ a {
   letter-spacing: 0.05rem;
   line-height: 1.8;
   color: #B3B3B3;
+}
+@media (max-width: 1024px) {
+  .map .top-markers .top-list .row .top-item {
+    flex-direction: column;
+    align-items: center;
+  }
+  .map .top-markers .top-list .row .top-item .img-wrapper {
+    width: 100%;
+  }
+  .map .top-markers .top-list .row .top-item .top-discription {
+    width: auto;
+    margin: 16px 0;
+  }
+}
+@media (max-width: 1439px) {
+  .map {
+    display: flex;
+    flex-direction: column;
+  }
+  .map .map-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding-top: 10%;
+  }
+  .map .map-content .map-left {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+  }
+  .map .map-content .map-left .btn-group {
+    flex-direction: row;
+    margin: 0 0 20px 0;
+    box-sizing: border-box;
+  }
+  .map .map-content .map-left .btn-group button {
+    writing-mode: horizontal-tb;
+    border-radius: 5px 5px;
+    box-sizing: border-box;
+    padding: 5px 10px;
+  }
+  .map .map-content .map-left .map-wrapper {
+    width: 80%;
+    height: 65vh;
+    min-width: 375px;
+    max-width: 80%;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .map .map-content .map-left .map-wrapper .leaflet-container {
+    width: 100%;
+    height: 100%;
+  }
+  .map .map-content .map-left .map-wrapper .leaflet-geosearch-bar {
+    display: none;
+  }
+  .map .map-content .map-left .map-wrapper .leaflet-container {
+    width: 100% !important;
+    /* 使用 !important 來確保覆蓋其他樣式 */
+    height: 100% !important;
+    margin: 0 auto;
+    /* 讓地圖置中 */
+  }
+  .map .map-content .list-panel {
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    height: auto;
+    max-width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  .map .map-content {
+    padding-top: 15%;
+  }
+  .map .top-markers .top-list .row {
+    gap: 10% 30px;
+  }
+  .map .top-markers .top-list .row .top-item {
+    flex-direction: column;
+    align-items: center;
+  }
+  .map .top-markers .top-list .row .top-item .top-discription {
+    width: auto;
+    margin: 16px 0;
+  }
+  .map .top-markers .top-list .row .top-item .top-discription p {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .map .map-content .map-left .map-wrapper .leaflet-container .leaflet-left a {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .map .map-content {
+    padding-top: 20%;
+  }
+  .map .map-content .map-left .map-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+  .map .top-markers .heading .everyone-search {
+    display: none;
+  }
 }
 
 .gallery-page {
@@ -1896,16 +2056,26 @@ a {
   font-family: "Noto Sans TC";
   font-weight: 400;
   font-size: 0.8125rem;
+  letter-spacing: 0rem;
+  line-height: 1.5;
+  overflow: hidden;
 }
 .gallery-page .location-info .info-area .info-text .comments-num {
   display: flex;
+  flex-direction: column;
+  color: #B3B3B3;
+}
+.gallery-page .location-info .info-area .info-text .comments-num p {
+  display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  text-align: right;
-  color: #B3B3B3;
   font-family: "Noto Sans TC";
   font-weight: 400;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
+  letter-spacing: 0rem;
+  line-height: 1.5;
+  overflow: hidden;
+  text-align: right;
 }
 .gallery-page .comments-area {
   width: 100%;
@@ -1976,6 +2146,8 @@ a {
   font-family: "Noto Sans TC";
   font-weight: 400;
   font-size: 0.8125rem;
+  letter-spacing: 0rem;
+  line-height: 1.5;
 }
 .gallery-page .comments-area .commentform textarea:focus {
   border-color: #acff6c;
@@ -2086,6 +2258,8 @@ a {
   font-family: "Noto Sans TC";
   font-weight: 400;
   font-size: 0.8125rem;
+  letter-spacing: 0rem;
+  line-height: 1.5;
   cursor: pointer;
 }
 .gallery-page .comments-area .commentlist .solocomment .preuser-data .preuser-info button:hover {
@@ -2133,6 +2307,8 @@ a {
   font-family: "Noto Sans TC";
   font-weight: 400;
   font-size: 0.8125rem;
+  letter-spacing: 0rem;
+  line-height: 1.5;
 }
 .gallery-page .gallery-area {
   width: 880px;
@@ -2158,17 +2334,88 @@ a {
   transform: scale(1.05);
   filter: brightness(0.5);
 }
+@media (max-width: 1440px) {
+  .gallery-page {
+    padding: 5% 10%;
+  }
+  .gallery-page .gallery-area {
+    height: 90vh;
+  }
+}
+@media (max-width: 768px) {
+  .gallery-page {
+    padding: 5% 15%;
+    flex-direction: column;
+  }
+  .gallery-page .location-info {
+    width: 100%;
+    min-width: 100%;
+  }
+  .gallery-page .location-info .cover-image {
+    width: 100%;
+    height: 50%;
+    padding: 0;
+  }
+  .gallery-page .location-info .info-area {
+    width: 100%;
+    height: 60vh;
+  }
+  .gallery-page .location-info .info-area .info-text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 8px 0;
+  }
+  .gallery-page .location-info .info-area .info-text h1 {
+    overflow: hidden;
+    margin: 8px 0;
+    font-family: "Noto Sans TC";
+    font-weight: 500;
+    font-size: 1.6rem;
+  }
+  .gallery-page .location-info .info-area .info-text .user-rating {
+    overflow: hidden;
+    margin-bottom: 20px 0;
+  }
+  .gallery-page .location-info .info-area .info-text .user-rating .comments-num {
+    flex-direction: row;
+  }
+  .gallery-page .location-info .info-area .comments-area {
+    padding: 20px;
+    height: calc(60vh - 100px);
+  }
+  .gallery-page .location-info .info-area .commentlist {
+    width: 100%;
+  }
+  .gallery-page .gallery-area {
+    align-items: center;
+    width: 100%;
+    margin: 30px 0;
+    border: #B595FF 1.5px solid;
+    border-radius: 5px;
+  }
+}
+@media (max-width: 600px) {
+  .gallery-page {
+    padding: 5% 5%;
+  }
+  .gallery-page .gallery-area {
+    width: 100%;
+  }
+}
 
 /*HOME  */
 .home {
   position: relative;
   width: 100%;
+  max-width: 100%;
   height: 100%;
   background: url("/images/noise.jpg") repeat;
   background-size: auto;
   background-blend-mode: normal;
   z-index: 6;
   isolation: isolate;
+  overflow-x: hidden;
   cursor: none;
 }
 .home .banner {
@@ -2304,6 +2551,7 @@ a {
   left: 0px;
   margin-bottom: 24px;
   z-index: 10;
+  padding: 0 30px;
 }
 .home .intro .title h2 {
   font-family: "Noto Sans TC";
@@ -2612,11 +2860,6 @@ a {
   font-size: 1rem;
   letter-spacing: 0.05rem;
   line-height: 1.8;
-  font-family: "Noto Sans TC";
-  font-weight: 300;
-  font-size: 1rem;
-  letter-spacing: 0.05rem;
-  line-height: 1.8;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -2625,6 +2868,157 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   text-decoration: none;
+}
+@media (max-width: 1200px) {
+  .home .banner {
+    height: 100vh;
+  }
+  .home .intro .title {
+    max-width: 100%;
+    align-self: center;
+    padding: 0 60px;
+  }
+  .home .intro #intro1 {
+    margin-top: 60px;
+  }
+  .home .intro #intro1 .door figure {
+    left: 0;
+  }
+  .home .intro #intro1 .door #intro_Q {
+    right: 10%;
+  }
+  .home .intro #intro1 .door #intro_Q img {
+    width: 80%;
+  }
+  .home .intro #intro3 .map-area {
+    width: 100%;
+  }
+  .home .intro #intro3 .map-area img {
+    margin-left: 80px;
+  }
+  .home .intro #intro3 .map-area .map-intro {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .home .intro #intro3 .map-area .map-intro div {
+    margin: 20px;
+  }
+  .home .intro #intro3 .map-area .map-intro div p {
+    margin-bottom: 0px;
+  }
+  .home .intro #intro4 div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .home .intro #intro4 .title {
+    padding: 30px;
+    width: 80%;
+  }
+  .home .intro #intro4 .forum-gallery {
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 5px 30px;
+    gap: 30px;
+  }
+  .home .intro #intro4 .forum-gallery #Legends,
+  .home .intro #intro4 .forum-gallery #Horror,
+  .home .intro #intro4 .forum-gallery #Exorcism,
+  .home .intro #intro4 .forum-gallery #Creeps,
+  .home .intro #intro4 .forum-gallery #Ruins {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+    margin: 0;
+    left: 0;
+  }
+  .home .intro #intro4 .forum-gallery #Legends .image-link,
+  .home .intro #intro4 .forum-gallery #Horror .image-link,
+  .home .intro #intro4 .forum-gallery #Exorcism .image-link,
+  .home .intro #intro4 .forum-gallery #Creeps .image-link,
+  .home .intro #intro4 .forum-gallery #Ruins .image-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  .home .intro #intro4 .forum-gallery #Legends .image-link img,
+  .home .intro #intro4 .forum-gallery #Horror .image-link img,
+  .home .intro #intro4 .forum-gallery #Exorcism .image-link img,
+  .home .intro #intro4 .forum-gallery #Creeps .image-link img,
+  .home .intro #intro4 .forum-gallery #Ruins .image-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px);
+  }
+  .home .intro #intro4 .forum-gallery #Legends .image-link .text-link,
+  .home .intro #intro4 .forum-gallery #Horror .image-link .text-link,
+  .home .intro #intro4 .forum-gallery #Exorcism .image-link .text-link,
+  .home .intro #intro4 .forum-gallery #Creeps .image-link .text-link,
+  .home .intro #intro4 .forum-gallery #Ruins .image-link .text-link {
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr;
+    letter-spacing: 0.5rem;
+  }
+  .home .intro #intro4 .forum-gallery #Legends .image-link:hover img,
+  .home .intro #intro4 .forum-gallery #Horror .image-link:hover img,
+  .home .intro #intro4 .forum-gallery #Exorcism .image-link:hover img,
+  .home .intro #intro4 .forum-gallery #Creeps .image-link:hover img,
+  .home .intro #intro4 .forum-gallery #Ruins .image-link:hover img {
+    filter: blur(0px);
+  }
+  .home .intro #intro4 .forum-gallery #Legends .image-link:hover .text-link,
+  .home .intro #intro4 .forum-gallery #Horror .image-link:hover .text-link,
+  .home .intro #intro4 .forum-gallery #Exorcism .image-link:hover .text-link,
+  .home .intro #intro4 .forum-gallery #Creeps .image-link:hover .text-link,
+  .home .intro #intro4 .forum-gallery #Ruins .image-link:hover .text-link {
+    font-family: "Noto Sans TC";
+    font-weight: 500;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .home .intro #intro3 .map-area img {
+    min-width: 95%;
+  }
+}
+@media (max-width: 500px) {
+  .home .intro .title h2 {
+    font-family: "Noto Sans TC";
+    font-weight: 500;
+    font-size: 2rem;
+  }
+  .home .intro .title h3 {
+    font-family: "Noto Sans TC";
+    font-weight: 500;
+    font-size: 1.125rem;
+    letter-spacing: 0.18rem;
+    line-height: 1.5;
+  }
+  .home .banner .logoXL {
+    margin: 60px;
+  }
+  .home .intro #intro4 .forum-gallery {
+    flex-wrap: wrap;
+  }
+  .home .intro #intro4 .forum-gallery #Legends .text-link,
+  .home .intro #intro4 .forum-gallery #Horror .text-link,
+  .home .intro #intro4 .forum-gallery #Exorcism .text-link,
+  .home .intro #intro4 .forum-gallery #Creeps .text-link,
+  .home .intro #intro4 .forum-gallery #Ruins .text-link {
+    -webkit-writing-mode: horizontal-tb;
+    writing-mode: horizontal-tb;
+    letter-spacing: 0.5rem;
+  }
 }
 
 /* 滑鼠 */
@@ -3584,12 +3978,14 @@ button:hover #custom-cursor::after {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-weight: 600;
 }
 .forum-body .forum-container .forum-layout .main-content .top-bar .nav-buttons div:hover {
   background-color: #B595FF;
 }
 .forum-body .forum-container .forum-layout .main-content .top-bar .nav-buttons div:hover p {
   color: #2A2A2A;
+  font-weight: 600;
 }
 .forum-body .forum-container .forum-layout .main-content .top-bar .nav-buttons div.active {
   background-color: #d8b4f8;
@@ -3678,6 +4074,24 @@ button:hover #custom-cursor::after {
   height: 32px;
   border-radius: 50%;
 }
+.forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content .article-header .delete-button {
+  background-color: #808080;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content .article-header .delete-button:hover {
+  background-color: #808080;
+}
+.forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content .article-header .article-header .delete-button {
+  display: inline-block;
+}
+.forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content .article-header .article-header .delete-button[hidden] {
+  display: none;
+}
 .forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content .article-Graphics-text {
   display: flex;
   justify-content: space-between;
@@ -3723,112 +4137,131 @@ button:hover #custom-cursor::after {
   border-radius: 5px;
   object-fit: cover;
 }
-.forum-body .forum-container .forum-layout .main-content #postModal {
-  display: none;
+.forum-body .forum-container .forum-layout .main-content .post-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content {
-  background: #2A2A2A;
-  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  background-color: #1a1a1a;
   border-radius: 8px;
-  width: 400px;
-  position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  z-index: 990;
+  overflow: hidden;
 }
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content .close-btn {
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content {
+  padding: 20px;
+  color: #fff;
+  height: 100%;
+}
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .close-btn {
   position: absolute;
   top: 10px;
-  right: 15px;
-  font-size: 24px;
-  color: #aaa;
+  right: 10px;
+  color: #fff;
+  font-size: 20px;
   cursor: pointer;
 }
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content .close-btn:hover {
-  color: #000;
-}
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content .user-info {
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-header {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content .user-info .avatar {
-  width: 40px;
-  height: 40px;
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-header .avatar {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   margin-right: 10px;
 }
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content .user-info #userName {
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-header .author-name {
+  background: transparent;
+  border: none;
+  color: #fff;
   font-size: 16px;
+  outline: none;
+}
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-group {
+  margin-bottom: 16px;
+}
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-group label {
+  display: block;
+  margin-bottom: 8px;
   font-weight: bold;
+  color: #ccc;
 }
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content #board-bar {
-  display: flex;
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-group input,
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-group textarea,
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-group select {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  outline: none;
 }
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content #board-bar #boardSelect {
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 15px;
-  font-size: 14px;
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-group textarea {
+  height: 100px;
 }
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content #postTitle,
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content #postContent {
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 8px;
-  font-size: 14px;
-  box-sizing: border-box;
-}
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content #postTitle#postContent,
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content #postContent#postContent {
-  height: 120px;
-  resize: none;
-}
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content .media-buttons {
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-group .image-upload-group {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15px;
+  gap: 10px;
 }
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content .media-buttons button {
-  padding: 8px 12px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-group .image-upload-group div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content .media-buttons button:hover {
-  background-color: #0056b3;
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-group .image-upload-group div input[type=file] {
+  width: 100%;
+  max-width: 120px;
 }
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content .action-buttons {
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-group .image-upload-group div .preview-image {
+  margin-top: 5px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-group .image-upload-group div span {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #ccc;
+}
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-actions {
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 }
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content .action-buttons button {
-  padding: 8px 12px;
-  background-color: #007bff;
-  color: #fff;
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-actions button {
+  padding: 10px 20px;
+  font-size: 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
 }
-.forum-body .forum-container .forum-layout .main-content #postModal .modal-content .action-buttons button:hover {
-  background-color: #0056b3;
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-actions button:first-child {
+  background-color: #6c757d;
+  color: white;
+}
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-actions button:last-child {
+  background-color: #acff6c;
+  color: #1a1a1a;
+}
+.forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-actions button:hover {
+  opacity: 0.9;
 }
 
 .article-view {
   margin: 0 115px;
+  padding-top: 100px;
   padding: 2rem;
   color: #ffffff;
   background-color: #2A2A2A;
+  padding-top: 130px !important;
 }
 .article-view .article-header {
   display: flex;
@@ -3863,12 +4296,19 @@ button:hover #custom-cursor::after {
   align-items: center;
   font-size: 0.9rem;
 }
-.article-view .article-header .category-nav .back-link::before {
-  content: "←";
-  margin-right: 0.5rem;
+.article-view .article-header .category-nav .back-link img {
+  width: 20px;
+  height: auto;
+  margin: 8px;
 }
 .article-view .article-header .category-nav .back-link:hover {
   text-decoration: underline;
+}
+.article-view .article-header .category-nav .back-link::before {
+  content: none !important; /* 移除可能的全局箭頭符號 */
+}
+.article-view .article-header .category-nav .back-link::after {
+  content: none !important; /* 移除可能的全局箭頭符號 */
 }
 .article-view .article-header .author-info {
   display: flex;
@@ -3917,11 +4357,12 @@ button:hover #custom-cursor::after {
   color: #e0e0e0;
 }
 .article-view .article-content .article-image {
-  margin: 1rem 0;
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
+  margin: 1rem auto;
+  max-width: 50%;
+  height: auto;
   border-radius: 8px;
+  display: block;
+  object-fit: contain;
 }
 .article-view .tags {
   display: flex;
@@ -3949,15 +4390,19 @@ button:hover #custom-cursor::after {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 1rem;
 }
-.article-view .interaction-bar .interaction-items {
-  display: flex;
-  gap: 1rem;
-}
-.article-view .interaction-bar .interaction-items a {
+.article-view .interaction-bar .interaction-item {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  /* 圖標和數字的間距 */
+  gap: 0.5rem;
+  /* 控制圖標和文字的間距 */
+}
+.article-view .interaction-bar .interaction-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+  gap: 0.5rem;
+  /* 圖標與文字間距 */
 }
 .article-view .interaction-bar .interaction-item img {
   width: 24px;
@@ -3969,6 +4414,8 @@ button:hover #custom-cursor::after {
   font-size: 16px;
   /* 調整文字大小 */
   color: #ffffff;
+  line-height: 20px;
+  /* 與圖標垂直對齊 */
 }
 .article-view .comments-section {
   margin-bottom: 100px;
@@ -3996,10 +4443,24 @@ button:hover #custom-cursor::after {
 }
 .article-view .comments-section .comment-item .comment-content .comment-header {
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  /* 垂直居中 */
+  gap: 5px;
+  /* 元素之間的間距 */
   margin-bottom: 0.5rem;
   color: #808080;
   font-size: 0.9rem;
+}
+.article-view .comments-section .comment-item .comment-content .comment-header .comment-user,
+.article-view .comments-section .comment-item .comment-content .comment-header .comment-floor,
+.article-view .comments-section .comment-item .comment-content .comment-header .comment-time {
+  display: inline-block;
+  /* 保持水平排列 */
+  font-size: 14px;
+  /* 可根據需要調整字體大小 */
+  color: #ffffff;
+  /* 文字顏色，可調整 */
 }
 .article-view .comments-section .comment-item .comment-content .comment-header .comment-user {
   font-weight: 500;
@@ -4008,31 +4469,43 @@ button:hover #custom-cursor::after {
 .article-view .comments-section .comment-item .comment-content .comment-header .comment-floor {
   color: #acff6c;
 }
+.article-view .comments-section .comment-item .comment-content .comment-header .comment-time {
+  color: #B3B3B3;
+}
+.article-view .comments-section .comment-item .comment-content .comment-header .comment-actions {
+  margin-left: auto;
+  /* 推到最右邊 */
+  display: flex;
+  /* 若有多個子元素，啟用 Flexbox */
+  align-items: center;
+  /* 垂直居中 */
+  gap: 5px;
+  /* 圖片與文字間距 */
+}
+.article-view .comments-section .comment-item .comment-content .comment-header .comment-actions .like-button {
+  margin-left: auto;
+  /* 將按鈕推到最右邊 */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* 圖片與文字之間的間距 */
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+.article-view .comments-section .comment-item .comment-content .comment-header .comment-actions .like-button img {
+  width: 20px;
+  height: 20px;
+}
+.article-view .comments-section .comment-item .comment-content .comment-header .comment-actions .like-button:hover {
+  opacity: 0.8;
+  /* 增加懸停效果 */
+}
 .article-view .comments-section .comment-item .comment-content .comment-text {
   margin-bottom: 0.75rem;
   line-height: 1.5;
   color: #e0e0e0;
-}
-.article-view .comments-section .comment-item .comment-content .comment-actions .like-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #808080;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-}
-.article-view .comments-section .comment-item .comment-content .comment-actions .like-button img {
-  width: 20px;
-  height: 20px;
-}
-.article-view .comments-section .comment-item .comment-content .comment-actions .like-button.liked {
-  color: #acff6c;
-}
-.article-view .comments-section .comment-item .comment-content .comment-actions .like-button:hover {
-  background-color: rgba(255, 255, 255, 0.05);
 }
 .article-view .comment-input {
   position: fixed;
@@ -4292,279 +4765,6 @@ button:hover #custom-cursor::after {
   color: #2A2A2A;
 }
 
-.article-view {
-  margin: 0 115px;
-  padding: 2rem;
-  color: #ffffff;
-  background-color: #2A2A2A;
-}
-.article-view .article-header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  /* 文字靠左對齊 */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 1rem;
-}
-.article-view .article-header .category-nav {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  /* 區塊填滿寬度 */
-  align-items: center !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-.article-view .article-header .category-nav .category {
-  font-size: 1rem;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-}
-.article-view .article-header .category-nav .category::before {
-  content: "🗂 ";
-  margin-right: 0.5rem;
-}
-.article-view .article-header .category-nav .back-link {
-  color: #acff6c;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  font-size: 0.9rem;
-}
-.article-view .article-header .category-nav .back-link::before {
-  content: "←";
-  margin-right: 0.5rem;
-}
-.article-view .article-header .category-nav .back-link:hover {
-  text-decoration: underline;
-}
-.article-view .article-header .author-info {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-.article-view .article-header .author-info .author-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-}
-.article-view .article-header .author-info .author-details {
-  display: flex;
-  flex-direction: column;
-}
-.article-view .article-header .author-info .author-details .article-title {
-  font-size: 1.75rem;
-  margin-bottom: 0.5rem;
-  color: #acff6c;
-  font-weight: 600;
-}
-.article-view .article-header .author-info .author-details .meta-info {
-  display: flex;
-  gap: 1rem;
-  color: #808080;
-  font-size: 0.9rem;
-}
-.article-view .article-header .author-info .author-details .meta-info .author-name {
-  font-weight: 500;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-}
-.article-view .article-header .author-info .author-details .meta-info .post-date {
-  margin-left: 15px;
-  display: flex;
-  align-items: center;
-}
-.article-view .article-content {
-  margin-bottom: 2rem;
-}
-.article-view .article-content .article-text {
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  white-space: pre-line;
-  color: #e0e0e0;
-}
-.article-view .article-content .article-image {
-  margin: 1rem 0;
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-.article-view .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
-}
-.article-view .tags .tag {
-  color: #B595FF;
-  padding: 0.5rem 0.5rem;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  border: 1px solid #B595FF;
-}
-.article-view .tags .tag:hover {
-  background-color: rgba(69, 41, 95, 0.4);
-}
-.article-view .interaction-bar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1rem;
-  /* 控制每個圖標之間的間距 */
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 1rem;
-}
-.article-view .interaction-bar .interaction-items {
-  display: flex;
-  gap: 1rem;
-}
-.article-view .interaction-bar .interaction-items a {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  /* 圖標和數字的間距 */
-}
-.article-view .interaction-bar .interaction-item img {
-  width: 24px;
-  /* 圖標大小 */
-  height: 24px;
-  /* 圖標大小 */
-}
-.article-view .interaction-bar .interaction-item span {
-  font-size: 16px;
-  /* 調整文字大小 */
-  color: #ffffff;
-}
-.article-view .comments-section {
-  margin-bottom: 100px;
-}
-.article-view .comments-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: #acff6c;
-}
-.article-view .comments-section .comment-item {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-}
-.article-view .comments-section .comment-item .comment-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-.article-view .comments-section .comment-item .comment-content {
-  flex: 1;
-}
-.article-view .comments-section .comment-item .comment-content .comment-header {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
-  color: #808080;
-  font-size: 0.9rem;
-}
-.article-view .comments-section .comment-item .comment-content .comment-header .comment-user {
-  font-weight: 500;
-  color: #ffffff;
-}
-.article-view .comments-section .comment-item .comment-content .comment-header .comment-floor {
-  color: #acff6c;
-}
-.article-view .comments-section .comment-item .comment-content .comment-text {
-  margin-bottom: 0.75rem;
-  line-height: 1.5;
-  color: #e0e0e0;
-}
-.article-view .comments-section .comment-item .comment-content .comment-actions .like-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #808080;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-}
-.article-view .comments-section .comment-item .comment-content .comment-actions .like-button img {
-  width: 20px;
-  height: 20px;
-}
-.article-view .comments-section .comment-item .comment-content .comment-actions .like-button.liked {
-  color: #acff6c;
-}
-.article-view .comments-section .comment-item .comment-content .comment-actions .like-button:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-.article-view .comment-input {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #1a1a1a;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  transition: all 0.3s ease;
-}
-.article-view .comment-input.expanded {
-  padding: 1.5rem;
-}
-.article-view .comment-input .input-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  gap: 1rem;
-}
-.article-view .comment-input .input-container input {
-  flex: 1;
-  padding: 0.75rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  background-color: #2a2a2a;
-  color: #ffffff;
-}
-.article-view .comment-input .input-container input:focus {
-  outline: none;
-  border-color: #acff6c;
-}
-.article-view .comment-input .input-container button {
-  background-color: #acff6c;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.article-view .comment-input .input-container button:hover {
-  background-color: #acff6c;
-}
-
-@media (max-width: 768px) {
-  .article-view {
-    padding: 1rem;
-  }
-  .article-view .article-header {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .article-view .article-header .article-title {
-    font-size: 1.5rem;
-  }
-  .article-view .interaction-bar {
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .article-view .interaction-bar .share-button {
-    width: 100%;
-    margin-top: 1rem;
-  }
-}
 footer {
   position: relative;
   display: inline-block;
