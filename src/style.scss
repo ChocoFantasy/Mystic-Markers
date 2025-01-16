@@ -1,6 +1,6 @@
 @use "reset";
-@use "variables" as *;
-@use "function" as *;
+@use "variables"as *;
+@use "function"as *;
 @use "keyframes";
 
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Handjet:wght@100..900&family=Mina&family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zen+Maru+Gothic&display=swap");
@@ -302,8 +302,41 @@ a {
     span {
       color: white;
     }
+  }
 
+  @media (max-width:768px) {
+    padding: 25px 0 50px 0;
 
+    .nav-wrapper {
+      margin-right: 15px;
+
+      #news,
+      #Group {
+        margin-right: 8px;
+      }
+
+    }
+
+    .Topbar-right {
+      margin-left: 15px;
+
+      .member {
+        display: none;
+      }
+
+      .logo {
+        width: auto;
+
+        img {
+          margin: 0;
+        }
+      }
+
+      h3 {
+        display: none;
+
+      }
+    }
   }
 }
 
@@ -3164,10 +3197,12 @@ a {
     .intro .title {
       h2 {
         @include font-style($font-medium-32);
+        padding: 0;
       }
 
       h3 {
         @include font-style($font-medium-18);
+
       }
 
     }
@@ -3176,7 +3211,64 @@ a {
       margin: 60px;
     }
 
+    .intro #intro1 {
+      min-height: 10vh;
+      height: 100vh;
+
+      .door {
+        figure {
+          width: 100%;
+          left: -20%;
+          top: 10%;
+        }
+
+        #intro_Q {
+          top: -28%;
+          right: 0;
+          left: 50px;
+          width: 80%;
+          margin: 0;
+
+          p {
+            @include font-style($font-regular-18);
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .intro #intro2 {
+      margin: 0;
+    }
+
+    .intro #intro3 .map-area .map-intro div {
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      align-items: center;
+      margin: 20px 0 0 0;
+      gap: 8px;
+
+      h4 {
+        width: auto;
+        text-align: center;
+        margin-bottom: 8px;
+        @include font-style($font-EN-medium-32);
+      }
+
+      p {
+        margin: 0px;
+        text-align: center;
+        line-height: 1.5;
+      }
+    }
+
     .intro #intro4 {
+      margin: 100px 0;
+      .title {
+        padding: 0 30px;
+      }
+
       .forum-gallery {
         flex-wrap: wrap;
 
@@ -3185,13 +3277,50 @@ a {
         #Exorcism,
         #Creeps,
         #Ruins {
-          .text-link {
-            -webkit-writing-mode: horizontal-tb;
-            writing-mode: horizontal-tb;
-            letter-spacing: 0.5rem;
+          .image-link {
+            .text-link {
+              -webkit-writing-mode: horizontal-tb;
+              writing-mode: horizontal-tb;
+              letter-spacing: 0.2rem;
+            }
+
+            img {
+              filter: blur(0px);
+            }
+
           }
         }
 
+      }
+    }
+
+    #carousel {
+
+      .next,
+      .prev,
+      .prevLeftSecond,
+      .nextRightSecond,
+      .prev {
+        display: none;
+      }
+
+    }
+
+    .buttons {
+      display: flex;
+      top: 450px;
+      flex-direction: row;
+      gap: 32px;
+
+
+      .icon-btn {
+        padding: 0;
+
+        .icon-img {
+          width: 32px;
+          height: 32px;
+          margin: 0;
+        }
       }
     }
 
@@ -4414,6 +4543,7 @@ button:hover #custom-cursor::after {
 
             .article-content {
               flex: 1;
+
               .article-header {
                 display: flex;
                 justify-content: space-between;
@@ -4512,12 +4642,6 @@ button:hover #custom-cursor::after {
 
 
 
-              }
-
-              span {
-                display: block; /* 每行獨占一行 */
-                margin-bottom: 0.5rem; /* 增加段落之間的間距 */
-                line-height: 1.6; /* 行距 */
               }
             }
           }
@@ -4819,46 +4943,45 @@ button:hover #custom-cursor::after {
 
   .interaction-bar {
     display: flex;
-    align-items: center; /* 垂直居中對齊 */
-    justify-content: flex-start; /* 從左到右排列 */
-    gap: 1.5rem; /* 控制圖標組之間的間距 */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    /* 控制每個圖標之間的間距 */
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* 底部分隔線 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 1rem;
-  
-    .interaction-items {
-      display: flex;
-      align-items: center; /* 確保圖標和文字垂直居中 */
-      gap: 1rem; /* 每個互動項目之間的間距 */
-    }
-  
+
     .interaction-item {
       display: flex;
-      align-items: center; /* 圖標和文字垂直居中 */
-      gap: 0.5rem; /* 圖標與文字之間的距離 */
-
-      img {
-        width: 24px;
-        height: 24px;
-      }
-  
-      span {
-        font-size: 16px;
-        color: #ffffff;
-        white-space: nowrap; /* 防止文字換行 */
-      }
+      align-items: center;
+      gap: 0.5rem;
+      /* 控制圖標和文字的間距 */
     }
-  
-    .share-button {
+
+    .interaction-item a {
       display: flex;
       align-items: center;
-      cursor: pointer;
-  
-      img {
-        width: 24px;
-        height: 24px;
-      }
+      text-decoration: none;
+      color: #ffffff;
+      gap: 0.5rem;
+      /* 圖標與文字間距 */
     }
+
+    .interaction-item img {
+      width: 24px;
+      /* 圖標大小 */
+      height: 24px;
+      /* 圖標大小 */
+    }
+
+    .interaction-item span {
+      font-size: 16px;
+      /* 調整文字大小 */
+      color: #ffffff;
+      line-height: 20px;
+      /* 與圖標垂直對齊 */
+    }
+
   }
 
   .comments-section {
@@ -5392,4 +5515,29 @@ footer {
       }
     }
   }
+
+  @media (max-width:768px) {
+    .content {
+      padding: 30px 35px 0 35px;
+      flex-direction: column;
+
+      .left {
+        width: 100%;
+
+        small {
+          display: none;
+        }
+      }
+
+      img {
+        margin-top: 0px;
+      }
+    }
+
+  }
+
+  @media (max-width:600px) {
+    display: none;
+  }
+
 }
