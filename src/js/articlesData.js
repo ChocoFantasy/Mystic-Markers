@@ -81,7 +81,7 @@ const articles = [
   },
   {
     id: 4,
-    commentCount: 465,
+    commentCount: 0,
     comments: [], 
     category: "恐怖作品",
     authorName: "轉空",

@@ -1084,13 +1084,13 @@ export default function Map() {
                         <Link to="/">首頁</Link>
                       </li>
                       <li>
-                        <Link to="/Story">怪奇博物館</Link>
-                      </li>
-                      <li>
-                        <Link to="/Map">靈異導航</Link>
+                        <Link to="/Story">怪談博物館</Link>
                       </li>
                       <li>
                         <Link to="/Forum">鬼影探索</Link>
+                      </li>
+                      <li>
+                        <Link to="/Contact">解謎之門</Link>
                       </li>
                     </ul>
                     <small>&copy; 2024 Mystic Markers. All Rights Reserved.</small>

@@ -271,7 +271,12 @@ const ArticleView = () => {
       </div>
       {/* 文章內文 */}
       <div className="article-content">
-        <p className="article-text">{article.preview}</p>
+        {article.preview.split(/(。|！|？)/g).filter(Boolean).map((segment, index) => (
+          <span key={index}>
+            {segment}
+            {segment.match(/。|！|？/) && <br />} {/* 標點符號後插入換行 */}
+          </span>
+        ))}
         <img
           src={`${article.articleImage}`}
           alt="文章圖片"
