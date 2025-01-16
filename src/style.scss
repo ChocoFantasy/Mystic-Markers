@@ -3060,6 +3060,9 @@ a {
   @media (max-width:1200px) {
     .banner {
       height: 100vh;
+      .fog-area-p, .fog-masked-g{
+        display:none;
+      }
 
     }
 
@@ -3072,6 +3075,9 @@ a {
 
       #intro1 {
         margin-top: 60px;
+        .intro1fog-G{
+          display: none;
+        }
 
         .door {
           figure {
@@ -3112,6 +3118,9 @@ a {
               }
             }
           }
+        }
+        .intro3fog-P{
+          display:none;
         }
       }
 
@@ -3218,12 +3227,12 @@ a {
       .door {
         figure {
           width: 100%;
-          left: -20%;
-          top: 10%;
+          left: -10%;
+          top: 20%;
         }
 
         #intro_Q {
-          top: -28%;
+          top: -20%;
           right: 0;
           left: 50px;
           width: 80%;
@@ -3239,6 +3248,9 @@ a {
 
     .intro #intro2 {
       margin: 0;
+      .paper{
+        display: none;
+      }
     }
 
     .intro #intro3 .map-area .map-intro div {
@@ -3265,6 +3277,7 @@ a {
 
     .intro #intro4 {
       margin: 100px 0;
+
       .title {
         padding: 0 30px;
       }
@@ -3277,7 +3290,11 @@ a {
         #Exorcism,
         #Creeps,
         #Ruins {
+        padding-bottom: 0;
+          height: 100px;
+          gap: 10px;
           .image-link {
+            height: 100%;
             .text-link {
               -webkit-writing-mode: horizontal-tb;
               writing-mode: horizontal-tb;

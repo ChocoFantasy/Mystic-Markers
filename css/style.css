@@ -2900,6 +2900,9 @@ a {
   .home .banner {
     height: 100vh;
   }
+  .home .banner .fog-area-p, .home .banner .fog-masked-g {
+    display: none;
+  }
   .home .intro .title {
     max-width: 100%;
     align-self: center;
@@ -2907,6 +2910,9 @@ a {
   }
   .home .intro #intro1 {
     margin-top: 60px;
+  }
+  .home .intro #intro1 .intro1fog-G {
+    display: none;
   }
   .home .intro #intro1 .door figure {
     left: 0;
@@ -2934,6 +2940,9 @@ a {
   }
   .home .intro #intro3 .map-area .map-intro div p {
     margin-bottom: 0px;
+  }
+  .home .intro #intro3 .intro3fog-P {
+    display: none;
   }
   .home .intro #intro4 div {
     display: flex;
@@ -3041,11 +3050,11 @@ a {
   }
   .home .intro #intro1 .door figure {
     width: 100%;
-    left: -20%;
-    top: 10%;
+    left: -10%;
+    top: 20%;
   }
   .home .intro #intro1 .door #intro_Q {
-    top: -28%;
+    top: -20%;
     right: 0;
     left: 50px;
     width: 80%;
@@ -3061,6 +3070,9 @@ a {
   }
   .home .intro #intro2 {
     margin: 0;
+  }
+  .home .intro #intro2 .paper {
+    display: none;
   }
   .home .intro #intro3 .map-area .map-intro div {
     display: flex;
@@ -3093,6 +3105,22 @@ a {
   }
   .home .intro #intro4 .forum-gallery {
     flex-wrap: wrap;
+  }
+  .home .intro #intro4 .forum-gallery #Legends,
+  .home .intro #intro4 .forum-gallery #Horror,
+  .home .intro #intro4 .forum-gallery #Exorcism,
+  .home .intro #intro4 .forum-gallery #Creeps,
+  .home .intro #intro4 .forum-gallery #Ruins {
+    padding-bottom: 0;
+    height: 100px;
+    gap: 10px;
+  }
+  .home .intro #intro4 .forum-gallery #Legends .image-link,
+  .home .intro #intro4 .forum-gallery #Horror .image-link,
+  .home .intro #intro4 .forum-gallery #Exorcism .image-link,
+  .home .intro #intro4 .forum-gallery #Creeps .image-link,
+  .home .intro #intro4 .forum-gallery #Ruins .image-link {
+    height: 100%;
   }
   .home .intro #intro4 .forum-gallery #Legends .image-link .text-link,
   .home .intro #intro4 .forum-gallery #Horror .image-link .text-link,
