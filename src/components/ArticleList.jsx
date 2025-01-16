@@ -55,19 +55,36 @@ const ArticleList = ({ articles, onFavorite, onDelete }) => {
       prevInteractions.map((articleInteractions, idx) =>
         idx === articleIndex
           ? articleInteractions.map((interaction, i) =>
-              i === interactionIndex
-                ? {
-                    ...interaction,
-                    isLiked: !interaction.isLiked, // 切換按讚狀態
-                    count: interaction.isLiked
-                      ? interaction.count - 1 // 若已按讚，數字減 1
-                      : interaction.count + 1, // 若未按讚，數字加 1
-                  }
-                : interaction
-            )
+            i === interactionIndex
+              ? {
+                ...interaction,
+                isLiked: !interaction.isLiked, // 切換按讚狀態
+                count: interaction.isLiked
+                  ? interaction.count - 1 // 若已按讚，數字減 1
+                  : interaction.count + 1, // 若未按讚，數字加 1
+              }
+              : interaction
+          )
           : articleInteractions
       )
     );
+  };
+  // 時間處理邏輯
+  const getRelativeTime = (createdAt) => {
+    const today = new Date();
+    const createdDate = new Date(createdAt);
+
+    const diffTime = today - createdDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays === 0) return "今天";
+    if (diffDays === 1) return "昨天";
+    if (diffDays === 2) return "前天";
+
+    // 顯示簡短日期，月份和日期補零
+    const month = (createdDate.getMonth() + 1).toString().padStart(2, "0");
+    const day = createdDate.getDate().toString().padStart(2, "0");
+    return `${month}/${day}`;
   };
 
   return (
@@ -84,7 +101,12 @@ const ArticleList = ({ articles, onFavorite, onDelete }) => {
                   className="author-avatar"
                 />
                 <span className="author-name">{article.authorName}</span>
+
               </div>
+              {/* 簡短 PO 文時間 */}
+              <p className="article-date">
+                {getRelativeTime(article.createdAt)}
+              </p>
               {/* 僅顯示用戶新增文章的刪除按鈕 */}
               {article.isUserCreated && (
                 <button
@@ -94,17 +116,6 @@ const ArticleList = ({ articles, onFavorite, onDelete }) => {
                   刪除
                 </button>
               )}
-              {/* 更多選項(待更新) */}
-              {/* <button type="button" aria-label="更多選項">
-                <svg
-                  width={24}
-                  height={24}
-                  viewBox="0 0 24 24"
-                  fill="$primary-purple"
-                >
-                  <path d="M6 12c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm12 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm12 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
-                </svg>
-              </button> */}
             </div>
             {/* 文章內容 */}
             <div className="article-Graphics-text">
@@ -164,6 +175,7 @@ const ArticleList = ({ articles, onFavorite, onDelete }) => {
                       </a>
                       <span>{article.isFavorite ? "已收藏" : "收藏"}</span>
                     </div>
+
                   </div>
                 </div>
               </Link>

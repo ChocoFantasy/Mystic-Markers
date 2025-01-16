@@ -4,6 +4,7 @@ const articles = [
     commentCount: 0,
     comments: [], // 留言內容初始化為空
     category: "都市傳說",
+    createdAt: "2025-01-01T12:30:00Z", // 發文時間
     authorName: "韭把刀",
     authorAvatar: "images/Forum/at/1-1.png",
     title: "那些年，一起追我們的女孩",
@@ -14,7 +15,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 1502,
+        count: 20,
         altText: "like"
       },// 按讚數
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },// 留言數
@@ -23,13 +24,14 @@ const articles = [
         filledIcon: "images/Forum/label-filled.svg",
         count: 600, altText: "label"
       }, // 收藏數
-    ]
+    ],
   },
   {
     id: 2,
     commentCount: 0,
     comments: [], 
     category: "廢墟探險",
+    createdAt: "2025-01-02T12:30:00Z", // 發文時間
     authorName: "藤森月子",
     authorAvatar: "images/Forum/Tsukiko-Fujimori.svg",
     title: "[民雄鬼屋] 充滿傳說的一口古井！",
@@ -41,7 +43,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 102,
+        count: 2,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -49,14 +51,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 78, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 3,
     commentCount: 0,
     comments: [], 
     category: "恐怖獵奇",
+    createdAt: "2025-01-03T12:30:00Z", // 發文時間
     authorName: "光",
     authorAvatar: "images/Forum/at/3-1.png",
     title: "每次回老家過夜都會噩夢",
@@ -68,7 +71,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 304,
+        count: 5,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -76,13 +79,14 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 2, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 4,
     commentCount: 0,
     comments: [], 
+    createdAt: "2025-01-04T12:30:00Z", // 發文時間
     category: "恐怖作品",
     authorName: "轉空",
     authorAvatar: "images/Forum/at/4-1.png",
@@ -95,7 +99,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 62,
+        count: 6,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -103,14 +107,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 78, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 5,
     commentCount: 0,
     comments: [], 
     category: "驅邪收驚",
+    createdAt: "2025-01-05T12:30:00Z", // 發文時間
     authorName: "迷路的貓",
     authorAvatar: "images/Forum/at/5-1.png",
     title: "鬼壓床還是被跟上了？求解！",
@@ -122,7 +127,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 82,
+        count: 7,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -130,14 +135,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 60, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 6,
     commentCount: 0,
     comments: [], 
     category: "都市傳說",
+    createdAt: "2025-01-06T12:30:00Z", // 發文時間
     authorName: "莉莉安",
     authorAvatar: "images/Forum/at/6-1.png",
     title: "鬼月半夜騎機車遇到「多出來的手」",
@@ -148,7 +154,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 102,
+        count: 8,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -156,14 +162,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 67, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 7,
     commentCount: 0,
     comments: [], 
     category: "都市傳說",
+    createdAt: "2025-01-07T12:30:00Z", // 發文時間
     authorName: "暗影守望者",
     authorAvatar: "images/Forum/at/7-1.png",
     title: "公司廁所半夜傳來的低語聲……",
@@ -174,7 +181,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 28,
+        count: 11,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -182,14 +189,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 60, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 8,
     commentCount: 0,
     comments: [], 
     category: "都市傳說",
+    createdAt: "2025-01-08T12:30:00Z", // 發文時間
     authorName: "黑夜行者",
     authorAvatar: "images/Forum/shadowwatcher.svg",
     title: "深夜在山區遇見「沒有臉」的登山者",
@@ -200,7 +208,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 502,
+        count: 3,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -208,14 +216,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 8, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 9,
     commentCount: 0,
     comments: [], 
     category: "都市傳說",
+    createdAt: "2025-01-09T12:30:00Z", // 發文時間
     authorName: "暗夜守望者",
     authorAvatar: "images/Forum/at/9-1.png",
     title: "鬧鬼工廠的不尋常聲音！發現奇怪的符號",
@@ -226,7 +235,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 72,
+        count: 2,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -234,14 +243,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 9, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 10,
     commentCount: 0,
     comments: [], 
     category: "都市傳說",
+    createdAt: "2025-01-10T12:30:00Z", // 發文時間
     authorName: "模糊獵人",
     authorAvatar: "images/Forum/at/10-1.png",
     title: "第一次發文，想跟大家分享我上週在嘉義一間廢棄工廠探險的恐怖經歷...",
@@ -252,7 +262,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 18,
+        count: 5,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -260,14 +270,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 10, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 11,
     commentCount: 0,
     comments: [], 
     category: "廢墟探險",
+    createdAt: "2025-01-11T12:30:00Z", // 發文時間
     authorName: "暗影探險家",
     authorAvatar: "images/Forum/at/11-1.png",
     title: "廢棄多年的精神病院，竟記載「某名病患聲稱被鬼附身」",
@@ -278,7 +289,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 1502,
+        count: 10,
         altText: "like"
       },// 按讚數
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },// 留言數
@@ -287,13 +298,14 @@ const articles = [
         filledIcon: "images/Forum/label-filled.svg",
         count: 600, altText: "label"
       }, // 收藏數
-    ]
+    ],
   },
   {
     id: 12,
     commentCount: 0,
     comments: [], 
     category: "廢墟探險",
+    createdAt: "2025-01-12T12:30:00Z", // 發文時間
     authorName: "遺跡獵人",
     authorAvatar: "images/Forum/at/12-1.png",
     title: "荒廢遊樂園的鬼影之夜",
@@ -305,7 +317,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 102,
+        count: 9,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -313,14 +325,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 78, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 13,
     commentCount: 0,
     comments: [], 
     category: "都市傳說",
+    createdAt: "2025-01-13T12:30:00Z", // 發文時間
     authorName: "幻影追尋者",
     authorAvatar: "../images/Forum/shadowwatcher.svg",
     title: "午夜電梯：通往不存在的樓層",
@@ -330,7 +343,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 502,
+        count: 8,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -338,8 +351,8 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 8, altText: "label"
-      }
-    ]
+      },
+    ],
   },
 
   {
@@ -347,6 +360,7 @@ const articles = [
     commentCount: 0,
     comments: [], 
     category: "廢墟探險",
+    createdAt: "2025-01-14T12:30:00Z", // 發文時間
     authorName: "迷失旅人",
     authorAvatar: "images/Forum/at/14-1.png",
     title: "廢棄車站的詭異音響",
@@ -357,7 +371,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 304,
+        count: 7,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -365,14 +379,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 2, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 15,
     commentCount: 0,
     comments: [], 
     category: "恐怖獵奇",
+    createdAt: "2025-01-15T12:30:00Z", // 發文時間
     commentCount: 465,
     authorName: "靈異蒐集家",
     authorAvatar: "images/Forum/at/15-1.png",
@@ -384,7 +399,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 62,
+        count: 6,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -392,14 +407,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 78, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 16,
     commentCount: 0,
     comments: [], 
     category: "恐怖獵奇",
+    createdAt: "2025-01-16T12:30:00Z", // 發文時間
     authorName: "黑暗檔案",
     authorAvatar: "images/Forum/at/16-1.png",
     title: "死亡時鐘：能預測死亡的詭異裝置",
@@ -410,7 +426,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 82,
+        count: 5,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -418,8 +434,8 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 60, altText: "label"
-      }
-    ]
+      },
+    ],
   },
 
   {
@@ -427,6 +443,7 @@ const articles = [
     commentCount: 0,
     comments: [], 
     category: "恐怖作品",
+    createdAt: "2025-01-17T12:30:00Z", // 發文時間
     authorName: "午夜書迷",
     authorAvatar: "images/Forum/Lillian.svg",
     title: "解析經典恐怖小說《鬼燈的誘惑》",
@@ -436,7 +453,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 102,
+        count: 4,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -444,14 +461,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 67, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 18,
     commentCount: 0,
     comments: [], 
     category: "都市傳說",
+    createdAt: "2024-12-31T12:30:00Z", // 發文時間
     authorName: "迷霧觀察者",
     authorAvatar: "images/Forum/at/18-1.png",
     title: "人影湖：午夜倒影中的詭異真相",
@@ -461,7 +479,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 502,
+        count: 4,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -469,14 +487,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 8, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 19,
     commentCount: 0,
     comments: [], 
     category: "恐怖作品",
+    createdAt: "2024-12-30T12:30:00Z", // 發文時間
     authorName: "黑暗電影人",
     authorAvatar: "images/Forum/at/19-1.png",
     title: "不容錯過的恐怖電影《深夜來電》",
@@ -486,7 +505,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 28,
+        count: 2,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -494,14 +513,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 60, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 20,
     commentCount: 0,
     comments: [], 
     category: "驅邪收驚",
+    createdAt: "2024-12-29T12:30:00Z", // 發文時間
     authorName: "古法守護者",
     authorAvatar: "images/Forum/shadowwatcher.svg",
     title: "收驚儀式的由來與重要性",
@@ -511,7 +531,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 502,
+        count: 3,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -519,14 +539,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 8, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 21,
     commentCount: 0,
     comments: [], 
     category: "都市傳說",
+    createdAt: "2024-12-28T12:30:00Z", // 發文時間
     authorName: "暗夜行者",
     authorAvatar: "images/Forum/at/21-1.png",
     title: "神秘的「午夜巴士」",
@@ -536,7 +557,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 18,
+        count: 2,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -544,14 +565,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 10, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 22,
     commentCount: 0,
     comments: [], 
     category: "驅邪收驚",
+    createdAt: "2024-12-27T12:30:00Z", // 發文時間
     authorName: "靈符傳人",
     authorAvatar: "images/Forum/at/22-1.png",
     title: "驅邪儀式的細節解析與親身經歷",
@@ -561,7 +583,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 72,
+        count: 2,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -569,14 +591,15 @@ const articles = [
         icon: "images/Forum/Forum_label.svg",
         filledIcon: "images/Forum/label-filled.svg",
         count: 9, altText: "label"
-      }
-    ]
+      },
+    ],
   },
   {
     id: 23,
     commentCount: 0,
     comments: [], 
     category: "驅邪收驚",
+    createdAt: "2024-12-26T12:30:00Z", // 發文時間
     authorName: "老街神秘人",
     authorAvatar: "images/Forum/at/23-1.png",
     title: "祖傳收驚術：一次神奇的重拾平靜",
@@ -586,7 +609,7 @@ const articles = [
       {
         icon: "images/Forum/Forum_ghost.svg",
         filledIcon: "images/Forum/solar_ghost-outline.svg",
-        count: 18,
+        count: 1,
         altText: "like"
       },
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
@@ -596,9 +619,7 @@ const articles = [
         count: 10, altText: "label"
       }
     ]
-  },
-
-
+  }
 
 ];
 

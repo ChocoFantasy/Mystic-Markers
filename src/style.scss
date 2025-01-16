@@ -4390,10 +4390,20 @@ button:hover #custom-cursor::after {
 
             .PostModal-bar {
               display: flex;
+              /* 使子元素水平排列 */
               align-items: center;
+              /* 垂直置中 */
+              justify-content: flex-end;
+              /* 將按鈕向右對齊（可根據需求調整） */
+              gap: 1rem;
+              /* 控制子元素之間的間距 */
               width: 35px;
               height: 35px;
 
+              img {
+                padding: 10px 0 0 0;
+                display: block;
+              }
             }
 
           }
@@ -4414,6 +4424,7 @@ button:hover #custom-cursor::after {
 
             .article-content {
               flex: 1;
+
               .article-header {
                 display: flex;
                 justify-content: space-between;
@@ -4431,6 +4442,12 @@ button:hover #custom-cursor::after {
                     height: 32px;
                     border-radius: 50%;
                   }
+                }
+
+                .article-date {
+                  font-size: 14px;
+                  color: $grey;
+                  margin-top: 0.5rem;
                 }
 
                 .delete-button {
@@ -4515,9 +4532,12 @@ button:hover #custom-cursor::after {
               }
 
               span {
-                display: block; /* 每行獨占一行 */
-                margin-bottom: 0.5rem; /* 增加段落之間的間距 */
-                line-height: 1.6; /* 行距 */
+                display: block;
+                /* 每行獨占一行 */
+                margin-bottom: 0.5rem;
+                /* 增加段落之間的間距 */
+                line-height: 1.6;
+                /* 行距 */
               }
             }
           }
@@ -4819,41 +4839,50 @@ button:hover #custom-cursor::after {
 
   .interaction-bar {
     display: flex;
-    align-items: center; /* 垂直居中對齊 */
-    justify-content: flex-start; /* 從左到右排列 */
-    gap: 1.5rem; /* 控制圖標組之間的間距 */
+    align-items: center;
+    /* 垂直居中對齊 */
+    justify-content: flex-start;
+    /* 從左到右排列 */
+    gap: 1.5rem;
+    /* 控制圖標組之間的間距 */
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* 底部分隔線 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* 底部分隔線 */
     margin-bottom: 1rem;
-  
+
     .interaction-items {
       display: flex;
-      align-items: center; /* 確保圖標和文字垂直居中 */
-      gap: 1rem; /* 每個互動項目之間的間距 */
+      align-items: center;
+      /* 確保圖標和文字垂直居中 */
+      gap: 1rem;
+      /* 每個互動項目之間的間距 */
     }
-  
+
     .interaction-item {
       display: flex;
-      align-items: center; /* 圖標和文字垂直居中 */
-      gap: 0.5rem; /* 圖標與文字之間的距離 */
+      align-items: center;
+      /* 圖標和文字垂直居中 */
+      gap: 0.5rem;
+      /* 圖標與文字之間的距離 */
 
       img {
         width: 24px;
         height: 24px;
       }
-  
+
       span {
         font-size: 16px;
         color: #ffffff;
-        white-space: nowrap; /* 防止文字換行 */
+        white-space: nowrap;
+        /* 防止文字換行 */
       }
     }
-  
+
     .share-button {
       display: flex;
       align-items: center;
       cursor: pointer;
-  
+
       img {
         width: 24px;
         height: 24px;
@@ -5232,42 +5261,32 @@ button:hover #custom-cursor::after {
 
       .contact-content {
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
         align-items: flex-start;
-        gap: 20px;
+        gap: 10px;
 
         .contact-bubble {
-          position: absolute;
-          top: 145px;
-          left: 200px;
-          /* 微調位置 */
-          z-index: 3;
-          overflow: visible;
-          flex: 1 1 300px;
-          width: 300px;
-
-          img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            /* 確保圖片居中 */
-            z-index: 1;
-            opacity: 0.9;
-            width: 100%;
-            margin: 0 auto 10px;
-          }
+          border-radius: 20px; // 圓角
+          padding: 50px;
+          display: flex; // 讓圖片與文字並排
 
           .bubble-text {
-            position: relative;
-            /* 設置文字區塊為相對定位 */
-            z-index: 2;
-            /* 設置文字區塊層級高於圖片 */
-            padding: 20px;
-            border-radius: 15px;
-            color: white;
+            text-align: left;     // 將文字水平方向居中
+            color: #FFFFFF; // 白色文字
+            font-size: 13px;
+            margin: -60px auto;         // 自動設定左右外距，讓文字居中
+            padding: 0 20px;        // 增加左右內邊距，讓內容離邊緣更遠
+
+
+            strong {
+              font-size: 16px;
+              text-align: left; // 靠左對齊
+              display: block; // 讓 strong 變成區塊元素
+              color: #A3E635; // 綠色關鍵字
+            }
           }
         }
+
 
         /* 人物圖片 */
         .person-image {

@@ -16,7 +16,8 @@ const Forum = () => {
   const { category } = useParams(); // 接收首頁路由中的分類名稱
   const [articles, setArticles] = useState(articlesData); // 狀態：所有文章
   const [searchValue, setSearchValue] = useState(""); // 搜尋欄位
-  const [ascending, setAscending] = useState(true); // 排序狀態
+  const [ascending, setAscending] = useState(true); // 排序 升幕與降幕
+  const [sortType, setSortType] = useState("popular"); // 排序類型"最新"或者"熱門"排序，預設"熱門"
   const [currentCategory, setCurrentCategory] = useState("所有看板"); // 狀態：當前分類
   const [isModalOpen, setModalOpen] = useState(false); // 狀態：發文彈窗是否開啟
   const [searchTriggered, setSearchTriggered] = useState(false); // 記錄是否已觸發搜尋
@@ -76,14 +77,21 @@ const Forum = () => {
     });
   }, [filteredArticles_search, currentCategory]);
 
-  // [熱門]根據按讚數進行排序
+  // [熱門、最新]根據按讚數進行排序
   const sortedArticles = useMemo(() => {
-    return filteredArticles_category.sort((a, b) => {
-      const aLikes = a.interactions.find((i) => i.altText === "like").count;
-      const bLikes = b.interactions.find((i) => i.altText === "like").count;
-      return ascending ? aLikes - bLikes : bLikes - aLikes; // 升冪或降冪排序
+    return [...filteredArticles_category].sort((a, b) => {
+      if (sortType === "popular") {
+        const aLikes = a.interactions.find((i) => i.altText === "like").count;
+        const bLikes = b.interactions.find((i) => i.altText === "like").count;
+        return ascending ? aLikes - bLikes : bLikes - aLikes; // 熱門排序
+      } else if (sortType === "latest") {
+        return ascending
+          ? new Date(a.createdAt) - new Date(b.createdAt)
+          : new Date(b.createdAt) - new Date(a.createdAt); //最新排序
+      }
+      return 0;
     });
-  }, [filteredArticles_category, ascending, searchTriggered]);
+  }, [filteredArticles_category, sortType, ascending, searchTriggered]);
 
   // [搜尋]輸入變化
   const handleSearch = (e) => {
@@ -123,6 +131,7 @@ const Forum = () => {
       )
     );
   };
+
 
   return (
     <>
@@ -193,13 +202,23 @@ const Forum = () => {
                             icon: "mingcute_fire-fill",
                             hoverIcon: "mingcute_fire-fill2", // 懸停時的圖標
                             label: "熱門",
-                            onClick: toggleSortOrder,
+                            onClick: () => {
+                              setSortType("popular"); // 設定熱門排序
+                              setAscending((prev) => !prev); // 切換升冪與降冪
+                            },
                           },
                           {
                             icon: "emojione-monotone_new-button",
                             hoverIcon: "emojione-monotone_new-button2", // 懸停時的圖標
                             label: "最新",
-                            //onClick: sortArticlesByDate,
+                            onClick: () => {
+                              if (sortType === "latest") {
+                                setAscending((prev) => !prev); // 切換升冪與降冪
+                              } else {
+                                setSortType("latest"); // 設定最新排序
+                                setAscending(true); // 默認升冪
+                              }
+                            }
                           },
                           {
                             icon: "ooui_notice",
