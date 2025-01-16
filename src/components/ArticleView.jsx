@@ -65,6 +65,50 @@ const ArticleView = () => {
     });
   };
 
+  // 時間計算格式
+  const formatRelativeDate = (dateString) => {
+    const now = new Date();
+    const commentDate = new Date(dateString);
+  
+    // 去掉時間的細節，只保留年月日部分進行比較
+    const nowDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const commentDateOnly = new Date(
+      commentDate.getFullYear(),
+      commentDate.getMonth(),
+      commentDate.getDate()
+    );
+  
+    const diffDays = (nowDate - commentDateOnly) / (1000 * 60 * 60 * 24);
+  
+    // 判斷日期差，返回對應的格式
+    if (diffDays === 0) {
+      return `今天 ${commentDate.getHours().toString().padStart(2, "0")}:${commentDate
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")}`;
+    } else if (diffDays === 1) {
+      return `昨天 ${commentDate.getHours().toString().padStart(2, "0")}:${commentDate
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")}`;
+    } else if (diffDays === 2) {
+      return `前天 ${commentDate.getHours().toString().padStart(2, "0")}:${commentDate
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")}`;
+    } else {
+      return `${(commentDate.getMonth() + 1)
+        .toString()
+        .padStart(2, "0")}/${commentDate
+        .getDate()
+        .toString()
+        .padStart(2, "0")} ${commentDate.getHours().toString().padStart(2, "0")}:${commentDate
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")}`;
+    }
+  };
+
   // 新增留言並保存
   const handleAddComment = () => {
     if (newComment.trim()) {
@@ -79,7 +123,7 @@ const ArticleView = () => {
         floor: `B${comments.length + 1}`,
         avatar: randomAvatar,
         userName: randomName,
-        time: new Date().toLocaleString(),
+        time:  new Date().toISOString(), // 時間格式
         isLiked: false,
       };
   
@@ -203,7 +247,7 @@ const ArticleView = () => {
           <span className="category">{article.category}</span>
           <Link to="/Forum" className="back-link">
             <img
-              src={`${"images/Forum/pajamas_go-back.svg"}`}
+                src="images/Forum/pajamas_go-back.svg"
               alt="回到文章符號"
             />
             回到文章列表
@@ -331,10 +375,8 @@ const ArticleView = () => {
               <div className="comment-header">
                 <span className="comment-user">{comment.userName}</span>
                 <span className="comment-floor">{comment.floor}</span>
-                <span className="comment-time">{comment.time}</span>
-              </div>
-              <p className="comment-text">{comment.text}</p>
-              <div className="comment-actions">
+                <span className="comment-time">{formatRelativeDate(comment.time)}</span>
+                <div className="comment-actions">
                 <button
                   className={`like-button ${comment.isLiked ? "liked" : ""}`}
                   onClick={() => handleLikeComment(index)}
@@ -350,6 +392,9 @@ const ArticleView = () => {
                   <span>{comment.likes}</span>
                 </button>
               </div>
+              </div>
+              <p className="comment-text">{comment.text}</p>
+
             </div>
           </div>
         ))}

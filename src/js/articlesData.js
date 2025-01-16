@@ -5,7 +5,7 @@ const articles = [
     comments: [], // 留言內容初始化為空
     category: "都市傳說",
     authorName: "韭把刀",
-    authorAvatar: "images/Story/Polygon 1.png",
+    authorAvatar: "images/Forum/at/1-1.png",
     title: "那些年，一起追我們的女孩",
     preview: "我們高中時期那片校園，有著綠意盎然的操場、隨風搖曳的櫻花道、破舊的教室樓，和一片漆黑的後山小徑。說是漆黑，並非真的因為陰暗，實際上那裡的路燈早已壞掉，但總有人說，即使是白晝，那片小徑也讓人不寒而慄。高三那一年，我們幾個臭味相投的好友，總是聚在一起取笑學妹，也喜歡一起挑戰校園的各種禁忌。畢竟是最後一年，青春就是要留下些讓人回想起來會心一笑的回憶，不是嗎？其中，最讓我們津津樂道的，便是班上那位安靜內向的女孩——綺婷。綺婷是一個瘦弱的女生，皮膚蒼白，幾乎不發一語，永遠坐在教室角落。每當放學後，其他人都回家了，她總會獨自留在教室裡，低著頭不知道在寫些什麼。我們這些心性未熟的男生見她這般奇怪，便將她當成班上的「幽靈」戲稱，並開始有意無意地捉弄她。有一天傍晚，我們忍不住好奇心，偷偷跑進教室，想一探她到底在寫什麼。桌上散亂的日記本映入眼簾，頁面上密密麻麻的筆跡寫滿了我們的名字，反覆地寫著，逐漸轉成歪曲的字體，夾雜著奇異的話語：「我會找到你們的……」「你們跑不掉……」那一刻，寒氣從腳底竄起，日記本被我們慌忙推倒，卻發現後面壓著一張泛黃的照片——那是我們與綺婷的合照，背後標註了「永別」。自從那天之後，我們這群人再也不敢單獨留下，總覺得身後有什麼東西追隨著自己。夜晚放學的時候，總覺得從教室角落有雙眼睛注視著我們，甚至在某些夜晚，我們各自的夢裡，總會夢見那條漆黑小徑的盡頭，站著一個模糊的影子——她朝著我們微笑，蒼白的臉上卻帶著詭異的扭曲。那年畢業後，班上流傳著綺婷不再來學校的傳言。有人說她已經轉學，有人說她只是厭倦了學校，但我們幾個人心裡都知道，她在我們身邊——只是已經不再是那個活生生的女孩。多年後，我們回到母校重聚，卻驚愕地在走廊盡頭的公告板上，見到當年那張泛黃的照片，依舊貼在角落，而照片中的我們，眼神變得空洞，彷彿靈魂已經隨著某個夜晚的記憶一同消失。我們每個人都知道，無論時光如何流逝，綺婷依舊在我們身後，冷冷地注視著，等待著那遲到的悔意。",
     isFavorite: false, // 是否收藏
@@ -20,7 +20,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },// 留言數
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 600, altText: "label"
       }, // 收藏數
     ]
@@ -47,7 +47,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 78, altText: "label"
       }
     ]
@@ -74,7 +74,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 2, altText: "label"
       }
     ]
@@ -101,7 +101,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 78, altText: "label"
       }
     ]
@@ -128,7 +128,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 60, altText: "label"
       }
     ]
@@ -154,7 +154,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 67, altText: "label"
       }
     ]
@@ -180,7 +180,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 60, altText: "label"
       }
     ]
@@ -206,7 +206,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 8, altText: "label"
       }
     ]
@@ -232,7 +232,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 9, altText: "label"
       }
     ]
@@ -258,7 +258,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 10, altText: "label"
       }
     ]
@@ -284,7 +284,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },// 留言數
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 600, altText: "label"
       }, // 收藏數
     ]
@@ -311,7 +311,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 78, altText: "label"
       }
     ]
@@ -336,7 +336,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 8, altText: "label"
       }
     ]
@@ -363,7 +363,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 2, altText: "label"
       }
     ]
@@ -390,7 +390,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 78, altText: "label"
       }
     ]
@@ -416,7 +416,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 60, altText: "label"
       }
     ]
@@ -442,7 +442,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 67, altText: "label"
       }
     ]
@@ -467,7 +467,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 8, altText: "label"
       }
     ]
@@ -492,7 +492,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 60, altText: "label"
       }
     ]
@@ -517,7 +517,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 8, altText: "label"
       }
     ]
@@ -542,7 +542,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 10, altText: "label"
       }
     ]
@@ -567,7 +567,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 9, altText: "label"
       }
     ]
@@ -592,7 +592,7 @@ const articles = [
       { icon: "images/Forum/mynaui_message.svg", count: 0, altText: "message" },
       {
         icon: "images/Forum/Forum_label.svg",
-        filledIcon: "images/Forum/MapCollect.png",
+        filledIcon: "images/Forum/label-filled.svg",
         count: 10, altText: "label"
       }
     ]

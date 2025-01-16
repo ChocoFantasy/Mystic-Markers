@@ -20,7 +20,7 @@ const Forum = () => {
   const [currentCategory, setCurrentCategory] = useState("所有看板"); // 狀態：當前分類
   const [isModalOpen, setModalOpen] = useState(false); // 狀態：發文彈窗是否開啟
   const [searchTriggered, setSearchTriggered] = useState(false); // 記錄是否已觸發搜尋
-
+  const [hoveredIcon, setHoveredIcon] = useState(null); //紀錄更換排序按鈕
   const location = useLocation(); //帳戶名稱
   const userName = location.state?.userName || "匿名用戶";
 
@@ -145,15 +145,14 @@ const Forum = () => {
                             { icon: "Forum_movie", label: "恐怖獵奇" },
                             { icon: "Forum_ghost-2", label: "恐怖作品" },
                             { icon: "Forum_temple", label: "驅邪收驚" },
-                            { icon: "Forum_building", label: "我的收藏" },
+                            { icon: "label-filled_grey", label: "我的收藏" },
                           ].map((category) => (
                             <li
                               key={category.label}
-                              className={`category-item ${
-                                currentCategory === category.label
-                                  ? "active"
-                                  : ""
-                              }`}
+                              className={`category-item ${currentCategory === category.label
+                                ? "active"
+                                : ""
+                                }`}
                               role="listitem"
                               onClick={() =>
                                 handleCategoryClick(category.label)
@@ -192,23 +191,31 @@ const Forum = () => {
                         {[
                           {
                             icon: "mingcute_fire-fill",
+                            hoverIcon: "mingcute_fire-fill2", // 懸停時的圖標
                             label: "熱門",
                             onClick: toggleSortOrder,
                           },
                           {
                             icon: "emojione-monotone_new-button",
+                            hoverIcon: "emojione-monotone_new-button2", // 懸停時的圖標
                             label: "最新",
                             //onClick: sortArticlesByDate,
                           },
                           {
                             icon: "ooui_notice",
+                            hoverIcon: "ooui_notice_fill", // 懸停時的圖標
                             label: "發文規則",
                             onClick: showPostingRules,
                           },
                         ].map((item, index) => (
-                          <div key={index} className="nav-button-container">
+                          <div key={index} className="nav-button-container"
+                            onMouseEnter={() => setHoveredIcon(item.hoverIcon)} // 當滑鼠進入時設定 hoverIcon
+                            onMouseLeave={() => setHoveredIcon(null)} // 當滑鼠離開時恢復
+                          >
                             <img
-                              src={`images/Forum/${item.icon}.svg`}
+                              src={hoveredIcon === item.hoverIcon
+                                ? `images/Forum/${item.hoverIcon}.svg`
+                                : `images/Forum/${item.icon}.svg`}
                               alt={item.label}
                               className="nav-button-icon"
                             />
