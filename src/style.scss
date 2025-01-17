@@ -1844,7 +1844,7 @@ a {
               margin-bottom: 16px;
 
               &:hover {
-                color: $primary-purple;
+                
               }
 
               &:active {
@@ -2039,10 +2039,12 @@ a {
       color: $primary-green;
       @include font-style($font-medium-16);
     }
-    &:hover{
+
+    &:hover {
       filter: invert(42%) saturate(1352%) hue-rotate(140deg) brightness(120%) contrast(119%);
     }
-    &:active{
+
+    &:active {
       transform: translateY(2px);
       filter: brightness(4);
     }
@@ -3774,6 +3776,11 @@ button:hover #custom-cursor::after {
     /* 設置顏色顏色 */
     @include font-style($font-regular-16)
     /* 調整字體大小 */
+
+  }
+
+  .story a:hover {
+    filter: brightness(1.5);
   }
 
 
@@ -3789,7 +3796,7 @@ button:hover #custom-cursor::after {
     padding: 10px;
     width: 24px;
     overflow: hidden;
-    
+
   }
 
   .share-link figure {
@@ -3813,9 +3820,6 @@ button:hover #custom-cursor::after {
     li {
       overflow: hidden;
     }
-
-
-
   }
 
   .share-icon img {
@@ -3832,8 +3836,7 @@ button:hover #custom-cursor::after {
   }
 
   .share-icon img:hover {
-    transform: scale(1.5);
-    /* 鼠標懸停時放大圖片 */
+    filter: brightness(0.5);
   }
 
 
@@ -4626,16 +4629,18 @@ button:hover #custom-cursor::after {
                     width: 32px;
                     height: 32px;
                     border-radius: 50%;
-                  } 
+                  }
                 }
-       
-                
-                
+
+
+
                 .delete-date-wrapper {
                   display: flex;
-                  align-items: center; /* 確保刪除按鈕與日期垂直居中 */
-                  gap: 10px; /* 控制按鈕和日期之間的距離 */
-              
+                  align-items: center;
+                  /* 確保刪除按鈕與日期垂直居中 */
+                  gap: 10px;
+                  /* 控制按鈕和日期之間的距離 */
+
                   .delete-button {
                     background-color: $grey;
                     border: none;
@@ -4645,11 +4650,12 @@ button:hover #custom-cursor::after {
                     border-radius: 5px;
                     cursor: pointer;
                     transition: background-color 0.3s;
-              
+
                     &:hover {
                       background-color: #a3e635;
                     }
                   }
+
                   .article-date {
                     font-size: 14px;
                     color: #999;
@@ -4657,6 +4663,7 @@ button:hover #custom-cursor::after {
                   }
 
                 }
+
                 .article-header .delete-button {
                   display: inline-block;
                 }
@@ -5471,46 +5478,27 @@ button:hover #custom-cursor::after {
 
         .contact-bubble {
           position: relative;
-          z-index: 1;
-          width: 380px;
-          height: auto;
-          background-color: #6c5387; /* 泡泡背景色 */
-          border-radius: 20px;
-          padding: 30px;
-          color: white;
-          line-height: 1.8;
-          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
-        
+          width: 300px;
+          background: transparent;
+          margin-bottom: 20px;
+    
           .bubble-text {
-            position: relative;
-            font-size: 16px;
-            top: 0; /* 移除多餘的位移，確保文字正常對齊 */
-            z-index: 2;
-        
-            strong {
-              color: #a3e635;
-              font-size: 18px;
-              margin-bottom: 10px;
-              display: block;
-            }
-        
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 20px;
+            color: #fff;
+            line-height: 1.6;
+            font-size: 14px;
+    
             p {
               margin: 10px 0;
+              strong {
+                color: #b9a4f5;
+              }
             }
-          }
-        
-          .person-image {
-            position: absolute;
-            bottom: -50px; /* 確保圖片位於泡泡框底部 */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px; /* 確保圖片大小符合比例 */
-            z-index: 0;
+
           }
         }
-        
-
-        
         /* 人物圖片 */
         .person-image {
           position: absolute;
@@ -5530,13 +5518,13 @@ button:hover #custom-cursor::after {
           padding-top: 30px;
           flex: 1;
           max-width: 550px;
-    
+
           p {
             color: #ffffff;
             font-size: 14px;
             margin-bottom: 8px;
           }
-    
+
           input,
           textarea {
             width: 100%;
@@ -5546,17 +5534,17 @@ button:hover #custom-cursor::after {
             padding: 12px;
             margin-bottom: 15px;
             font-size: 14px;
-    
+
             &::placeholder {
               color: #666666;
             }
           }
-    
+
           textarea {
             height: 150px;
             resize: none;
           }
-    
+
           button {
             width: 100%;
             background: #9747FF;
@@ -5568,19 +5556,19 @@ button:hover #custom-cursor::after {
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s;
-            
+
             &:hover {
               background: #a47aec;
             }
           }
-    
+
           .form-note {
             color: #666666;
             font-size: 12px;
             margin-top: 10px;
           }
         }
-        
+
       }
     }
   }
@@ -5674,4 +5662,4 @@ footer {
     display: none;
   }
 
-} 
+}

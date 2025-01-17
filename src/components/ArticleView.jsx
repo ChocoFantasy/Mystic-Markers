@@ -29,10 +29,10 @@ const ArticleView = () => {
 
   const avatars = [
     // 預設隨機頭像
-    "images/Forum/lost-cat.svg",
-    "images/Forum/light.svg",
-    "images/Forum/Lillian.svg",
-    "images/Forum/Night-Explorer.svg",
+    "images/Forum/lost-cat.png",
+    "images/Forum/light.png",
+    "images/Forum/Lillian.png",
+    "images/Forum/Night-Explorer.png",
   ];
 
   // 初始化留言內容與留言數
@@ -407,7 +407,7 @@ const ArticleView = () => {
           {/* 頭像與名稱 */}
           <div className="user-info" style={{ backgroundColor: "#acff6c" }}>
             <img
-              src="images/Forum/lost-cat.svg" // 預設匿名者頭像
+              src="images/Forum/lost-cat.png" // 預設匿名者頭像
               alt="匿名者頭像"
               className="user-avatar"
             />

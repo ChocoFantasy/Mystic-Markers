@@ -185,7 +185,7 @@ const Forum = () => {
                       >
                         <img
                           className="ad-text"
-                          src="images/Forum/HORRO.svg"
+                          src="images/Forum/HORRO.png"
                           alt="廣告"
                         />
                       </div>

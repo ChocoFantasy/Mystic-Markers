@@ -90,7 +90,7 @@ const PostModal = ({ isOpen, onClose, onNewArticle, userName }) => {
         <h2>新增文章</h2>
         <div className="form-header">
           <img
-            src={authorAvatar || "images/Forum/light.svg"}
+            src={authorAvatar || "images/Forum/light.png"}
             alt="頭像"
             className="avatar"
           />
