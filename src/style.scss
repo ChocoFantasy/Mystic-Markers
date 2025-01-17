@@ -3747,6 +3747,7 @@ button:hover #custom-cursor::after {
     -webkit-line-clamp: 15;
     width: 32rem;
     height: 26.8rem;
+    pointer-events: none;
 
     p {
       font-family: 'Noto Sans TC';
@@ -3788,6 +3789,7 @@ button:hover #custom-cursor::after {
     padding: 10px;
     width: 24px;
     overflow: hidden;
+    
   }
 
   .share-link figure {
@@ -3869,7 +3871,7 @@ button:hover #custom-cursor::after {
     object-fit: cover;
     z-index: 2;
     opacity: 40%;
-
+    pointer-events: none;
   }
 
   .tree {
