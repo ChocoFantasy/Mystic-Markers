@@ -1843,10 +1843,6 @@ a {
               overflow: hidden;
               margin-bottom: 16px;
 
-              &:hover {
-                
-              }
-
               &:active {
                 color: $light;
                 transform: translateY(2px);
@@ -1880,7 +1876,6 @@ a {
         width: auto;
         margin: 16px 0;
 
-        p {}
       }
     }
 
@@ -3714,6 +3709,7 @@ button:hover #custom-cursor::after {
     margin: 5px 5px;
     font-size: 24px;
     color: #B595FF;
+    overflow: hidden;
   }
 
   .story-title {
@@ -3773,74 +3769,55 @@ button:hover #custom-cursor::after {
     text-decoration: none;
     /* 移除預設的下劃線 */
     color: $primary-green;
+    overflow: hidden;
     /* 設置顏色顏色 */
     @include font-style($font-regular-16)
     /* 調整字體大小 */
-
   }
 
   .story a:hover {
     filter: brightness(1.5);
   }
 
-
-
-  .share-link {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    /* 讓內容垂直對齊底部 */
-    align-items: center;
-    /* 讓內容水平居中 */
-    margin-bottom: 40%;
-    padding: 10px;
-    width: 24px;
-    overflow: hidden;
-
-  }
-
-  .share-link figure {
-    margin: 0;
-    overflow: hidden;
-    /* 去除 figure 的預設外邊距 */
-  }
-
-
   .share-icon {
-    /* 去掉 ul 和 li 的預設樣式 */
-    list-style-type: none;
-    /* 去掉圓點符號 */
+    list-style: none; // 移除列表樣式
     padding: 0;
-    /* 去掉內邊距 */
+    margin: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; // 垂直排列
+    align-items: center; // 居中
     justify-content: center;
-    overflow: hidden;
+    overflow: hidden; // 隱藏滾動
+    max-height: 100%; // 限制最大高度
+  }
 
-    li {
-      overflow: hidden;
-    }
+  .share-icon li {
+    margin: 0; // 確保沒有額外間距
+    padding: 0;
+
   }
 
   .share-icon img {
-    width: 24px;
-    /* 設置圖標大小 */
-    height: 24px;
-    /* 保持圖片為正方形 */
-
-    margin-top: 5px;
-
-    transition: transform 0.3s ease;
-    /* 為圖標添加懸停效果 */
-
+    display: block; // 強制圖片成為塊級元素
+    width: 100%; // 確保圖片寬度不超出
+    height: auto; // 自適應高度
   }
 
-  .share-icon img:hover {
-    filter: brightness(0.5);
+  .share-icon a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; // 保持和 li 一致
+    height: 100%;
+    text-decoration: none;
+    overflow: hidden; // 防止內容溢出
+    transition: transform 0.2s ease; // 平滑過渡效果
   }
 
-
-
+  .share-icon a:hover {
+    filter: brightness(1.5);
+    transform: none; // 禁止放大
+  }
 
   /* 鄉野奇談 */
   .countryside-story {
@@ -3862,6 +3839,7 @@ button:hover #custom-cursor::after {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 3;
+    overflow: hidden;
   }
 
 
@@ -5481,7 +5459,7 @@ button:hover #custom-cursor::after {
           width: 300px;
           background: transparent;
           margin-bottom: 20px;
-    
+
           .bubble-text {
             background: rgba(0, 0, 0, 0.8);
             border-radius: 20px;
@@ -5489,9 +5467,10 @@ button:hover #custom-cursor::after {
             color: #fff;
             line-height: 1.6;
             font-size: 14px;
-    
+
             p {
               margin: 10px 0;
+
               strong {
                 color: #b9a4f5;
               }
@@ -5499,6 +5478,7 @@ button:hover #custom-cursor::after {
 
           }
         }
+
         /* 人物圖片 */
         .person-image {
           position: absolute;
