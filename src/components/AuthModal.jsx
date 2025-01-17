@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../style.scss";
 import { signInWithPopup } from "firebase/auth";
-import { auth, provide } from "../config/firebase"; 
+import { auth, provide } from "../config/firebase";
 const AuthModal = ({ isOpen, onClose, initialView }) => {
   const [currentView, setCurrentView] = useState(initialView);
   const [formData, setFormData] = useState({
@@ -10,7 +10,7 @@ const AuthModal = ({ isOpen, onClose, initialView }) => {
     email: "",
     password: "",
   });
-  
+
   // 添加 Google 登入功能
   const handleGoogleLogin = async () => {
     try {
@@ -52,7 +52,7 @@ const AuthModal = ({ isOpen, onClose, initialView }) => {
       alert("請輸入帳號和密碼！");
       return;
     }
-  
+
     const storedData = JSON.parse(localStorage.getItem("registeredData"));
     if (
       storedData &&
@@ -120,14 +120,18 @@ const AuthModal = ({ isOpen, onClose, initialView }) => {
               <h1>Mystic Markers</h1>
             </div>
             <div className="form-container">
+              <label htmlFor="email">帳號</label>
               <input
+                id="email"
                 type="email"
                 placeholder="請輸入Email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
               />
+              <label htmlFor="password">密碼</label>
               <input
+                id="password"
                 type="password"
                 placeholder="請輸入密碼"
                 name="password"
@@ -140,11 +144,15 @@ const AuthModal = ({ isOpen, onClose, initialView }) => {
                 登入
               </button>
               {/* Google 登入區域 */}
-              <button className="login-btn" onClick={handleGoogleLogin}>
+              <button className="login-btn google" onClick={handleGoogleLogin}>
                 使用 Google 帳號登入
               </button>
-              <p onClick={() => setCurrentView("register")}>前往註冊</p>
-              <p onClick={() => setCurrentView("forgotPassword")}>忘記密碼</p>
+              <div className="register-forgot-container">
+                <p onClick={() => setCurrentView("register")}>前往註冊</p>
+                <span>/</span>
+                <p onClick={() => setCurrentView("forgotPassword")}>忘記密碼</p>
+              </div>
+
             </div>
           </>
         )}
@@ -189,6 +197,13 @@ const AuthModal = ({ isOpen, onClose, initialView }) => {
               />
               <button className="register-btn" onClick={handleRegister}>
                 註冊
+              </button>
+              {/* 返回登入按鈕 */}
+              <button
+                className="login-btn"
+                onClick={() => setCurrentView("login")}
+              >
+                返回登入
               </button>
             </div>
           </>
