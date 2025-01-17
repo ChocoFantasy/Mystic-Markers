@@ -336,7 +336,7 @@ const App = () => {
                       </li>
                     </ul>
                     <small>
-                      &copy; 2024 Mystic Markers. All Rights Reserved.  本網站僅供學生練習用作品，無任何商業營利用途。
+                      &copy; 2024 Mystic Markers. All Rights Reserved.  此網站設計學生練習作品，無任何商業營利用途。
                     </small>
                   </div>
                   <img src="images/LOGO_footer.svg" alt="神秘座標" />

@@ -1,6 +1,6 @@
 @use "reset";
-@use "variables"as *;
-@use "function"as *;
+@use "variables" as *;
+@use "function" as *;
 @use "keyframes";
 
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Handjet:wght@100..900&family=Mina&family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zen+Maru+Gothic&display=swap");
@@ -3060,8 +3060,10 @@ a {
   @media (max-width:1200px) {
     .banner {
       height: 100vh;
-      .fog-area-p, .fog-masked-g{
-        display:none;
+
+      .fog-area-p,
+      .fog-masked-g {
+        display: none;
       }
 
     }
@@ -3075,7 +3077,8 @@ a {
 
       #intro1 {
         margin-top: 60px;
-        .intro1fog-G{
+
+        .intro1fog-G {
           display: none;
         }
 
@@ -3119,8 +3122,9 @@ a {
             }
           }
         }
-        .intro3fog-P{
-          display:none;
+
+        .intro3fog-P {
+          display: none;
         }
       }
 
@@ -3248,7 +3252,8 @@ a {
 
     .intro #intro2 {
       margin: 0;
-      .paper{
+
+      .paper {
         display: none;
       }
     }
@@ -3290,11 +3295,13 @@ a {
         #Exorcism,
         #Creeps,
         #Ruins {
-        padding-bottom: 0;
+          padding-bottom: 0;
           height: 100px;
           gap: 10px;
+
           .image-link {
             height: 100%;
+
             .text-link {
               -webkit-writing-mode: horizontal-tb;
               writing-mode: horizontal-tb;
@@ -4988,7 +4995,6 @@ button:hover #custom-cursor::after {
   .interaction-bar {
     display: flex;
     align-items: center;
-
     /* 垂直居中對齊 */
     justify-content: flex-start;
     /* 從左到右排列 */
@@ -5024,7 +5030,19 @@ button:hover #custom-cursor::after {
         color: #ffffff;
         white-space: nowrap;
         /* 防止文字換行 */
+        line-height: 20px;
       }
+
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #ffffff;
+        gap: 0.5rem;
+        /* 圖標與文字間距 */
+
+      }
+
     }
 
     .share-button {
@@ -5036,46 +5054,7 @@ button:hover #custom-cursor::after {
         width: 24px;
         height: 24px;
       }
-
-    justify-content: flex-start;
-    gap: 1rem;
-    /* 控制每個圖標之間的間距 */
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 1rem;
-
-    .interaction-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      /* 控制圖標和文字的間距 */
     }
-
-    .interaction-item a {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: #ffffff;
-      gap: 0.5rem;
-      /* 圖標與文字間距 */
-
-    }
-
-    .interaction-item img {
-      width: 24px;
-      /* 圖標大小 */
-      height: 24px;
-      /* 圖標大小 */
-    }
-
-    .interaction-item span {
-      font-size: 16px;
-      /* 調整文字大小 */
-      color: #ffffff;
-      line-height: 20px;
-      /* 與圖標垂直對齊 */
-    }
-
   }
 
   .comments-section {
@@ -5249,7 +5228,7 @@ button:hover #custom-cursor::after {
       input {
         flex: 1;
         /* 占滿剩餘空間 */
-        padding: 0.5rem;
+        padding: 1rem;
         font-size: 16px;
         border: none;
         /* 移除邊框 */
@@ -5271,7 +5250,7 @@ button:hover #custom-cursor::after {
         color: #000;
         /* 按鈕文字顏色 */
         border: none;
-        padding: 0 1.5rem;
+        padding: 0 2rem;
         /* 左右填充 */
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;
@@ -5284,67 +5263,65 @@ button:hover #custom-cursor::after {
     }
   }
 
-}
+  // .article-view RWD
+  @media (max-width: 768px) {
+    .article-view {
+      padding: 1rem;
 
-// .article-view RWD
-@media (max-width: 768px) {
-  .article-view {
-    padding: 1rem;
+      .article-header {
+        flex-direction: column;
+        gap: 1rem;
 
-    .article-header {
+        .article-title {
+          font-size: 1.5rem;
+        }
+      }
+
+      .interaction-bar {
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .share-button {
+          width: 100%;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+
+  // RWD 
+
+  @media (max-width: 991px) {
+    .forum-layout {
       flex-direction: column;
-      gap: 1rem;
-
-      .article-title {
-        font-size: 1.5rem;
-      }
     }
 
-    .interaction-bar {
-      flex-wrap: wrap;
-      gap: 1rem;
+    .sidebar,
+    .main-content {
+      width: 100%;
+    }
 
-      .share-button {
-        width: 100%;
-        margin-top: 1rem;
-      }
+    .search-bar {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .article-card {
+      flex-direction: column;
+    }
+
+    .article-image {
+      width: 100%;
+      height: auto;
     }
   }
 }
-
-
-// RWD 
-
-@media (max-width: 991px) {
-  .forum-layout {
-    flex-direction: column;
-  }
-
-  .sidebar,
-  .main-content {
-    width: 100%;
-  }
-
-  .search-bar {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .article-card {
-    flex-direction: column;
-  }
-
-  .article-image {
-    width: 100%;
-    height: auto;
-  }
-}
-
 
 /* 常見問題 */
 
 .contact-body {
-  padding-top: 180px;
+  padding-top: 30px;
   position: relative;
   z-index: 0;
   background: url("images/Contact/Noise3.png") repeat;
@@ -5352,24 +5329,23 @@ button:hover #custom-cursor::after {
 
   .faq-contact {
     padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    text-align: center;
+    position: relative;
+    /* 確保可以使用絕對定位 */
+    z-index: 2;
+    /* 層級設置，確保在 footer 上層 */
 
-    .faq-section,
-    .contact-section {
-      max-width: 1200px;
-      margin: 0 auto 50px;
-      text-align: center;
-      position: relative;
-      /* 確保可以使用絕對定位 */
-      z-index: 2;
-      /* 層級設置，確保在 footer 上層 */
 
-      h1 {
-        font-size: 2rem;
-        font-weight: 600;
-        margin-bottom: 20px;
-        color: $primary-green;
-      }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: $primary-green;
     }
+
 
     /* FAQ Section */
     .faq-section {
@@ -5448,7 +5424,7 @@ button:hover #custom-cursor::after {
       justify-content: space-between;
 
       .contact-content {
-        display: flex;
+          display: flex;
         justify-content: space-between;
         align-items: flex-start;
         gap: 10px;
@@ -5459,18 +5435,23 @@ button:hover #custom-cursor::after {
           display: flex; // 讓圖片與文字並排
 
           .bubble-text {
-            text-align: left;     // 將文字水平方向居中
-            color: #FFFFFF; // 白色文字
-            font-size: 13px;
-            margin: -60px auto;         // 自動設定左右外距，讓文字居中
-            padding: 0 20px;        // 增加左右內邊距，讓內容離邊緣更遠
-
-
+            position: absolute; /* 將文字絕對定位 */
+            top: 50%; /* 垂直居中 */
+            left: 50%; /* 水平居中 */
+            transform: translate(-50%, -50%); /* 修正定位偏移 */
+            border-radius: 20px;
+            padding: 10px;
+            color: #ffffff;
+            font-size: 14px;
+            line-height: 1;
+            text-align: left;
+            width: 80%; /* 控制文字區域寬度 */
+    
             strong {
-              font-size: 16px;
-              text-align: left; // 靠左對齊
-              display: block; // 讓 strong 變成區塊元素
-              color: #A3E635; // 綠色關鍵字
+              color: #A3E635;
+              font-size: 18px;
+              display: block;
+              margin-bottom: 10px;
             }
           }
         }
@@ -5492,45 +5473,59 @@ button:hover #custom-cursor::after {
         }
 
         .contact-form {
+          padding-top: 30px;
           flex: 1;
-          padding: 0 30px;
-          max-width: 40%;
-          justify-content: center;
-          align-items: center;
-
+          max-width: 550px;
+    
           p {
-            margin-bottom: 5px;
-            color: white;
+            color: #ffffff;
+            font-size: 14px;
+            margin-bottom: 8px;
           }
-
+    
           input,
           textarea {
             width: 100%;
-            margin-bottom: 10px;
-            padding: 10px 0;
-            background-color: $deep;
-            color: $light;
-            border: 1px solid $primary-green;
-            border-radius: 20px;
-          }
-
-          button {
-            width: 100%;
-            margin-top: 40px;
-            padding: 10px;
-            background-color: $primary-green;
-            color: $deep;
+            background: #E8E8E8;
             border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-
-            &:hover {
-              background-color: $light;
-              color: $deep;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 15px;
+            font-size: 14px;
+    
+            &::placeholder {
+              color: #666666;
             }
           }
+    
+          textarea {
+            height: 150px;
+            resize: none;
+          }
+    
+          button {
+            width: 100%;
+            background: #9747FF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+    
+            &:hover {
+              background: #8035FF;
+            }
+          }
+    
+          .form-note {
+            color: #666666;
+            font-size: 12px;
+            margin-top: 10px;
+          }
         }
+        
       }
     }
   }
@@ -5623,7 +5618,5 @@ footer {
   @media (max-width:600px) {
     display: none;
   }
-
-} 
 
 }
