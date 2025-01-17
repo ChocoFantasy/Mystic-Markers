@@ -41,30 +41,22 @@ const ArticleList = ({ articles, onFavorite, onDelete }) => {
     );
   }, [articles]);
 
-  // 獲取留言數方法
-  const getCommentCountFromArticleView = (articleId) => {
-    const articleInView = articles.find((a) => a.id === articleId);
-    if (articleInView && articleInView.commentCount) {
-      return articleInView.commentCount;
-    }
-    return 0; // 預設值
-  };
 
   const handleInteractionClick = (articleIndex, interactionIndex) => {
     setInteractions((prevInteractions) =>
       prevInteractions.map((articleInteractions, idx) =>
         idx === articleIndex
           ? articleInteractions.map((interaction, i) =>
-            i === interactionIndex
-              ? {
-                ...interaction,
-                isLiked: !interaction.isLiked, // 切換按讚狀態
-                count: interaction.isLiked
-                  ? interaction.count - 1 // 若已按讚，數字減 1
-                  : interaction.count + 1, // 若未按讚，數字加 1
-              }
-              : interaction
-          )
+              i === interactionIndex
+                ? {
+                    ...interaction,
+                    isLiked: !interaction.isLiked, // 切換按讚狀態
+                    count: interaction.isLiked
+                      ? interaction.count - 1 // 若已按讚，數字減 1
+                      : interaction.count + 1, // 若未按讚，數字加 1
+                  }
+                : interaction
+            )
           : articleInteractions
       )
     );
@@ -96,26 +88,28 @@ const ArticleList = ({ articles, onFavorite, onDelete }) => {
             <div className="article-header">
               <div className="author-info">
                 <img
-                  src={article.authorAvatar}
+                  src={article.authorAvatar || "images/Forum/default-avatar.svg"}
                   alt="Author Avatar"
                   className="author-avatar"
                 />
                 <span className="author-name">{article.authorName}</span>
-
               </div>
-              {/* 簡短 PO 文時間 */}
-              <p className="article-date">
-                {getRelativeTime(article.createdAt)}
-              </p>
-              {/* 僅顯示用戶新增文章的刪除按鈕 */}
-              {article.isUserCreated && (
-                <button
-                  className="delete-button"
-                  onClick={() => onDelete(article.id)}
-                >
-                  刪除
-                </button>
-              )}
+              <div className="delete-date-wrapper">
+                  {/* 僅顯示用戶新增文章的刪除按鈕 */}
+                  {article.isUserCreated && (
+                  <button
+                    className="delete-button"
+                    onClick={() => onDelete(article.id)}
+                  >
+                    刪除
+                  </button>
+                )}
+                {/* 簡短 PO 文時間 */}
+                <p className="article-date">
+                  {getRelativeTime(article.createdAt)}
+                </p>
+              
+              </div>
             </div>
             {/* 文章內容 */}
             <div className="article-Graphics-text">
@@ -175,7 +169,6 @@ const ArticleList = ({ articles, onFavorite, onDelete }) => {
                       </a>
                       <span>{article.isFavorite ? "已收藏" : "收藏"}</span>
                     </div>
-
                   </div>
                 </div>
               </Link>

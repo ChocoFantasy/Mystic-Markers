@@ -16,14 +16,22 @@ const PostModal = ({ isOpen, onClose, onNewArticle, userName }) => {
   const handleAvatarUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setAuthorAvatar(URL.createObjectURL(file));
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setAuthorAvatar(reader.result); // 保存 Base64 字符串
+      };
+      reader.readAsDataURL(file);
     }
   };
 
   const handleArticleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setArticleImage(URL.createObjectURL(file));
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setArticleImage(reader.result); // 保存 Base64 字符串
+      };
+      reader.readAsDataURL(file);
     }
   };
 
@@ -40,6 +48,7 @@ const PostModal = ({ isOpen, onClose, onNewArticle, userName }) => {
       preview: content.substring(0, 100), // 預覽文字
       isFavorite: false,
       articleImage: articleImage || "images/Forum/default-image.svg",
+      createdAt: new Date().toISOString(), // 自動生成當前時間
       interactions: [
         {
           icon: "images/Forum/Forum_ghost.svg",

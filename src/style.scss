@@ -4624,29 +4624,37 @@ button:hover #custom-cursor::after {
                     width: 32px;
                     height: 32px;
                     border-radius: 50%;
+                  } 
+                }
+       
+                
+                
+                .delete-date-wrapper {
+                  display: flex;
+                  align-items: center; /* 確保刪除按鈕與日期垂直居中 */
+                  gap: 10px; /* 控制按鈕和日期之間的距離 */
+              
+                  .delete-button {
+                    background-color: $grey;
+                    border: none;
+                    color: white;
+                    font-size: 14px;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+              
+                    &:hover {
+                      background-color: #a3e635;
+                    }
                   }
-                }
-
-                .article-date {
-                  font-size: 14px;
-                  color: $grey;
-                  margin-top: 0.5rem;
-                }
-
-                .delete-button {
-                  background-color: #808080;
-                  color: white;
-                  border: none;
-                  border-radius: 4px;
-                  padding: 5px 10px;
-                  cursor: pointer;
-                  font-size: 14px;
-
-                  &:hover {
-                    background-color: #808080;
+                  .article-date {
+                    font-size: 14px;
+                    color: #999;
+                    text-align: right;
                   }
-                }
 
+                }
                 .article-header .delete-button {
                   display: inline-block;
                 }
@@ -5454,39 +5462,53 @@ button:hover #custom-cursor::after {
       justify-content: space-between;
 
       .contact-content {
-          display: flex;
+        display: flex;
         justify-content: space-between;
         align-items: flex-start;
         gap: 10px;
 
         .contact-bubble {
-          border-radius: 20px; // 圓角
-          padding: 50px;
-          display: flex; // 讓圖片與文字並排
-
+          position: relative;
+          z-index: 1;
+          width: 380px;
+          height: auto;
+          background-color: #6c5387; /* 泡泡背景色 */
+          border-radius: 20px;
+          padding: 30px;
+          color: white;
+          line-height: 1.8;
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+        
           .bubble-text {
-            position: absolute; /* 將文字絕對定位 */
-            top: 50%; /* 垂直居中 */
-            left: 50%; /* 水平居中 */
-            transform: translate(-50%, -50%); /* 修正定位偏移 */
-            border-radius: 20px;
-            padding: 10px;
-            color: #ffffff;
-            font-size: 14px;
-            line-height: 1;
-            text-align: left;
-            width: 80%; /* 控制文字區域寬度 */
-    
+            position: relative;
+            font-size: 16px;
+            top: 0; /* 移除多餘的位移，確保文字正常對齊 */
+            z-index: 2;
+        
             strong {
-              color: #A3E635;
+              color: #a3e635;
               font-size: 18px;
-              display: block;
               margin-bottom: 10px;
+              display: block;
+            }
+        
+            p {
+              margin: 10px 0;
             }
           }
+        
+          .person-image {
+            position: absolute;
+            bottom: -50px; /* 確保圖片位於泡泡框底部 */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px; /* 確保圖片大小符合比例 */
+            z-index: 0;
+          }
         }
+        
 
-
+        
         /* 人物圖片 */
         .person-image {
           position: absolute;
@@ -5536,16 +5558,17 @@ button:hover #custom-cursor::after {
           button {
             width: 100%;
             background: #9747FF;
-            color: white;
+            color: $primary-green;
+            font-size: 600;
             border: none;
             border-radius: 8px;
             padding: 12px;
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s;
-    
+            
             &:hover {
-              background: #8035FF;
+              background: #a47aec;
             }
           }
     
