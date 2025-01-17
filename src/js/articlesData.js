@@ -203,7 +203,7 @@ const articles = [
     title: "深夜在山區遇見「沒有臉」的登山者",
     preview: "和朋友去宜蘭的山區露營，結果遇到非常詭異的事。那天晚上十點左右，我去帳篷外走動，正準備回去時看到一個穿著藍色風衣的人正往我們的營地走來。因為太晚了，我覺得有點奇怪，於是多看了幾眼。他走到靠近篝火的地方，我才發現他的臉……是空的！就像一團模糊的影子，完全沒有五官。當我想要喊朋友的時候，他已經轉身離開，走向樹林深處了。我當場嚇到全身僵住，後來回帳篷跟朋友講，他們也覺得不可思議。有人知道這是什麼靈異現象嗎？有經驗的大神請指教！",
     isFavorite: false, // 是否收藏
-    articleImage: "images/Forum/Shadowwatch-Articles.png",
+    articleImage: "images/Forum/Night-Walker-Articles.png",
     interactions: [
       {
         icon: "images/Forum/Forum_ghost.svg",
