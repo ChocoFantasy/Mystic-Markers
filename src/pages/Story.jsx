@@ -251,7 +251,7 @@ export default function Story() {
                           多年後，我們回到母校重聚，卻驚愕地在走廊盡頭的公告板上，見到當年那張泛黃的照片，依舊貼在角落，而照片中的我們，眼神變得空洞，彷彿靈魂已經隨著某個夜晚的記憶一同消失。我們每個人都知道，無論時光如何流逝，綺婷依舊在我們身後，冷冷地注視著，等待著那遲到的悔意。
                         </p>
                       </div>
-                      <a href="Forum/article/1">繼續閱讀</a>
+                      <Link to="/Forum/article/1">繼續閱讀</Link>
                     </div>
                     <div
                       ref={(el) => slideTopRefs.current.push(el)}
