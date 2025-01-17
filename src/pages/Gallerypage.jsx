@@ -5,6 +5,7 @@ import { imageConfig } from "../components/imageConfig";
 import StarRating from "../components/StarRating";
 import CommentForm from "../components/CommentForm";
 import CommentList from "../components/CommentList";
+import { Link } from "react-router-dom";
 import { presetComments, generateComments } from "../components/presetComments";
 import "../style.scss";
 
@@ -140,8 +141,11 @@ function GalleryPage() {
 
 
 
-  return (
+  return (  
+   
     <div className="gallery-page">
+       <Link to="/Map" ><div className="backto-map"><img src="images/Mapgallery/go-back.svg" alt="回到地圖按鈕" /><span>回到地圖</span></div></Link>
+       <div className="page-container">
       <div className="location-info">
         {images.length > 0 && (
           <div className="cover-image">
@@ -191,6 +195,7 @@ function GalleryPage() {
           </Masonry>
         </ResponsiveMasonry>
       </div>
+    </div>
     </div>
   );
 }
