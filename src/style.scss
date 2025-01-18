@@ -134,62 +134,72 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    /* 半透明深色背景 */
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
   }
 
+  /* 容器來包住 modal 和關閉按鈕 */
+  .modal-container {
+    position: relative;
+    width: 400px;
+  }
+
   /* 主視窗 */
   .modal {
     background: #2a2a2a;
-    /* 深灰色背景 */
-    border-radius: 12px;
-    width: 350px;
-    padding: 60px 80px;
+    border-radius: 20px;
+    width: 300px;
+    padding: 30px 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: relative;
     text-align: center;
-    font-family: "Arial", sans-serif;
   }
 
   /* 關閉按鈕 (叉叉) */
   .close-btn {
     position: absolute;
-    top: 0px;
-    right: -220px;
-    background: transparent;
+    top: 20px;
+    right: 20px;
+    background: rgba(42, 42, 42, 0.8);
     border: none;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: bold;
     color: $primary-green;
     cursor: pointer;
-    transition: color 0.3s ease;
-  }
+    transition: all 0.3s ease;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 1001;
 
-  .close-btn:hover {
-    color: #b595ff;
-    /* 懸停時變紫色 */
+    &:hover {
+      color: $primary-purple;
+      background: rgba(42, 42, 42, 1);
+    }
   }
 
   .title-login {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 20px;
 
-    /* LOGO 圖片  */
     .login-LOGO {
       width: 25%;
+      height: auto;
+      margin-bottom: 10px;
     }
 
-    /* 標題 */
     h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
+      font-size: 20px;
       color: $primary-green;
-      /* 螢光綠主色 */
+      margin: 0;
     }
   }
 
@@ -197,113 +207,123 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-  
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+
     label {
-      align-self: flex-start; // 靠左對齊
-      color: #fff;
-      margin-bottom: 2px; // 與輸入框的間距縮小
+      align-self: flex-start;
+      color: $light;
+      margin-bottom: 5px;
       font-size: 14px;
-      width: calc(100% - 250px); // 與 input 的 padding 左右一致，確保對齊
-      max-width: 280px; // 與 input 的最大寬度一致
-      padding-left: 8px; // 與輸入框的內邊距對齊
-      box-sizing: border-box; // 包括 padding
     }
-  
+
     input {
       width: 100%;
-      max-width: 280px;
-      padding: 8px;
-      margin-bottom: 2px; // 輸入框之間的間距
-      border: 1px solid $grey;
-      border-radius: 5px;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      background: $light;
       font-size: 14px;
       box-sizing: border-box;
+
+      &::placeholder {
+        color: #999;
+      }
     }
-  
-    .login-btn {
+
+    /* 所有按鈕的基本樣式 */
+    .login-btn,
+    .register-btn {
       width: 100%;
       max-width: 280px;
+      /* 限制最大寬度 */
+      height: 40px;
+      /* 固定高度 */
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      /* 減小字體大小 */
+      padding: 0;
+      /* 移除內邊距 */
+      margin: 8px 0;
+      /* 統一外邊距 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    /* 登入按鈕特定樣式 */
+    .login-btn {
       background-color: $primary-green;
       color: $deep;
-      font-size: 14px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+
       &:hover {
-        background-color: #66bb6d;
+        opacity: 0.9;
+      }
+
+      &.google {
+        background-color: $grey;
       }
     }
-  
-    .login-btn.google {
-      width: 100%;
-      max-width: 280px;
-      background-color: $grey; // 灰色背景
+
+    /* 註冊按鈕特定樣式 */
+    .register-btn {
+      background-color: $primary-purple;
       color: $deep;
-      font-size: 14px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-  
+
       &:hover {
-        background-color: #888787;
+        opacity: 0.9;
       }
     }
-  
-    .register-forgot-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 14px;
+  }
+
+  .register-forgot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    gap: 5px;
+
+    p {
       color: $light;
-  
-      a {
-        margin: 0 5px;
-        text-decoration: none; // 無下劃線
+      font-size: 14px;
+      cursor: pointer;
+      margin: 0;
+
+      &:hover {
         color: $primary-green;
-  
-        &:hover {
-          text-decoration: underline; // hover 時顯示下劃線
-        }
-      }
-  
-      span {
-        margin: 0 5px; // 斜線的間距
-        color: #fff;
       }
     }
+
+    span {
+      color: $light;
+    }
   }
-  
-  
-  /* 註冊按鈕 */
-  .register-btn {
-    width: 80%;
-    background-color: #b595ff;
+
+  /* 成功訊息樣式 */
+  .success-message {
     color: $primary-green;
-  }
-
-  .register-btn:hover {
-    background-color: #9c7fdd;
-  }
-
-  /* 訊息文字 */
-  p {
-    font-size: 14px;
-    color: #ffffff;
-    /* 白色文字 */
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-
-  p:hover {
-    color: #b595ff;
-    /* 紫色 */
-  }
-
-  /* 密碼顯示文字 */
-  .password-display {
     font-size: 16px;
-    color: $primary-green;
-    font-weight: bold;
+    margin: 20px 0;
+  }
+
+  /* 錯誤提示樣式 */
+  .error-message {
+    color: $primary-purple;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  /* 電子郵件提示區域 */
+  .email-hint {
+    font-size: 12px;
+    color: $grey;
+    margin-top: 10px;
+    text-align: center;
   }
 
   .welcome-container {
@@ -580,7 +600,6 @@ a {
   }
 }
 
-/* 回到頂部 */
 /* 回到頂部 */
 .totop {
   position: fixed;
@@ -3806,47 +3825,61 @@ button:hover #custom-cursor::after {
   }
 
   .story a:hover {
-    filter: brightness(1.5);
+    filter: brightness(1.2);
   }
 
-  .share-icon {
-    list-style: none; // 移除列表樣式
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column; // 垂直排列
-    align-items: center; // 居中
-    justify-content: center;
-    overflow: hidden; // 隱藏滾動
-    max-height: 100%; // 限制最大高度
-  }
+  .share-link {
+    max-width: 100%;
+    overflow: hidden;
 
-  .share-icon li {
-    margin: 0; // 確保沒有額外間距
-    padding: 0;
+    figure img {
+      max-height: 400px;
+      width: auto;
+      display: block;
+      margin: 0 auto;
+    }
 
-  }
+    .share-icon {
+      list-style: none; // 移除列表樣式
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column; // 垂直排列
+      align-items: center; // 居中
+      justify-content: center;
+      overflow: hidden; // 隱藏滾動
+      max-height: 100%; // 限制最大高度
+    }
 
-  .share-icon img {
-    display: block; // 強制圖片成為塊級元素
-    width: 100%; // 確保圖片寬度不超出
-    height: auto; // 自適應高度
-  }
+    .share-icon li {
+      margin: 0; // 確保沒有額外間距
+      padding: 4px;
 
-  .share-icon a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; // 保持和 li 一致
-    height: 100%;
-    text-decoration: none;
-    overflow: hidden; // 防止內容溢出
-    transition: transform 0.2s ease; // 平滑過渡效果
-  }
 
-  .share-icon a:hover {
-    filter: brightness(1.5);
-    transform: none; // 禁止放大
+    }
+
+    .share-icon img {
+      display: block; // 強制圖片成為塊級元素
+      width: 100%; // 確保圖片寬度不超出
+      height: auto; // 自適應高度
+    }
+
+    .share-icon a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%; // 保持和 li 一致
+      height: 100%;
+      text-decoration: none;
+      overflow: hidden; // 防止內容溢出
+      transition: transform 0.2s ease; // 平滑過渡效果
+    }
+
+    .share-icon a:hover {
+      filter: brightness(1.5);
+      transform: none; // 禁止放大
+    }
+
   }
 
   /* 鄉野奇談 */
@@ -4754,6 +4787,7 @@ button:hover #custom-cursor::after {
         }
 
         .post-modal {
+
           position: fixed;
           top: 50%;
           left: 50%;
@@ -4764,6 +4798,7 @@ button:hover #custom-cursor::after {
           background-color: #1a1a1a; // 深色背景
           border-radius: 8px;
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+
           z-index: 990;
           overflow: hidden; // 防止內容溢出彈窗邊界
 

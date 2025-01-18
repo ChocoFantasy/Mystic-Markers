@@ -105,10 +105,12 @@ const AuthModal = ({ isOpen, onClose, initialView }) => {
 
   return (
     <div className="modal-overlay">
+       <div className="modal-container">
+      <button className="close-btn" onClick={onClose}>
+        &times; {/* 叉叉按鈕 */}
+      </button>
       <div className="modal" ref={modalRef}>
-        <button className="close-btn" onClick={onClose}>
-          &times; {/* 叉叉按鈕 */}
-        </button>
+
         {currentView === "login" && (
           <>
             <div className="title-login">
@@ -167,6 +169,7 @@ const AuthModal = ({ isOpen, onClose, initialView }) => {
               <h1>Mystic Markers</h1>
             </div>
             <div className="form-container">
+              <label htmlFor="text">姓名</label>
               <input
                 type="text"
                 placeholder="請輸入姓名"
@@ -174,6 +177,7 @@ const AuthModal = ({ isOpen, onClose, initialView }) => {
                 value={formData.name}
                 onChange={handleChange}
               />
+              <label htmlFor="text">電話</label>
               <input
                 type="text"
                 placeholder="請輸入電話"
@@ -181,6 +185,7 @@ const AuthModal = ({ isOpen, onClose, initialView }) => {
                 value={formData.phone}
                 onChange={handleChange}
               />
+              <label htmlFor="email">帳號</label>
               <input
                 type="email"
                 placeholder="請輸入帳號"
@@ -188,6 +193,7 @@ const AuthModal = ({ isOpen, onClose, initialView }) => {
                 value={formData.email}
                 onChange={handleChange}
               />
+              <label htmlFor="password">密碼</label>
               <input
                 type="password"
                 placeholder="請輸入密碼"
@@ -255,6 +261,7 @@ const AuthModal = ({ isOpen, onClose, initialView }) => {
           </>
         )}
       </div>
+    </div>
     </div>
   );
 };
