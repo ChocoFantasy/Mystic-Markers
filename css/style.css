@@ -341,8 +341,8 @@ a {
 }
 .Topbar .close-btn {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  left: 295px;
   background: rgba(42, 42, 42, 0.8);
   border: none;
   font-size: 24px;
