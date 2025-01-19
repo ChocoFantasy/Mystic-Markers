@@ -5411,7 +5411,7 @@ button:hover #custom-cursor::after {
 /* 常見問題 */
 
 .contact-body {
-  padding-top: 30px;
+  padding-top: 180px;
   position: relative;
   z-index: 0;
   background: url("images/noise.jpg") repeat;
@@ -5419,25 +5419,25 @@ button:hover #custom-cursor::after {
 
   .faq-contact {
     padding: 100px 20px;
-    max-width: 1200px;
-    margin: 0 auto 50px;
-    text-align: center;
-    position: relative;
-    /* 確保可以使用絕對定位 */
-    z-index: 2;
-    /* 層級設置，確保在 footer 上層 */
 
+    .faq-section,
+    .contact-section {
+      max-width: 1200px;
+      margin: 0 auto 50px;
+      text-align: center;
+      position: relative;
+      /* 確保可以使用絕對定位 */
+      z-index: 2;
+      /* 層級設置，確保在 footer 上層 */
 
-
-    h1 {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 20px;
-      color: $primary-green;
+      h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: $primary-green;
+      }
     }
 
-
-    /* FAQ Section */
     .faq-section {
       .faq-buttons {
         display: flex;
@@ -5520,29 +5520,26 @@ button:hover #custom-cursor::after {
         gap: 10px;
 
         .contact-bubble {
-          position: relative;
-          width: 300px;
-          background: transparent;
-          margin-bottom: 20px;
+          border-radius: 20px; // 圓角
+          padding: 60px;
+          display: flex; // 讓圖片與文字並排
 
           .bubble-text {
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 20px;
-            padding: 20px;
-            color: #fff;
-            line-height: 1.6;
-            font-size: 14px;
+            text-align: left;     // 將文字水平方向居中
+            color: #FFFFFF;     // 白色文字
+            font-size: 13px;
+            margin: -60px auto;   // 自動設定左右外距，讓文字居中
+            padding: 0 20px;      // 增加左右內邊距，讓內容離邊緣更遠
 
-            p {
-              margin: 10px 0;
-
-              strong {
-                color: #b9a4f5;
-              }
+            strong {
+              font-size: 16px;
+              text-align: left; // 靠左對齊
+              display: block; // 讓 strong 變成區塊元素
+              color: #A3E635; // 綠色關鍵字
             }
-
           }
         }
+
 
         /* 人物圖片 */
         .person-image {
@@ -5560,64 +5557,50 @@ button:hover #custom-cursor::after {
         }
 
         .contact-form {
-          padding-top: 30px;
           flex: 1;
-          max-width: 550px;
+          padding: 0 30px;
+          max-width: 40%;
+          justify-content: center;
+          align-items: center;
 
           p {
-            color: #ffffff;
-            font-size: 14px;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
+            color: white;
           }
 
           input,
           textarea {
             width: 100%;
-            background: #E8E8E8;
-            border: none;
-            border-radius: 8px;
-            padding: 12px;
-            margin-bottom: 15px;
-            font-size: 14px;
-
-            &::placeholder {
-              color: #666666;
-            }
-          }
-
-          textarea {
-            height: 150px;
-            resize: none;
+            margin-bottom: 10px;
+            padding: 10px 0;
+            background-color: $deep;
+            color: $light;
+            border: 1px solid $primary-green;
+            border-radius: 20px;
           }
 
           button {
             width: 100%;
-            background: #9747FF;
-            color: $primary-green;
-            font-size: 600;
+            margin-top: 40px;
+            padding: 10px;
+            background-color: $primary-green;
+            color: $deep;
             border: none;
-            border-radius: 8px;
-            padding: 12px;
-            font-size: 16px;
+            border-radius: 20px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
 
             &:hover {
-              background: #a47aec;
+              background-color: $light;
+              color: $deep;
             }
           }
-
-          .form-note {
-            color: #666666;
-            font-size: 12px;
-            margin-top: 10px;
-          }
         }
-
       }
     }
   }
 }
+  
 
 footer {
   position: relative;
