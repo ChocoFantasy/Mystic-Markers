@@ -83,11 +83,14 @@ const PostModal = ({ isOpen, onClose, onNewArticle, userName }) => {
 
   return (
     <div className="post-modal">
+      <div className="overlay" onClick={onClose}></div> {/* 添加的遮罩層 */}
       <div className="modal-content">
         <span className="close-btn" onClick={onClose}>
           &times;
         </span>
-        <h2>新增文章</h2>
+        <div className="header-container">
+          <h2>新增文章</h2>
+        </div>
         <div className="form-header">
           <img
             src={authorAvatar || "images/Forum/light.png"}
