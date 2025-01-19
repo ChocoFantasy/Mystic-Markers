@@ -112,23 +112,24 @@ const Contact = () => {
                 <h1>聯絡我們</h1>
                 <div className="contact-content">
                   <div className="contact-right">
+
                     <div className="contact-bubble">
-                      <img src="images/Contact/Union.svg" alt="人物圖片" />
-                      <div className="bubble-text">
-                        <p>
-                          <strong>E-mail</strong> mystiocmarkers@google.com
-                        </p>
-                        <p>客服信箱將於48小時內進行回覆，謝謝你的等待。</p>
-                        <br />
-                        <p>
-                          <strong>電話專線</strong> 02-412-8869
-                        </p>
-                        <p>如果需要快速解決方案，請查看我們的常見問題。</p>
-                        <br />
-                        <p>
-                          <strong>服務時間</strong> 週一至週日 09:30 - 18:30
-                        </p>
-                      </div>
+                    <div className="contact-info">
+                      <p>
+                        <strong>E-mail</strong> mystiocmarkers@google.com
+                      </p>
+                      <p>客服信箱將於48小時內進行回覆，謝謝你的等待。</p>
+                      <br />
+                      <p>
+                        <strong>電話專線</strong> 02-412-8869
+                      </p>
+                      <p>如果需要快速解決方案，請查看我們的常見問題。</p>
+                      <br />
+                      <p>
+                        <strong>服務時間</strong> 週一至週日 09:30 - 18:30
+                      </p>
+                    </div>
+                      <img src="images/Contact/Union.svg" alt="泡泡圖案" />
                     </div>
                     <img
                       className="person-image"

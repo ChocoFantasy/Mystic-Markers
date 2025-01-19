@@ -5502,7 +5502,7 @@ button:hover #custom-cursor::after {
     /* 聯絡我們 */
     .contact-section {
       position: relative;
-      margin-top: 100px;
+      margin-top: 60px;
       bottom: 0%;
       padding: 50px 15px;
       overflow: visible;
@@ -5516,83 +5516,159 @@ button:hover #custom-cursor::after {
       .contact-content {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
-        gap: 10px;
+        gap: 20px;
 
-        .contact-bubble {
-          border-radius: 20px; // 圓角
-          padding: 60px;
-          display: flex; // 讓圖片與文字並排
+        .contact-right {
+          display: flex;
+          flex: 1;
+          margin-right: 20px;
+          /* 增加與表單的間距，避免擠壓 */
+          flex-direction: column;
+          /* 垂直排列 */
+          align-items: center;
+          /* 置中內容 */
 
-          .bubble-text {
-            text-align: left;     // 將文字水平方向居中
-            color: #FFFFFF;     // 白色文字
-            font-size: 13px;
-            margin: -60px auto;   // 自動設定左右外距，讓文字居中
-            padding: 0 20px;      // 增加左右內邊距，讓內容離邊緣更遠
+          .contact-bubble {
+            position: relative;
+            /* 設定為相對定位，方便內部絕對定位 */
+            left: 20%;
+            /* 距離左側 10% */
+            border-radius: 15px;
+            /* 圓角效果 */
+            width: 100%;
+            /* 根據需求調整寬度 */
+            padding: 20px;
+            margin-bottom: 20px;
+            /* 與下方元素的間距 */
 
-            strong {
-              font-size: 16px;
-              text-align: left; // 靠左對齊
-              display: block; // 讓 strong 變成區塊元素
-              color: #A3E635; // 綠色關鍵字
+            .contact-info {
+              position: absolute;
+              /* 絕對定位，壓在泡泡上 */
+              top: 15%;
+              /* 距離上方 20% */
+              left: 20%;
+              /* 距離左側 10% */
+              color: #fff;
+              /* 白色文字 */
+              font-size: 14px;
+              /* 調整文字大小 */
+              line-height: 1.5;
+              /* 行高 */
+
+              p {
+                text-align: left; // 靠左對齊
+              }
+
+              strong {
+                font-size: 18px;
+                text-align: left; // 靠左對齊
+                display: block; // 讓 strong 變成區塊元素
+                color: #A3E635; // 綠色關鍵字
+              }
             }
           }
-        }
 
 
-        /* 人物圖片 */
-        .person-image {
-          position: absolute;
-          /* 絕對定位 */
-          bottom: -80%;
-          /* 設定到 footer 下方一層 */
-          left: 0%;
-          z-index: 1;
-          /* 層級設置低於 footer */
-          width: 400px;
-          /* 圖片大小 */
-          opacity: 0.9;
+
+          /* 人物圖片 */
+          .person-image {
+            position: absolute;
+            /* 絕對定位 */
+            bottom: -80%;
+            /* 設定到 footer 下方一層 */
+            left: 0%;
+            z-index: 1;
+            /* 層級設置低於 footer */
+            width: 400px;
+            /* 圖片大小 */
+            opacity: 0.9;
+
+          }
 
         }
 
         .contact-form {
           flex: 1;
-          padding: 0 30px;
-          max-width: 40%;
-          justify-content: center;
-          align-items: center;
+          padding: 20px 40px;
+          /* 增加內部填充，讓表單看起來更大氣 */
+          max-width: 50%;
+          /* 放寬表單的最大寬度 */
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          /* 靠左對齊 */
+          margin-left: 50px; /* 將整個區塊向右移動 */
+
+
 
           p {
-            margin-bottom: 5px;
-            color: white;
+            margin-bottom: 8px;
+            /* 調整文字與輸入框的距離 */
+            color: $light;
+            /* 使用綠色文字作為標籤顏色 */
+            font-size: 14px;
+            /* 增加標籤字體大小 */
+            font-weight: bold;
+            /* 突出顯示標籤文字 */
+            text-align: left;
+            /* 標籤靠左對齊 */
           }
 
           input,
           textarea {
             width: 100%;
-            margin-bottom: 10px;
-            padding: 10px 0;
-            background-color: $deep;
+            margin-bottom: 15px;
+            /* 增加輸入框與下一個元素的距離 */
+            padding: 12px 15px;
+            /* 增加內部間距 */
+            background-color: rgb(252, 251, 251, 0.7);
+            /* 增加透明背景 */
             color: $light;
-            border: 1px solid $primary-green;
-            border-radius: 20px;
+            /* 白色字體 */
+            border: none;
+            border-radius: 15px;
+            /* 圓角效果 */
+            font-size: 14px;
+            /* 增大字體大小 */
+            outline: none;
+            /* 移除聚焦時的外框 */
+            transition: all 0.3s;
+
+            &:focus {
+              background-color: rgb(252, 251, 251, 0.9);
+              /* 聚焦時背景稍微變亮 */
+              border-color: #fff;
+              /* 聚焦時邊框變白 */
+            }
+          }
+
+          textarea {
+            height: 150px;
+            /* 增加 textarea 的高度 */
           }
 
           button {
-            width: 100%;
-            margin-top: 40px;
-            padding: 10px;
-            background-color: $primary-green;
-            color: $deep;
+            width: 40%;
+            margin-top: 20px;
+            /* 調整按鈕與內容的間距 */
+            padding: 12px;
+            background-color: $primary-purple;
+            color: $primary-green;
             border: none;
-            border-radius: 20px;
+            border-radius: 10px;
+            /* 圓角效果 */
+            font-size: 16px;
+            /* 增大按鈕文字 */
+            font-weight: bold;
+            /* 突出按鈕文字 */
             cursor: pointer;
             transition: all 0.3s;
 
             &:hover {
-              background-color: $light;
-              color: $deep;
+              background-color: rgba(165, 118, 228, 0.8);
+              /* 增加透明效果 */
+              color: $primary-green;
+              /* 改變字體顏色為白色 */
             }
           }
         }
@@ -5600,7 +5676,7 @@ button:hover #custom-cursor::after {
     }
   }
 }
-  
+
 
 footer {
   position: relative;
