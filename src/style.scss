@@ -2082,6 +2082,7 @@ a {
     span {
       color: $primary-green;
       @include font-style($font-medium-16);
+      letter-spacing: 0.1rem;
     }
 
     &:hover {
@@ -2189,7 +2190,12 @@ a {
             text-align: center;
             @include font-style($font-medium-36);
             color: $light;
+            &.long-title {
+              font-size: 30px;
+              letter-spacing:0.1rem;
+            }
           }
+    
 
           .user-rating {
             display: flex;

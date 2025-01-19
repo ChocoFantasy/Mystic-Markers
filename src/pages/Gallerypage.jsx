@@ -154,7 +154,9 @@ function GalleryPage() {
         )}
         <div className="info-area">
           <div className="info-text">
-            <h1>{location}</h1>
+          <h1 className={location.length > 4 ? 'long-title' : ''}>
+    {location}
+  </h1>
             <div className="user-rating">
               <div className="average-rating">
                 <StarRating rating={averageRating} />

@@ -405,9 +405,6 @@ a {
   font-size: 14px;
   box-sizing: border-box;
 }
-.Topbar .form-container input::-moz-placeholder {
-  color: #999;
-}
 .Topbar .form-container input::placeholder {
   color: #999;
 }
@@ -606,7 +603,6 @@ a {
   align-items: flex-end;
   overflow: visible;
   z-index: 997;
-  height: -moz-fit-content;
   height: fit-content;
 }
 .nav-wrapper .navbar .hamburger {
@@ -1086,7 +1082,6 @@ a {
   flex-direction: row;
   text-align: center;
   align-items: center;
-  height: -moz-fit-content;
   height: fit-content;
   margin: 0;
 }
@@ -1098,7 +1093,6 @@ a {
   color: #2A2A2A;
 }
 .map .map-content .map-left .map-wrapper .leaflet-container .custom-popup .leaflet-popup-content .marker-form .file-upload .upload-button {
-  height: -moz-fit-content;
   height: fit-content;
   border: #B595FF 1px solid;
   border-radius: 10px;
@@ -1283,16 +1277,14 @@ a {
 .map .map-content .map-left .map-wrapper .leaflet-container .location-info .marker-image {
   width: 100%;
   height: 150px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   overflow: hidden;
   padding: 0;
 }
 .map .map-content .map-left .map-wrapper .leaflet-container .location-info .marker-image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   overflow: hidden;
 }
 .map .map-content .map-left .map-wrapper .leaflet-container .location-info ::-webkit-scrollbar {
@@ -1403,14 +1395,6 @@ a {
   letter-spacing: 0.1rem;
   cursor: text;
   border-radius: 10px;
-}
-.map .map-content .map-left .map-wrapper .leaflet-container .location-info .comments-area .commentform textarea::-moz-placeholder {
-  color: #949494;
-  font-family: "Noto Sans TC";
-  font-weight: 400;
-  font-size: 0.8125rem;
-  letter-spacing: 0rem;
-  line-height: 1.5;
 }
 .map .map-content .map-left .map-wrapper .leaflet-container .location-info .comments-area .commentform textarea::placeholder {
   color: #949494;
@@ -1844,7 +1828,6 @@ a {
 }
 .map .top-markers .heading img {
   display: inline-block;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .map .top-markers .top-list {
@@ -1874,8 +1857,7 @@ a {
   position: absolute;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 10px;
 }
 .map .top-markers .top-list .row .top-item .top-discription {
@@ -2041,6 +2023,7 @@ a {
   font-family: "Noto Sans TC";
   font-weight: 500;
   font-size: 1rem;
+  letter-spacing: 0.1rem;
 }
 .gallery-page .backto-map:hover {
   filter: invert(42%) saturate(1352%) hue-rotate(140deg) brightness(120%) contrast(119%);
@@ -2087,16 +2070,14 @@ a {
 .gallery-page .page-container .location-info .cover-image {
   width: calc(100% - 48px);
   height: 285px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   overflow: hidden;
   padding: 24px;
 }
 .gallery-page .page-container .location-info .cover-image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   overflow: hidden;
 }
 .gallery-page .page-container .location-info .info-area {
@@ -2136,6 +2117,10 @@ a {
   font-weight: 500;
   font-size: 2.25rem;
   color: #FFFFFF;
+}
+.gallery-page .page-container .location-info .info-area .info-text h1.long-title {
+  font-size: 30px;
+  letter-spacing: 0.1rem;
 }
 .gallery-page .page-container .location-info .info-area .info-text .user-rating {
   display: flex;
@@ -2254,14 +2239,6 @@ a {
   letter-spacing: 0.1rem;
   cursor: text;
   border-radius: 10px;
-}
-.gallery-page .page-container .comments-area .commentform textarea::-moz-placeholder {
-  color: #949494;
-  font-family: "Noto Sans TC";
-  font-weight: 400;
-  font-size: 0.8125rem;
-  letter-spacing: 0rem;
-  line-height: 1.5;
 }
 .gallery-page .page-container .comments-area .commentform textarea::placeholder {
   color: #949494;
@@ -2575,10 +2552,8 @@ a {
   /* 使用遮罩限制霧的區域 */
   mask-image: url("/images/fog-mask1.png");
   mask-repeat: no-repeat;
-  -webkit-mask-size: 100% auto;
-          mask-size: 100% auto;
-  -webkit-mask-position: top 0;
-          mask-position: top 0;
+  mask-size: 100% auto;
+  mask-position: top 0;
   /* Webkit 瀏覽器支持 */
   -webkit-mask-image: url("/images/fog-mask1.png");
   -webkit-mask-repeat: no-repeat;
@@ -2617,8 +2592,7 @@ a {
   /* 使用遮罩限制霧的區域 */
   mask-image: url("/images/fog-mask2.png");
   mask-repeat: no-repeat;
-  -webkit-mask-size: auto;
-          mask-size: auto;
+  mask-size: auto;
   mask-position: top 0;
   /* Webkit 瀏覽器支持 */
   -webkit-mask-image: url("/images/fog-mask2.png");
@@ -2809,8 +2783,7 @@ a {
 .home .intro #intro2 .paper1 img {
   width: 50%;
   overflow-y: visible;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: 100%;
 }
 .home .intro #intro2 .paper2 {
@@ -2824,8 +2797,7 @@ a {
   z-index: 1;
   overflow-y: visible;
   overflow-x: hidden;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: 100%;
 }
 .home .intro #intro3 {
@@ -2911,7 +2883,6 @@ a {
   position: absolute;
   position: absolute;
   margin-bottom: 45px;
-  width: -moz-fit-content;
   width: fit-content;
   top: 0%;
   top: 0%;
@@ -2919,7 +2890,6 @@ a {
 }
 .home .intro #intro4 .forum-gallery #Horror {
   position: absolute;
-  width: -moz-fit-content;
   width: fit-content;
   bottom: 0%;
   left: 0%;
@@ -2927,7 +2897,6 @@ a {
 }
 .home .intro #intro4 .forum-gallery #Exorcism {
   position: absolute;
-  width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 35px;
   top: 0%;
@@ -2935,14 +2904,12 @@ a {
 }
 .home .intro #intro4 .forum-gallery #Creeps {
   position: absolute;
-  width: -moz-fit-content;
   width: fit-content;
   bottom: 0%;
   right: 0%;
 }
 .home .intro #intro4 .forum-gallery #Ruins {
   position: absolute;
-  width: -moz-fit-content;
   width: fit-content;
   bottom: 0%;
   left: 32.5%;
@@ -2981,8 +2948,7 @@ a {
   z-index: 0;
   width: 100%;
   height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   border: none;
   transition: transform 0.6s ease-in-out, filter 0.6s ease;
 }
@@ -3100,8 +3066,7 @@ a {
   .home .intro #intro4 .forum-gallery #Ruins .image-link img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     filter: blur(5px);
   }
   .home .intro #intro4 .forum-gallery #Legends .image-link .text-link,
@@ -3109,6 +3074,7 @@ a {
   .home .intro #intro4 .forum-gallery #Exorcism .image-link .text-link,
   .home .intro #intro4 .forum-gallery #Creeps .image-link .text-link,
   .home .intro #intro4 .forum-gallery #Ruins .image-link .text-link {
+    -webkit-writing-mode: vertical-lr;
     writing-mode: vertical-lr;
     letter-spacing: 0.5rem;
   }
@@ -3234,6 +3200,7 @@ a {
   .home .intro #intro4 .forum-gallery #Exorcism .image-link .text-link,
   .home .intro #intro4 .forum-gallery #Creeps .image-link .text-link,
   .home .intro #intro4 .forum-gallery #Ruins .image-link .text-link {
+    -webkit-writing-mode: horizontal-tb;
     writing-mode: horizontal-tb;
     letter-spacing: 0.2rem;
   }
@@ -3347,10 +3314,12 @@ button:hover #custom-cursor::after {
 /* 動畫效果 */
 @keyframes slide-in-buttom {
   0% {
+    -webkit-transform: translateY(100px);
     transform: translateY(100px);
     opacity: 0;
   }
   100% {
+    -webkit-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;
   }
@@ -3694,8 +3663,7 @@ button:hover #custom-cursor::after {
   top: -50%;
   left: 0;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   z-index: 2;
   opacity: 40%;
   pointer-events: none;
@@ -4275,9 +4243,6 @@ button:hover #custom-cursor::after {
   height: 100%;
   box-sizing: border-box;
 }
-.forum-body .forum-container .forum-layout .main-content .top-bar .right-bar .search-bar .search-input::-moz-placeholder {
-  color: #a0a0a0;
-}
 .forum-body .forum-container .forum-layout .main-content .top-bar .right-bar .search-bar .search-input::placeholder {
   color: #a0a0a0;
 }
@@ -4419,8 +4384,7 @@ button:hover #custom-cursor::after {
 .forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content .article-Graphics-text .right .article-image {
   width: 100%;
   border-radius: 5px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content span {
   display: block;
@@ -4542,8 +4506,7 @@ button:hover #custom-cursor::after {
   margin-top: 5px;
   width: 50px;
   height: 50px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 4px;
 }
 .forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-group .image-upload-group div span {
@@ -4725,8 +4688,7 @@ button:hover #custom-cursor::after {
   height: auto;
   border-radius: 8px;
   display: block;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .article-view .tags {
   display: flex;
