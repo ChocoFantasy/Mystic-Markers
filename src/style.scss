@@ -4576,15 +4576,18 @@ button:hover #custom-cursor::after {
           }
 
           .right-bar {
-            display: flex;
-
+            display: inline-flex;
+            gap:16px;
+            align-items: center;
+            justify-content: center;
+            .search-bar-container{width:350px;}
             .search-bar {
               display: flex;
               align-items: center;
               border: 2px solid $primary-green;
-              border-radius: 8px; // 圓角
+              border-radius: 5px; // 圓角
               overflow: hidden; // 避免子元素超出邊界
-              height: 40px; // 固定高度，確保子元素一致
+              height: 30px; // 固定高度，確保子元素一致
 
               .search-input {
                 flex: 1; // 填滿剩餘空間
@@ -4592,9 +4595,11 @@ button:hover #custom-cursor::after {
                 border: none;
                 outline: none;
                 font-size: 16px;
-                color: $deep;
+                color: $light;
+                background-color: $deep;
                 height: 100%; // 高度與父容器一致
                 box-sizing: border-box; // 包含內邊距和邊框在內
+                
 
                 &::placeholder {
                   color: #a0a0a0; // placeholder 顏色
@@ -4636,7 +4641,7 @@ button:hover #custom-cursor::after {
               height: 35px;
 
               img {
-                padding: 10px 0 0 0;
+                padding: 0;
                 display: block;
               }
             }
@@ -4659,6 +4664,7 @@ button:hover #custom-cursor::after {
 
             .article-content {
               flex: 1;
+           
 
               .article-header {
                 display: flex;
@@ -5100,7 +5106,7 @@ button:hover #custom-cursor::after {
 
         .article-title {
           font-size: 1.75rem;
-          margin-bottom: 0.5rem;
+          margin-bottom: 1rem;
           color: $primary-green;
           font-weight: 600;
         }
@@ -5130,16 +5136,21 @@ button:hover #custom-cursor::after {
 
   .article-content {
     margin-bottom: 2rem;
-
+    margin-top: 2rem;
     .article-text {
       line-height: 1.8;
       margin-bottom: 2rem;
       white-space: pre-line;
       color: #e0e0e0;
     }
+    span {
+      padding: 4px 0;
+    display: inline-block;
+    }
+   
 
     .article-image {
-      margin: 1rem auto;
+      margin: 2rem auto;
       max-width: 50%;
       height: auto;
       border-radius: 8px;
@@ -5342,7 +5353,7 @@ button:hover #custom-cursor::after {
   .comment-input {
     background: #333;
     /* 背景色 */
-    border-radius: 8px;
+    border-radius: 5px;
     display: flex;
     align-items: stretch;
     /* 子元素高度一致 */
