@@ -4956,7 +4956,7 @@ button:hover #custom-cursor::after {
 
 /* 常見問題 */
 .contact-body {
-  padding-top: 180px;
+  padding-top: 80px;
   position: relative;
   z-index: 0;
   background: url("images/noise.jpg") repeat;
@@ -5033,7 +5033,7 @@ button:hover #custom-cursor::after {
 }
 .contact-body .faq-contact .contact-section {
   position: relative;
-  margin-top: 60px;
+  margin-top: 70px;
   bottom: 0%;
   padding: 50px 15px;
   overflow: visible;
@@ -5063,7 +5063,6 @@ button:hover #custom-cursor::after {
   position: relative;
   /* 設定為相對定位，方便內部絕對定位 */
   left: 20%;
-  /* 距離左側 10% */
   border-radius: 15px;
   /* 圓角效果 */
   width: 100%;
@@ -5111,13 +5110,13 @@ button:hover #custom-cursor::after {
   flex: 1;
   padding: 20px 40px;
   /* 增加內部填充，讓表單看起來更大氣 */
-  max-width: 100%;
+  max-width: 50%;
   /* 放寬表單的最大寬度 */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   /* 靠左對齊 */
-  margin-left: 50px; /* 將整個區塊向右移動 */
+  margin-left: 80px; /* 將整個區塊向右移動 */
 }
 .contact-body .faq-contact .contact-section .contact-content .contact-form p {
   margin-bottom: 8px;
@@ -5130,6 +5129,7 @@ button:hover #custom-cursor::after {
   /* 突出顯示標籤文字 */
   text-align: left;
   /* 標籤靠左對齊 */
+  width: 100%;
 }
 .contact-body .faq-contact .contact-section .contact-content .contact-form input,
 .contact-body .faq-contact .contact-section .contact-content .contact-form textarea {
@@ -5164,7 +5164,7 @@ button:hover #custom-cursor::after {
 }
 .contact-body .faq-contact .contact-section .contact-content .contact-form button {
   width: 40%;
-  margin-top: 20px;
+  margin: 30px auto 0; /* 按鈕置中 */
   /* 調整按鈕與內容的間距 */
   padding: 12px;
   background-color: #B595FF;
