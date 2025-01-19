@@ -4575,6 +4575,47 @@ button:hover #custom-cursor::after {
   opacity: 0.9;
 }
 
+@media screen and (max-width: 768px) {
+  .forum-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    flex: 0 0 auto;
+    margin-bottom: 20px;
+  }
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .top-bar .search-bar {
+    width: 100%;
+  }
+  .article-list .article-card {
+    flex: 1 1 calc(50% - 10px); /* 每行兩列 */
+  }
+}
+@media screen and (max-width: 480px) {
+  .forum-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    display: none; /* 隱藏側邊欄 */
+  }
+  .top-bar {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .top-bar .search-bar {
+    width: 100%;
+  }
+  .top-bar .search-bar input {
+    width: calc(100% - 60px); /* 調整輸入框寬度 */
+  }
+  .article-list .article-card {
+    flex: 1 1 100%; /* 每行一列 */
+  }
+}
 .article-view {
   margin: 0 115px;
   padding-top: 100px;
@@ -4939,47 +4980,70 @@ button:hover #custom-cursor::after {
   margin: 0;
   /* 移除間隔 */
 }
-@media (max-width: 768px) {
-  .article-view .article-view {
-    padding: 1rem;
-  }
-  .article-view .article-view .article-header {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .article-view .article-view .article-header .article-title {
-    font-size: 1.5rem;
-  }
-  .article-view .article-view .interaction-bar {
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .article-view .article-view .interaction-bar .share-button {
-    width: 100%;
-    margin-top: 1rem;
-  }
-}
-@media (max-width: 991px) {
-  .article-view .forum-layout {
-    flex-direction: column;
-  }
-  .article-view .sidebar,
-  .article-view .main-content {
-    width: 100%;
-  }
-  .article-view .search-bar {
-    width: 100%;
-    max-width: 300px;
-  }
-  .article-view .article-card {
-    flex-direction: column;
-  }
-  .article-view .article-image {
-    width: 100%;
-    height: auto;
-  }
-}
 
+@media screen and (max-width: 768px) {
+  .article-view {
+    padding: 10px;
+  }
+  .article-view .article-header .category-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .article-view .article-header .category-nav .back-link {
+    margin-top: 10px;
+  }
+  .article-view .article-header .meta-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .article-view .tags {
+    justify-content: center;
+  }
+  .article-view .interaction-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .comments-section .comment-item {
+    flex-direction: column;
+  }
+  .comments-section .comment-item .comment-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .comments-section .comment-input .input-container {
+    flex-direction: column;
+  }
+  .comments-section .comment-input .input-container button {
+    align-self: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .article-view .article-header h1.article-title {
+    font-size: 18px;
+  }
+  .article-view .interaction-bar .interaction-items {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .article-view .comments-section h2 {
+    font-size: 18px;
+  }
+  .article-view .comments-section .comment-item .comment-avatar {
+    width: 30px;
+    height: 30px;
+  }
+  .article-view .comment-input .input-container {
+    width: 50%;
+  }
+  .article-view .comment-input .input-container input {
+    font-size: 12px; /* 減小字體大小 */
+    padding: 8px;
+  }
+  .article-view .comment-input .input-container button {
+    font-size: 12px; /* 按鈕字體縮小 */
+    padding: 8px 16px;
+  }
+}
 /* 常見問題 */
 .contact-body {
   padding-top: 80px;
@@ -5212,6 +5276,70 @@ button:hover #custom-cursor::after {
   /* 改變字體顏色為白色 */
 }
 
+/* 常見問題 RWD */
+@media screen and (max-width: 768px) {
+  .contact-body {
+    padding: 10px;
+  }
+  .contact-body .faq-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-body .faq-buttons button {
+    width: 100%; /* 撐滿螢幕寬度 */
+  }
+  .contact-body .contact-content {
+    flex-direction: column; /* 垂直排列 */
+    align-items: center;
+  }
+  .contact-body .contact-content .contact-right,
+  .contact-body .contact-content .contact-form {
+    width: 100%; /* 撐滿螢幕寬度 */
+  }
+  .contact-body .contact-content .contact-bubble {
+    width: 100%; /* 撐滿寬度 */
+    text-align: center;
+  }
+  .contact-body .contact-content .person-image {
+    max-width: 100px;
+    margin: 10px auto; /* 居中顯示 */
+  }
+  .contact-body .contact-content .contact-form button {
+    width: 100%; /* 按鈕撐滿寬度 */
+  }
+}
+@media screen and (max-width: 480px) {
+  .contact-body .faq-section h1,
+  .contact-body .contact-section h1 {
+    font-size: 20px; /* 縮小標題字體 */
+    text-align: center;
+  }
+  .contact-body .faq-buttons button {
+    font-size: 14px;
+    padding: 8px 10px; /* 減小按鈕內邊距 */
+  }
+  .contact-body .contact-content {
+    gap: 10px; /* 減少區塊之間的距離 */
+  }
+  .contact-body .contact-content .contact-right .contact-bubble {
+    padding: 15px; /* 縮小內邊距 */
+  }
+  .contact-body .contact-content .person-image {
+    max-width: 80px;
+  }
+  .contact-body .contact-content .contact-form p {
+    font-size: 14px; /* 縮小標籤字體 */
+  }
+  .contact-body .contact-content .contact-form input,
+  .contact-body .contact-content .contact-form textarea {
+    font-size: 14px; /* 調整輸入框字體 */
+    padding: 8px;
+  }
+  .contact-body .contact-content .contact-form button {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}
 footer {
   position: relative;
   display: inline-block;
