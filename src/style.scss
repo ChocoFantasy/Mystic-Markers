@@ -5213,36 +5213,38 @@ button:hover #custom-cursor::after {
   .forum-body {
     padding: 10% 2%;
     margin: 0;
+
     .forum-container {
       .forum-layout {
         display: flex;
         flex-direction: column;
-  
+
         .sidebar {
           width: 100%;
           flex: 0 0 auto;
           margin-bottom: 20px;
-          .sidebar-content{
+
+          .sidebar-content {
             flex-direction: row;
-           
-            .category-board{
-              .category-list{
+
+            .category-board {
+              .category-list {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
               }
 
-            } 
+            }
           }
-  
+
         }
-  
+
       }
-  
+
     }
   }
-  
+
 
   .forum-container .forum-layout .sidebar .sidebar-content .ad-section {
     width: 0;
@@ -5326,17 +5328,26 @@ button:hover #custom-cursor::after {
       align-items: center !important; // 確保垂直居中
       border-bottom: 1px solid rgba(255, 255, 255, 0.1); //水平線
 
-      .category {
-        font-size: 1rem;
-        color: #ffffff;
+      .category-c {
         display: flex;
-        align-items: center;
+        .category-icon {
+          width: 24px; // 設定圖片寬度
+          height: 24px; // 設定圖片高度
+          margin-right: 8px; // 與分類名稱之間的間距
+          vertical-align: middle; // 垂直置中對齊
+          border-radius: 50%; // 如果圖片需要圓形，取消此行可以移除圓形樣式
+          object-fit: contain; // 確保圖片不會被裁剪     
+        }
 
-        &::before {
-          content: "🗂 ";
-          margin-right: 0.5rem;
+        .category {
+          font-size: 1rem;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
         }
       }
+
+
 
       .back-link {
         color: $primary-green;

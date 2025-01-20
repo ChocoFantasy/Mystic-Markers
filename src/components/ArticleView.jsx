@@ -82,17 +82,26 @@ const ArticleView = () => {
 
     // 判斷日期差，返回對應的格式
     if (diffDays === 0) {
-      return `今天 ${commentDate.getHours().toString().padStart(2, "0")}:${commentDate
+      return `今天 ${commentDate
+        .getHours()
+        .toString()
+        .padStart(2, "0")}:${commentDate
         .getMinutes()
         .toString()
         .padStart(2, "0")}`;
     } else if (diffDays === 1) {
-      return `昨天 ${commentDate.getHours().toString().padStart(2, "0")}:${commentDate
+      return `昨天 ${commentDate
+        .getHours()
+        .toString()
+        .padStart(2, "0")}:${commentDate
         .getMinutes()
         .toString()
         .padStart(2, "0")}`;
     } else if (diffDays === 2) {
-      return `前天 ${commentDate.getHours().toString().padStart(2, "0")}:${commentDate
+      return `前天 ${commentDate
+        .getHours()
+        .toString()
+        .padStart(2, "0")}:${commentDate
         .getMinutes()
         .toString()
         .padStart(2, "0")}`;
@@ -100,12 +109,15 @@ const ArticleView = () => {
       return `${(commentDate.getMonth() + 1)
         .toString()
         .padStart(2, "0")}/${commentDate
-          .getDate()
-          .toString()
-          .padStart(2, "0")} ${commentDate.getHours().toString().padStart(2, "0")}:${commentDate
-            .getMinutes()
-            .toString()
-            .padStart(2, "0")}`;
+        .getDate()
+        .toString()
+        .padStart(2, "0")} ${commentDate
+        .getHours()
+        .toString()
+        .padStart(2, "0")}:${commentDate
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")}`;
     }
   };
 
@@ -164,10 +176,10 @@ const ArticleView = () => {
       prevComments.map((comment, idx) =>
         idx === index
           ? {
-            ...comment,
-            likes: comment.isLiked ? comment.likes - 1 : comment.likes + 1,
-            isLiked: !comment.isLiked,
-          }
+              ...comment,
+              likes: comment.isLiked ? comment.likes - 1 : comment.likes + 1,
+              isLiked: !comment.isLiked,
+            }
           : comment
       )
     );
@@ -214,12 +226,12 @@ const ArticleView = () => {
       prevInteractions.map((interaction, idx) =>
         idx === interactionIndex
           ? {
-            ...interaction,
-            isLiked: !interaction.isLiked,
-            count: interaction.isLiked
-              ? interaction.count - 1 // 若已按讚，數字減 1
-              : interaction.count + 1, // 若未按讚，數字加 1
-          }
+              ...interaction,
+              isLiked: !interaction.isLiked,
+              count: interaction.isLiked
+                ? interaction.count - 1 // 若已按讚，數字減 1
+                : interaction.count + 1, // 若未按讚，數字加 1
+            }
           : interaction
       )
     );
@@ -237,19 +249,33 @@ const ArticleView = () => {
     });
   };
 
-
+  const categoryIcons = {
+    所有看板: "images/Forum/Forum_list-box.svg",
+    都市傳說: "images/Forum/Forum-symbols-book-5.svg",
+    廢墟探險: "images/Forum/Forum_building.svg",
+    恐怖獵奇: "images/Forum/Forum_movie.svg",
+    恐怖作品: "images/Forum/Forum_ghost-2.svg",
+    驅邪收驚: "images/Forum/Forum_temple.svg",
+    我的收藏: "images/Forum/label-filled_grey.svg",
+  };
 
   return (
     <div className="article-view">
       {/* 文章標題 */}
       <div className="article-header">
         <div className="category-nav">
-          <span className="category">{article.category}</span>
-          <Link to="/Forum" className="back-link">
+          <div className="category-c">
+            {/* 動態顯示分類圖片 */}
             <img
-              src="images/Forum/pajamas_go-back.svg"
-              alt="回到文章符號"
+              src={categoryIcons[article.category] || "images/default-icon.svg"}
+              alt={article.category}
+              className="category-icon"
             />
+            <span className="category">{article.category}</span>
+          </div>
+
+          <Link to="/Forum" className="back-link">
+            <img src="images/Forum/pajamas_go-back.svg" alt="回到文章符號" />
             回到文章列表
           </Link>
         </div>
@@ -271,12 +297,15 @@ const ArticleView = () => {
       </div>
       {/* 文章內文 */}
       <div className="article-content">
-        {article.preview.split(/(。|！|？)/g).filter(Boolean).map((segment, index) => (
-          <span key={index}>
-            {segment}
-            {segment.match(/。|！|？/) && <br />} {/* 標點符號後插入換行 */}
-          </span>
-        ))}
+        {article.preview
+          .split(/(。|！|？)/g)
+          .filter(Boolean)
+          .map((segment, index) => (
+            <span key={index}>
+              {segment}
+              {segment.match(/。|！|？/) && <br />} {/* 標點符號後插入換行 */}
+            </span>
+          ))}
         <img
           src={`${article.articleImage}`}
           alt="文章圖片"
@@ -306,10 +335,11 @@ const ArticleView = () => {
                 }}
               >
                 <img
-                  src={`${interaction.isLiked
-                    ? interaction.filledIcon
-                    : interaction.icon
-                    }`}
+                  src={`${
+                    interaction.isLiked
+                      ? interaction.filledIcon
+                      : interaction.icon
+                  }`}
                   alt={interaction.altText}
                 />
                 <span>{interaction.count}</span>
@@ -326,10 +356,11 @@ const ArticleView = () => {
               }}
             >
               <img
-                src={`${isFavorite
-                  ? article.interactions[2].filledIcon // 使用 interactions[2] 的已收藏圖案
-                  : article.interactions[2].icon // 使用 interactions[2] 的未收藏圖案
-                  }`}
+                src={`${
+                  isFavorite
+                    ? article.interactions[2].filledIcon // 使用 interactions[2] 的已收藏圖案
+                    : article.interactions[2].icon // 使用 interactions[2] 的未收藏圖案
+                }`}
                 alt={isFavorite ? "已收藏" : "收藏"}
               />
             </a>
@@ -378,17 +409,20 @@ const ArticleView = () => {
               <div className="comment-header">
                 <span className="comment-user">{comment.userName}</span>
                 <span className="comment-floor">{comment.floor}</span>
-                <span className="comment-time">{formatRelativeDate(comment.time)}</span>
+                <span className="comment-time">
+                  {formatRelativeDate(comment.time)}
+                </span>
                 <div className="comment-actions">
                   <button
                     className={`like-button ${comment.isLiked ? "liked" : ""}`}
                     onClick={() => handleLikeComment(index)}
                   >
                     <img
-                      src={`${comment.isLiked
-                        ? "images/Forum/solar_ghost-outline.svg"
-                        : "images/Forum/Forum_ghost.svg"
-                        }`}
+                      src={`${
+                        comment.isLiked
+                          ? "images/Forum/solar_ghost-outline.svg"
+                          : "images/Forum/Forum_ghost.svg"
+                      }`}
                       alt="like"
                     />
                     <span>{comment.likes}</span>
@@ -396,7 +430,6 @@ const ArticleView = () => {
                 </div>
               </div>
               <p className="comment-text">{comment.text}</p>
-
             </div>
           </div>
         ))}

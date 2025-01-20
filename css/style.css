@@ -4877,15 +4877,22 @@ button:hover #custom-cursor::after {
   align-items: center !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-.article-view .article-header .category-nav .category {
+.article-view .article-header .category-nav .category-c {
+  display: flex;
+}
+.article-view .article-header .category-nav .category-c .category-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+  border-radius: 50%;
+  object-fit: contain;
+}
+.article-view .article-header .category-nav .category-c .category {
   font-size: 1rem;
   color: #ffffff;
   display: flex;
   align-items: center;
-}
-.article-view .article-header .category-nav .category::before {
-  content: "🗂 ";
-  margin-right: 0.5rem;
 }
 .article-view .article-header .category-nav .back-link {
   color: #acff6c;
