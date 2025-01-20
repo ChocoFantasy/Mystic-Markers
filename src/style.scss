@@ -2190,12 +2190,13 @@ a {
             text-align: center;
             @include font-style($font-medium-36);
             color: $light;
+
             &.long-title {
               font-size: 30px;
-              letter-spacing:0.1rem;
+              letter-spacing: 0.1rem;
             }
           }
-    
+
 
           .user-rating {
             display: flex;
@@ -3742,6 +3743,13 @@ button:hover #custom-cursor::after {
       }
     }
 
+    @media (max-width:768px) {
+      width: 100%;
+      justify-content: flex-end;
+      flex: 8;
+
+    }
+
   }
 
 
@@ -3770,6 +3778,12 @@ button:hover #custom-cursor::after {
   .story-title {
     position: relative;
     width: 20%;
+
+    @media (max-width:768px) {
+      width: 40%;
+      height: auto;
+      flex: 2;
+    }
   }
 
   .text-title {
@@ -3807,6 +3821,21 @@ button:hover #custom-cursor::after {
       font-weight: 300;
       font-size: 1rem; // 16px
       color: $light;
+    }
+
+    @media(max-width:768px) {
+      width: 31.5rem;
+      height: 30rem;
+      padding: 2rem;
+          p {
+        width: 100%; 
+        height: auto; 
+        line-height: 2rem;
+        word-wrap: break-word; 
+        white-space: normal; 
+        padding: 0 1rem;
+        max-height: calc(1.5em * 15); 
+    }
     }
   }
 
@@ -3885,6 +3914,13 @@ button:hover #custom-cursor::after {
       filter: brightness(1.5);
       transform: none; // 禁止放大
     }
+    @media (max-width:768px) {
+      display:flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 60px;
+      
+    }
 
   }
 
@@ -3899,6 +3935,10 @@ button:hover #custom-cursor::after {
     position: relative;
     overflow: visible;
     opacity: 0.6;
+    @media (max-width:768px) {
+      height: 30vh;
+      
+    }
 
   }
 
@@ -3977,6 +4017,10 @@ button:hover #custom-cursor::after {
     padding: 20px;
     box-sizing: border-box;
     /* 讓 padding 不影響容器的實際大小 */
+    @media (max-width:768px) {
+      background-position:85%  0%;
+      
+    }
   }
 
   /* 紅衣小女孩文字背景圖 */
@@ -4005,6 +4049,16 @@ button:hover #custom-cursor::after {
     /* 確保 padding 不會影響總尺寸 */
     margin-left: 10%;
     /* 確保容器靠左 */
+
+    @media(max-width:1440px) {
+      width: 45%;
+    }
+    @media(max-width:768px) {
+      padding: 0;
+      width: 60%;
+      margin-left: 5%;
+      background: radial-gradient(#000000, rgba(0, 0, 0, 0));
+    }
   }
 
   /* 文字內容區 */
@@ -4077,6 +4131,10 @@ button:hover #custom-cursor::after {
     box-sizing: border-box;
     /* 讓 padding 不影響容器的實際大小 */
     overflow: visible;
+    @media (max-width:768px) {
+      background-position: 50% 0%;
+      
+    }
   }
 
   /* 黃色小飛俠 文字背景圖 */
@@ -4108,6 +4166,16 @@ button:hover #custom-cursor::after {
     /* 自動將容器推到右邊 */
     margin-right: 10%;
     /* 控制容器與右邊界的距離 */
+    @media(max-width:1440px) {
+      width: 45%;
+    }
+    @media(max-width:768px) {
+      padding: 0;
+      margin-right: 5%;
+      width: 60%;
+      background: radial-gradient(#000000, rgba(0, 0, 0, 0));
+    }
+  
   }
 
 
@@ -4180,6 +4248,10 @@ button:hover #custom-cursor::after {
     padding: 20px;
     box-sizing: border-box;
     /* 讓 padding 不影響容器的實際大小 */
+    @media (max-width:768px) {
+      background-position: 65% 0%;
+      
+    }
   }
 
   /* 宮燈姐姐 文字背景圖 */
@@ -4208,6 +4280,15 @@ button:hover #custom-cursor::after {
     /* 確保 padding 不會影響總尺寸 */
     margin-left: 10%;
     /* 確保容器靠左 */
+    @media(max-width:1440px) {
+      width: 45%;
+    }
+    @media(max-width:768px) {
+      padding: 0;
+      margin-left: 5%;
+      width: 60%;
+      background: radial-gradient(#000000, rgba(0, 0, 0, 0));
+    }
   }
 
   /* 文字內容區 */
@@ -4281,6 +4362,10 @@ button:hover #custom-cursor::after {
     box-sizing: border-box;
     /* 讓 padding 不影響容器的實際大小 */
     margin-bottom: 20%;
+    @media (max-width:768px) {
+      background-position: 15% 0%;
+      
+    }
 
   }
 
@@ -4313,6 +4398,15 @@ button:hover #custom-cursor::after {
     /* 自動將容器推到右邊 */
     margin-right: 10%;
     /* 控制容器與右邊界的距離 */
+    @media(max-width:1440px) {
+      width: 45%;
+    }
+    @media(max-width:768px) {
+      padding: 0;
+      margin-right: 5%;
+      width: 60%;
+      background: radial-gradient(#000000, rgba(0, 0, 0, 0));
+    }
   }
 
 
@@ -4375,22 +4469,21 @@ button:hover #custom-cursor::after {
   @media screen and (max-width: 1200px) {
     .feature-story-container {
       padding: 20px;
-      /* 減少邊距，適應較小視窗 */
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-
     .feature-story-container p {
       font-size: 18px;
-      /* 減小文字大小 */
 
     }
   }
 
   @media screen and (max-width: 768px) {
-    .feature-story-container {
-      padding: 15px;
+    .feature-story .feature-story-container {
+      display: flex;
+      flex-direction: column;
+      padding: 10% 5%;
       /* 調整小視窗的邊距 */
     }
 
@@ -4577,10 +4670,14 @@ button:hover #custom-cursor::after {
 
           .right-bar {
             display: inline-flex;
-            gap:16px;
+            gap: 16px;
             align-items: center;
             justify-content: center;
-            .search-bar-container{width:350px;}
+
+            .search-bar-container {
+              width: 350px;
+            }
+
             .search-bar {
               display: flex;
               align-items: center;
@@ -4599,7 +4696,7 @@ button:hover #custom-cursor::after {
                 background-color: $deep;
                 height: 100%; // 高度與父容器一致
                 box-sizing: border-box; // 包含內邊距和邊框在內
-                
+
 
                 &::placeholder {
                   color: #a0a0a0; // placeholder 顏色
@@ -4664,7 +4761,7 @@ button:hover #custom-cursor::after {
 
             .article-content {
               flex: 1;
-           
+
 
               .article-header {
                 display: flex;
@@ -4779,6 +4876,7 @@ button:hover #custom-cursor::after {
                   }
                 }
               }
+
               span {
                 display: block;
                 /* 每行獨占一行 */
@@ -4797,7 +4895,7 @@ button:hover #custom-cursor::after {
           position: fixed;
           top: 0;
           left: 0;
-          bottom:5;
+          bottom: 5;
           width: 100%;
           height: 100%;
           display: flex;
@@ -4807,24 +4905,29 @@ button:hover #custom-cursor::after {
           overflow: hidden; // 防止內容溢出彈窗邊界
 
           .overlay {
-            position: fixed; /* 固定位置，覆蓋整個視窗 */
+            position: fixed;
+            /* 固定位置，覆蓋整個視窗 */
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7); /* 半透明黑色背景 */
-            z-index: 980; /* 確保在 modal-content 下方 */
+            background: rgba(0, 0, 0, 0.7);
+            /* 半透明黑色背景 */
+            z-index: 980;
+            /* 確保在 modal-content 下方 */
           }
 
           .modal-content {
             position: relative;
             padding: 20px;
             border-radius: 8px;
-            z-index: 991; /* 確保在 overlay 上方 */
+            z-index: 991;
+            /* 確保在 overlay 上方 */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 90%;
             max-width: 600px;
-            overflow-y: auto; /* 防止內容過多超出視窗 */
+            overflow-y: auto;
+            /* 防止內容過多超出視窗 */
             background-color: $deep;
 
             .close-btn {
@@ -4861,7 +4964,8 @@ button:hover #custom-cursor::after {
               display: flex;
               flex-direction: column;
               align-items: flex-start;
-              width: 100%; /* 確保表單寬度一致 */
+              width: 100%;
+              /* 確保表單寬度一致 */
               margin-bottom: 20px;
 
               label {
@@ -4872,8 +4976,7 @@ button:hover #custom-cursor::after {
               }
 
               input,
-              textarea
-               {
+              textarea {
                 width: 90%;
                 padding: 10px;
                 border: 1px solid #444;
@@ -4942,12 +5045,12 @@ button:hover #custom-cursor::after {
                 cursor: pointer;
 
                 &:first-child {
-                  background-color: #6c757d; 
+                  background-color: #6c757d;
                   color: white;
                 }
 
                 &:last-child {
-                  background-color: $primary-green; 
+                  background-color: $primary-green;
                   color: #1a1a1a;
                 }
 
@@ -4987,7 +5090,8 @@ button:hover #custom-cursor::after {
 
   .article-list {
     .article-card {
-      flex: 1 1 calc(50% - 10px); /* 每行兩列 */
+      flex: 1 1 calc(50% - 10px);
+      /* 每行兩列 */
     }
   }
 }
@@ -4998,7 +5102,8 @@ button:hover #custom-cursor::after {
   }
 
   .sidebar {
-    display: none; /* 隱藏側邊欄 */
+    display: none;
+    /* 隱藏側邊欄 */
   }
 
   .top-bar {
@@ -5007,15 +5112,18 @@ button:hover #custom-cursor::after {
 
     .search-bar {
       width: 100%;
+
       input {
-        width: calc(100% - 60px); /* 調整輸入框寬度 */
+        width: calc(100% - 60px);
+        /* 調整輸入框寬度 */
       }
     }
   }
 
   .article-list {
     .article-card {
-      flex: 1 1 100%; /* 每行一列 */
+      flex: 1 1 100%;
+      /* 每行一列 */
     }
   }
 }
@@ -5137,17 +5245,19 @@ button:hover #custom-cursor::after {
   .article-content {
     margin-bottom: 2rem;
     margin-top: 2rem;
+
     .article-text {
       line-height: 1.8;
       margin-bottom: 2rem;
       white-space: pre-line;
       color: #e0e0e0;
     }
+
     span {
       padding: 4px 0;
-    display: inline-block;
+      display: inline-block;
     }
-   
+
 
     .article-image {
       margin: 2rem auto;
@@ -5536,23 +5646,26 @@ button:hover #custom-cursor::after {
     .comment-input {
       .input-container {
         width: 50%;
+
         input {
-          font-size: 12px; /* 減小字體大小 */
+          font-size: 12px;
+          /* 減小字體大小 */
           padding: 8px;
         }
-  
+
         button {
-          font-size: 12px; /* 按鈕字體縮小 */
+          font-size: 12px;
+          /* 按鈕字體縮小 */
           padding: 8px 16px;
         }
       }
+    }
   }
 }
-}
 
 
 
- 
+
 
 /* 常見問題 */
 
@@ -5585,7 +5698,7 @@ button:hover #custom-cursor::after {
     }
 
     .faq-section {
-      
+
       .faq-buttons {
         display: flex;
         justify-content: center;
@@ -5744,7 +5857,8 @@ button:hover #custom-cursor::after {
           flex-direction: column;
           align-items: flex-start;
           /* 靠左對齊 */
-          margin-left: 80px; /* 將整個區塊向右移動 */
+          margin-left: 80px;
+          /* 將整個區塊向右移動 */
 
           p {
             margin-bottom: 8px;
@@ -5795,7 +5909,8 @@ button:hover #custom-cursor::after {
 
           button {
             width: 40%;
-            margin: 30px auto 0; /* 按鈕置中 */
+            margin: 30px auto 0;
+            /* 按鈕置中 */
             /* 調整按鈕與內容的間距 */
             padding: 12px;
             background-color: $primary-purple;
@@ -5833,32 +5948,38 @@ button:hover #custom-cursor::after {
       align-items: center;
 
       button {
-        width: 100%; /* 撐滿螢幕寬度 */
+        width: 100%;
+        /* 撐滿螢幕寬度 */
       }
     }
 
     .contact-content {
-      flex-direction: column; /* 垂直排列 */
+      flex-direction: column;
+      /* 垂直排列 */
       align-items: center;
 
       .contact-right,
       .contact-form {
-        width: 100%; /* 撐滿螢幕寬度 */
+        width: 100%;
+        /* 撐滿螢幕寬度 */
       }
 
       .contact-bubble {
-        width: 100%; /* 撐滿寬度 */
+        width: 100%;
+        /* 撐滿寬度 */
         text-align: center;
       }
 
       .person-image {
         max-width: 100px;
-        margin: 10px auto; /* 居中顯示 */
+        margin: 10px auto;
+        /* 居中顯示 */
       }
 
       .contact-form {
         button {
-          width: 100%; /* 按鈕撐滿寬度 */
+          width: 100%;
+          /* 按鈕撐滿寬度 */
         }
       }
     }
@@ -5867,24 +5988,29 @@ button:hover #custom-cursor::after {
 
 @media screen and (max-width: 480px) {
   .contact-body {
+
     .faq-section h1,
     .contact-section h1 {
-      font-size: 20px; /* 縮小標題字體 */
+      font-size: 20px;
+      /* 縮小標題字體 */
       text-align: center;
     }
 
     .faq-buttons {
       button {
         font-size: 14px;
-        padding: 8px 10px; /* 減小按鈕內邊距 */
+        padding: 8px 10px;
+        /* 減小按鈕內邊距 */
       }
     }
 
     .contact-content {
-      gap: 10px; /* 減少區塊之間的距離 */
+      gap: 10px;
+      /* 減少區塊之間的距離 */
 
       .contact-right .contact-bubble {
-        padding: 15px; /* 縮小內邊距 */
+        padding: 15px;
+        /* 縮小內邊距 */
       }
 
       .person-image {
@@ -5893,12 +6019,14 @@ button:hover #custom-cursor::after {
 
       .contact-form {
         p {
-          font-size: 14px; /* 縮小標籤字體 */
+          font-size: 14px;
+          /* 縮小標籤字體 */
         }
 
         input,
         textarea {
-          font-size: 14px; /* 調整輸入框字體 */
+          font-size: 14px;
+          /* 調整輸入框字體 */
           padding: 8px;
         }
 

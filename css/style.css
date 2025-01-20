@@ -3515,6 +3515,13 @@ button:hover #custom-cursor::after {
   text-align: left;
   margin-left: 1.5rem;
 }
+@media (max-width: 768px) {
+  .Story .story-box {
+    width: 100%;
+    justify-content: flex-end;
+    flex: 8;
+  }
+}
 .Story .user {
   display: flex;
   justify-content: flex-end;
@@ -3536,6 +3543,13 @@ button:hover #custom-cursor::after {
 .Story .story-title {
   position: relative;
   width: 20%;
+}
+@media (max-width: 768px) {
+  .Story .story-title {
+    width: 40%;
+    height: auto;
+    flex: 2;
+  }
 }
 .Story .text-title {
   position: absolute;
@@ -3570,6 +3584,22 @@ button:hover #custom-cursor::after {
   font-weight: 300;
   font-size: 1rem;
   color: #FFFFFF;
+}
+@media (max-width: 768px) {
+  .Story .story-content {
+    width: 31.5rem;
+    height: 30rem;
+    padding: 2rem;
+  }
+  .Story .story-content p {
+    width: 100%;
+    height: auto;
+    line-height: 2rem;
+    word-wrap: break-word;
+    white-space: normal;
+    padding: 0 1rem;
+    max-height: 22.5em;
+  }
 }
 .Story .story1 {
   text-indent: 2em;
@@ -3638,6 +3668,14 @@ button:hover #custom-cursor::after {
   filter: brightness(1.5);
   transform: none;
 }
+@media (max-width: 768px) {
+  .Story .share-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 60px;
+  }
+}
 .Story .countryside-story {
   position: absolute;
   top: -30px;
@@ -3648,6 +3686,11 @@ button:hover #custom-cursor::after {
   position: relative;
   overflow: visible;
   opacity: 0.6;
+}
+@media (max-width: 768px) {
+  .Story .countryside-story {
+    height: 30vh;
+  }
 }
 .Story .countryside-story-title {
   position: absolute;
@@ -3709,6 +3752,11 @@ button:hover #custom-cursor::after {
   box-sizing: border-box;
   /* 讓 padding 不影響容器的實際大小 */
 }
+@media (max-width: 768px) {
+  .Story .story-item {
+    background-position: 85% 0%;
+  }
+}
 .Story .red-girl-container {
   background-image: url("/images/Story/old-torn-paper-inksplash-2.png");
   background-size: contain;
@@ -3733,6 +3781,19 @@ button:hover #custom-cursor::after {
   /* 確保 padding 不會影響總尺寸 */
   margin-left: 10%;
   /* 確保容器靠左 */
+}
+@media (max-width: 1440px) {
+  .Story .red-girl-container {
+    width: 45%;
+  }
+}
+@media (max-width: 768px) {
+  .Story .red-girl-container {
+    padding: 0;
+    width: 60%;
+    margin-left: 5%;
+    background: radial-gradient(#000000, rgba(0, 0, 0, 0));
+  }
 }
 .Story .red-girl-text {
   display: flex;
@@ -3799,6 +3860,11 @@ button:hover #custom-cursor::after {
   /* 讓 padding 不影響容器的實際大小 */
   overflow: visible;
 }
+@media (max-width: 768px) {
+  .Story .story-item2 {
+    background-position: 50% 0%;
+  }
+}
 .Story .yellow-peter-pan-container {
   background-image: url("/images/Story/old-torn-paper-inksplash-2.png");
   background-size: contain;
@@ -3824,6 +3890,19 @@ button:hover #custom-cursor::after {
   /* 自動將容器推到右邊 */
   margin-right: 10%;
   /* 控制容器與右邊界的距離 */
+}
+@media (max-width: 1440px) {
+  .Story .yellow-peter-pan-container {
+    width: 45%;
+  }
+}
+@media (max-width: 768px) {
+  .Story .yellow-peter-pan-container {
+    padding: 0;
+    margin-right: 5%;
+    width: 60%;
+    background: radial-gradient(#000000, rgba(0, 0, 0, 0));
+  }
 }
 .Story .yellow-peter-pan {
   display: flex;
@@ -3890,6 +3969,11 @@ button:hover #custom-cursor::after {
   box-sizing: border-box;
   /* 讓 padding 不影響容器的實際大小 */
 }
+@media (max-width: 768px) {
+  .Story .story-item3 {
+    background-position: 65% 0%;
+  }
+}
 .Story .lantern-sister-container {
   background-image: url("/images/Story/old-torn-paper-inksplash-2.png");
   background-size: contain;
@@ -3914,6 +3998,19 @@ button:hover #custom-cursor::after {
   /* 確保 padding 不會影響總尺寸 */
   margin-left: 10%;
   /* 確保容器靠左 */
+}
+@media (max-width: 1440px) {
+  .Story .lantern-sister-container {
+    width: 45%;
+  }
+}
+@media (max-width: 768px) {
+  .Story .lantern-sister-container {
+    padding: 0;
+    margin-left: 5%;
+    width: 60%;
+    background: radial-gradient(#000000, rgba(0, 0, 0, 0));
+  }
 }
 .Story .lantern-sister-text {
   display: flex;
@@ -3982,6 +4079,11 @@ button:hover #custom-cursor::after {
   /* 讓 padding 不影響容器的實際大小 */
   margin-bottom: 20%;
 }
+@media (max-width: 768px) {
+  .Story .story-item4 {
+    background-position: 15% 0%;
+  }
+}
 .Story .goat-man-container {
   background-image: url("/images/Story/old-torn-paper-inksplash-2.png");
   background-size: contain;
@@ -4007,6 +4109,19 @@ button:hover #custom-cursor::after {
   /* 自動將容器推到右邊 */
   margin-right: 10%;
   /* 控制容器與右邊界的距離 */
+}
+@media (max-width: 1440px) {
+  .Story .goat-man-container {
+    width: 45%;
+  }
+}
+@media (max-width: 768px) {
+  .Story .goat-man-container {
+    padding: 0;
+    margin-right: 5%;
+    width: 60%;
+    background: radial-gradient(#000000, rgba(0, 0, 0, 0));
+  }
 }
 .Story .goat-man-title {
   display: flex;
@@ -4061,19 +4176,19 @@ button:hover #custom-cursor::after {
 @media screen and (max-width: 1200px) {
   .Story .feature-story-container {
     padding: 20px;
-    /* 減少邊距，適應較小視窗 */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
   .Story .feature-story-container p {
     font-size: 18px;
-    /* 減小文字大小 */
   }
 }
 @media screen and (max-width: 768px) {
-  .Story .feature-story-container {
-    padding: 15px;
+  .Story .feature-story .feature-story-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10% 5%;
     /* 調整小視窗的邊距 */
   }
   .Story .feature-story-container p {
@@ -4415,23 +4530,28 @@ button:hover #custom-cursor::after {
   overflow: hidden;
 }
 .forum-body .forum-container .forum-layout .main-content .post-modal .overlay {
-  position: fixed; /* 固定位置，覆蓋整個視窗 */
+  position: fixed;
+  /* 固定位置，覆蓋整個視窗 */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* 半透明黑色背景 */
-  z-index: 980; /* 確保在 modal-content 下方 */
+  background: rgba(0, 0, 0, 0.7);
+  /* 半透明黑色背景 */
+  z-index: 980;
+  /* 確保在 modal-content 下方 */
 }
 .forum-body .forum-container .forum-layout .main-content .post-modal .modal-content {
   position: relative;
   padding: 20px;
   border-radius: 8px;
-  z-index: 991; /* 確保在 overlay 上方 */
+  z-index: 991;
+  /* 確保在 overlay 上方 */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 600px;
-  overflow-y: auto; /* 防止內容過多超出視窗 */
+  overflow-y: auto;
+  /* 防止內容過多超出視窗 */
   background-color: #2A2A2A;
 }
 .forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .close-btn {
@@ -4464,7 +4584,8 @@ button:hover #custom-cursor::after {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%; /* 確保表單寬度一致 */
+  width: 100%;
+  /* 確保表單寬度一致 */
   margin-bottom: 20px;
 }
 .forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-group label {
@@ -4562,7 +4683,8 @@ button:hover #custom-cursor::after {
     width: 100%;
   }
   .article-list .article-card {
-    flex: 1 1 calc(50% - 10px); /* 每行兩列 */
+    flex: 1 1 calc(50% - 10px);
+    /* 每行兩列 */
   }
 }
 @media screen and (max-width: 480px) {
@@ -4570,7 +4692,8 @@ button:hover #custom-cursor::after {
     flex-direction: column;
   }
   .sidebar {
-    display: none; /* 隱藏側邊欄 */
+    display: none;
+    /* 隱藏側邊欄 */
   }
   .top-bar {
     flex-direction: column;
@@ -4580,10 +4703,12 @@ button:hover #custom-cursor::after {
     width: 100%;
   }
   .top-bar .search-bar input {
-    width: calc(100% - 60px); /* 調整輸入框寬度 */
+    width: calc(100% - 60px);
+    /* 調整輸入框寬度 */
   }
   .article-list .article-card {
-    flex: 1 1 100%; /* 每行一列 */
+    flex: 1 1 100%;
+    /* 每行一列 */
   }
 }
 .article-view {
@@ -5010,11 +5135,13 @@ button:hover #custom-cursor::after {
     width: 50%;
   }
   .article-view .comment-input .input-container input {
-    font-size: 12px; /* 減小字體大小 */
+    font-size: 12px;
+    /* 減小字體大小 */
     padding: 8px;
   }
   .article-view .comment-input .input-container button {
-    font-size: 12px; /* 按鈕字體縮小 */
+    font-size: 12px;
+    /* 按鈕字體縮小 */
     padding: 8px 16px;
   }
 }
@@ -5180,7 +5307,8 @@ button:hover #custom-cursor::after {
   flex-direction: column;
   align-items: flex-start;
   /* 靠左對齊 */
-  margin-left: 80px; /* 將整個區塊向右移動 */
+  margin-left: 80px;
+  /* 將整個區塊向右移動 */
 }
 .contact-body .faq-contact .contact-section .contact-content .contact-form p {
   margin-bottom: 8px;
@@ -5228,7 +5356,8 @@ button:hover #custom-cursor::after {
 }
 .contact-body .faq-contact .contact-section .contact-content .contact-form button {
   width: 40%;
-  margin: 30px auto 0; /* 按鈕置中 */
+  margin: 30px auto 0;
+  /* 按鈕置中 */
   /* 調整按鈕與內容的間距 */
   padding: 12px;
   background-color: #B595FF;
@@ -5260,53 +5389,65 @@ button:hover #custom-cursor::after {
     align-items: center;
   }
   .contact-body .faq-buttons button {
-    width: 100%; /* 撐滿螢幕寬度 */
+    width: 100%;
+    /* 撐滿螢幕寬度 */
   }
   .contact-body .contact-content {
-    flex-direction: column; /* 垂直排列 */
+    flex-direction: column;
+    /* 垂直排列 */
     align-items: center;
   }
   .contact-body .contact-content .contact-right,
   .contact-body .contact-content .contact-form {
-    width: 100%; /* 撐滿螢幕寬度 */
+    width: 100%;
+    /* 撐滿螢幕寬度 */
   }
   .contact-body .contact-content .contact-bubble {
-    width: 100%; /* 撐滿寬度 */
+    width: 100%;
+    /* 撐滿寬度 */
     text-align: center;
   }
   .contact-body .contact-content .person-image {
     max-width: 100px;
-    margin: 10px auto; /* 居中顯示 */
+    margin: 10px auto;
+    /* 居中顯示 */
   }
   .contact-body .contact-content .contact-form button {
-    width: 100%; /* 按鈕撐滿寬度 */
+    width: 100%;
+    /* 按鈕撐滿寬度 */
   }
 }
 @media screen and (max-width: 480px) {
   .contact-body .faq-section h1,
   .contact-body .contact-section h1 {
-    font-size: 20px; /* 縮小標題字體 */
+    font-size: 20px;
+    /* 縮小標題字體 */
     text-align: center;
   }
   .contact-body .faq-buttons button {
     font-size: 14px;
-    padding: 8px 10px; /* 減小按鈕內邊距 */
+    padding: 8px 10px;
+    /* 減小按鈕內邊距 */
   }
   .contact-body .contact-content {
-    gap: 10px; /* 減少區塊之間的距離 */
+    gap: 10px;
+    /* 減少區塊之間的距離 */
   }
   .contact-body .contact-content .contact-right .contact-bubble {
-    padding: 15px; /* 縮小內邊距 */
+    padding: 15px;
+    /* 縮小內邊距 */
   }
   .contact-body .contact-content .person-image {
     max-width: 80px;
   }
   .contact-body .contact-content .contact-form p {
-    font-size: 14px; /* 縮小標籤字體 */
+    font-size: 14px;
+    /* 縮小標籤字體 */
   }
   .contact-body .contact-content .contact-form input,
   .contact-body .contact-content .contact-form textarea {
-    font-size: 14px; /* 調整輸入框字體 */
+    font-size: 14px;
+    /* 調整輸入框字體 */
     padding: 8px;
   }
   .contact-body .contact-content .contact-form button {
