@@ -3742,10 +3742,11 @@ button:hover #custom-cursor::after {
         text-align: left;
         margin-left: 1.5rem;
       }
+
       @media (max-width:480px) {
         margin-top: 10%;
         width: 90%;
-  
+
       }
     }
 
@@ -3791,6 +3792,11 @@ button:hover #custom-cursor::after {
     font-size: 24px;
     color: #B595FF;
     overflow: hidden;
+
+    @media (max-width:375px) {
+      font-size: 20px;
+
+    }
   }
 
   .story-title {
@@ -3877,6 +3883,24 @@ button:hover #custom-cursor::after {
         max-height: calc(1.5em * 15);
         overflow: hidden;
       }
+    }
+
+    @media (max-height:768px) {
+      width: 80%;
+      height: 18rem;
+      padding: 2rem;
+
+      p {
+        width: 100%;
+        height: auto;
+        line-height: 2rem;
+        word-wrap: break-word;
+        white-space: normal;
+        padding: 0 1rem;
+        max-height: calc(1.5em * 15);
+        overflow: hidden;
+      }
+
     }
   }
 
@@ -3989,6 +4013,7 @@ button:hover #custom-cursor::after {
       height: 30vh;
 
     }
+
     @media (max-width:480px) {
       height: 50vh;
 
@@ -4003,10 +4028,11 @@ button:hover #custom-cursor::after {
     transform: translate(-50%, -50%);
     z-index: 3;
     overflow: hidden;
+
     @media (max-width:480px) {
-      top:10%;
-      left:40%;
-      
+      top: 10%;
+      left: 40%;
+
     }
   }
 
@@ -4081,9 +4107,15 @@ button:hover #custom-cursor::after {
       background-position: 85% 0%;
 
     }
-    @media (max-width:480px){
+
+    @media (max-width:480px) {
       background-position: 82% 0%;
       background-size: 500%;
+    }
+
+    @media (max-width:375px) {
+      background-position: 82% 0%;
+      background-size: 300%;
 
     }
   }
@@ -4125,10 +4157,11 @@ button:hover #custom-cursor::after {
       margin-left: 5%;
       background: radial-gradient(#000000, rgba(0, 0, 0, 0));
     }
-    @media (max-width:480px){
-      width: 80%; 
+
+    @media (max-width:480px) {
+      width: 80%;
       margin: 0;
-      
+
     }
   }
 
@@ -4207,9 +4240,16 @@ button:hover #custom-cursor::after {
       background-position: 50% 0%;
 
     }
-    @media (max-width:480px){
+
+    @media (max-width:480px) {
       background-position: 45% 90%;
       background-size: 500%;
+
+    }
+
+    @media (max-width:375px) {
+      background-position: 30% 0%;
+      background-size: 300%;
 
     }
   }
@@ -4254,10 +4294,12 @@ button:hover #custom-cursor::after {
       width: 60%;
       background: radial-gradient(#000000, rgba(0, 0, 0, 0));
     }
-    @media (max-width:480px){
-      width: 80%; 
+
+    @media (max-width:480px) {
+      width: 80%;
       margin-right: 0;
     }
+
 
   }
 
@@ -4375,8 +4417,9 @@ button:hover #custom-cursor::after {
       width: 60%;
       background: radial-gradient(#000000, rgba(0, 0, 0, 0));
     }
-    @media (max-width:480px){
-      width: 80%; 
+
+    @media (max-width:480px) {
+      width: 80%;
       margin: 0;
     }
   }
@@ -4500,8 +4543,9 @@ button:hover #custom-cursor::after {
       width: 60%;
       background: radial-gradient(#000000, rgba(0, 0, 0, 0));
     }
-    @media (max-width:480px){
-      width: 80%; 
+
+    @media (max-width:480px) {
+      width: 80%;
       margin-right: 0;
     }
   }
@@ -4590,6 +4634,19 @@ button:hover #custom-cursor::after {
       /* 手機視窗下文字更小 */
     }
   }
+
+  @media screen and (max-height: 758px) {
+    .feature-story .feature-story-container {
+      padding: 20% 5%;
+      overflow: hidden;
+
+    }
+
+    .feature-story .feature-story-container p {
+      font-size: 14px;
+      /* 手機視窗下文字更小 */
+    }
+  }
 }
 
 
@@ -4625,7 +4682,6 @@ button:hover #custom-cursor::after {
           display: flex;
           flex-direction: column;
           gap: 24px;
-
 
 
           .category-board {
@@ -5148,19 +5204,51 @@ button:hover #custom-cursor::after {
         }
       }
     }
+
   }
 }
 
 // Forum RWD
 @media screen and (max-width: 768px) {
-  .forum-container {
-    flex-direction: column;
+  .forum-body {
+    padding: 10% 2%;
+    margin: 0;
+    .forum-container {
+      .forum-layout {
+        display: flex;
+        flex-direction: column;
+  
+        .sidebar {
+          width: 100%;
+          flex: 0 0 auto;
+          margin-bottom: 20px;
+          .sidebar-content{
+            flex-direction: row;
+           
+            .category-board{
+              .category-list{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+              }
+
+            } 
+          }
+  
+        }
+  
+      }
+  
+    }
+  }
+  
+
+  .forum-container .forum-layout .sidebar .sidebar-content .ad-section {
+    width: 0;
   }
 
-  .sidebar {
-    flex: 0 0 auto;
-    margin-bottom: 20px;
-  }
+
 
   .top-bar {
     flex-direction: column;

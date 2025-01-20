@@ -3560,6 +3560,11 @@ button:hover #custom-cursor::after {
   color: #B595FF;
   overflow: hidden;
 }
+@media (max-width: 375px) {
+  .Story .story h2 {
+    font-size: 20px;
+  }
+}
 .Story .story-title {
   position: relative;
   width: 20%;
@@ -3630,6 +3635,23 @@ button:hover #custom-cursor::after {
   .Story .story-content {
     width: 80%;
     height: 25.5rem;
+    padding: 2rem;
+  }
+  .Story .story-content p {
+    width: 100%;
+    height: auto;
+    line-height: 2rem;
+    word-wrap: break-word;
+    white-space: normal;
+    padding: 0 1rem;
+    max-height: 22.5em;
+    overflow: hidden;
+  }
+}
+@media (max-height: 768px) {
+  .Story .story-content {
+    width: 80%;
+    height: 18rem;
     padding: 2rem;
   }
   .Story .story-content p {
@@ -3823,6 +3845,12 @@ button:hover #custom-cursor::after {
     background-size: 500%;
   }
 }
+@media (max-width: 375px) {
+  .Story .story-item {
+    background-position: 82% 0%;
+    background-size: 300%;
+  }
+}
 .Story .red-girl-container {
   background-image: url("/images/Story/old-torn-paper-inksplash-2.png");
   background-size: contain;
@@ -3941,6 +3969,12 @@ button:hover #custom-cursor::after {
   .Story .story-item2 {
     background-position: 45% 90%;
     background-size: 500%;
+  }
+}
+@media (max-width: 375px) {
+  .Story .story-item2 {
+    background-position: 30% 0%;
+    background-size: 300%;
   }
 }
 .Story .yellow-peter-pan-container {
@@ -4282,6 +4316,16 @@ button:hover #custom-cursor::after {
 @media screen and (max-width: 480px) {
   .Story .feature-story .feature-story-container {
     padding: 20% 5%;
+  }
+  .Story .feature-story .feature-story-container p {
+    font-size: 14px;
+    /* 手機視窗下文字更小 */
+  }
+}
+@media screen and (max-height: 758px) {
+  .Story .feature-story .feature-story-container {
+    padding: 20% 5%;
+    overflow: hidden;
   }
   .Story .feature-story .feature-story-container p {
     font-size: 14px;
@@ -4747,12 +4791,30 @@ button:hover #custom-cursor::after {
 }
 
 @media screen and (max-width: 768px) {
-  .forum-container {
+  .forum-body {
+    padding: 10% 2%;
+    margin: 0;
+  }
+  .forum-body .forum-container .forum-layout {
+    display: flex;
     flex-direction: column;
   }
-  .sidebar {
+  .forum-body .forum-container .forum-layout .sidebar {
+    width: 100%;
     flex: 0 0 auto;
     margin-bottom: 20px;
+  }
+  .forum-body .forum-container .forum-layout .sidebar .sidebar-content {
+    flex-direction: row;
+  }
+  .forum-body .forum-container .forum-layout .sidebar .sidebar-content .category-board .category-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .forum-container .forum-layout .sidebar .sidebar-content .ad-section {
+    width: 0;
   }
   .top-bar {
     flex-direction: column;
