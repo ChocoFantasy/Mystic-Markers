@@ -747,6 +747,7 @@ a {
   .totop {
     width: 0px;
     height: 0px;
+    padding: 0;
   }
 }
 
@@ -3515,11 +3516,23 @@ button:hover #custom-cursor::after {
   text-align: left;
   margin-left: 1.5rem;
 }
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+  .Story .story-box .story {
+    margin-top: 10%;
+    width: 90%;
+  }
+}
+@media (max-width: 1439px) {
   .Story .story-box {
     width: 100%;
     justify-content: flex-end;
     flex: 8;
+  }
+}
+@media (max-width: 480px) {
+  .Story .story-box {
+    margin-top: 10%;
+    width: 100%;
   }
 }
 .Story .user {
@@ -3527,6 +3540,13 @@ button:hover #custom-cursor::after {
   justify-content: flex-end;
   text-align: right;
   color: #acff6c;
+}
+@media (max-width: 480px) {
+  .Story .user {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
 }
 .Story .user-img {
   width: 32px;
@@ -3544,11 +3564,16 @@ button:hover #custom-cursor::after {
   position: relative;
   width: 20%;
 }
-@media (max-width: 768px) {
+@media (max-width: 1439px) {
   .Story .story-title {
     width: 40%;
     height: auto;
     flex: 2;
+  }
+}
+@media (max-width: 480px) {
+  .Story .story-title {
+    width: 60%;
   }
 }
 .Story .text-title {
@@ -3585,7 +3610,7 @@ button:hover #custom-cursor::after {
   font-size: 1rem;
   color: #FFFFFF;
 }
-@media (max-width: 768px) {
+@media (max-width: 1439px) {
   .Story .story-content {
     width: 31.5rem;
     height: 30rem;
@@ -3599,6 +3624,23 @@ button:hover #custom-cursor::after {
     white-space: normal;
     padding: 0 1rem;
     max-height: 22.5em;
+  }
+}
+@media (max-width: 480px) {
+  .Story .story-content {
+    width: 80%;
+    height: 25.5rem;
+    padding: 2rem;
+  }
+  .Story .story-content p {
+    width: 100%;
+    height: auto;
+    line-height: 2rem;
+    word-wrap: break-word;
+    white-space: normal;
+    padding: 0 1rem;
+    max-height: 22.5em;
+    overflow: hidden;
   }
 }
 .Story .story1 {
@@ -3668,12 +3710,19 @@ button:hover #custom-cursor::after {
   filter: brightness(1.5);
   transform: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 1439px) {
   .Story .share-link {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding-bottom: 60px;
+  }
+}
+@media (max-width: 480px) {
+  .Story .share-link {
+    height: 80%;
+    padding-top: 20%;
+    width: 48px;
   }
 }
 .Story .countryside-story {
@@ -3687,9 +3736,14 @@ button:hover #custom-cursor::after {
   overflow: visible;
   opacity: 0.6;
 }
-@media (max-width: 768px) {
+@media (max-width: 1439px) {
   .Story .countryside-story {
     height: 30vh;
+  }
+}
+@media (max-width: 480px) {
+  .Story .countryside-story {
+    height: 50vh;
   }
 }
 .Story .countryside-story-title {
@@ -3699,6 +3753,12 @@ button:hover #custom-cursor::after {
   transform: translate(-50%, -50%);
   z-index: 3;
   overflow: hidden;
+}
+@media (max-width: 480px) {
+  .Story .countryside-story-title {
+    top: 10%;
+    left: 40%;
+  }
 }
 .Story .flying-papersblack {
   position: absolute;
@@ -3752,9 +3812,15 @@ button:hover #custom-cursor::after {
   box-sizing: border-box;
   /* 讓 padding 不影響容器的實際大小 */
 }
-@media (max-width: 768px) {
+@media (max-width: 1439px) {
   .Story .story-item {
     background-position: 85% 0%;
+  }
+}
+@media (max-width: 480px) {
+  .Story .story-item {
+    background-position: 82% 0%;
+    background-size: 500%;
   }
 }
 .Story .red-girl-container {
@@ -3787,12 +3853,18 @@ button:hover #custom-cursor::after {
     width: 45%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1439px) {
   .Story .red-girl-container {
     padding: 0;
     width: 60%;
     margin-left: 5%;
     background: radial-gradient(#000000, rgba(0, 0, 0, 0));
+  }
+}
+@media (max-width: 480px) {
+  .Story .red-girl-container {
+    width: 80%;
+    margin: 0;
   }
 }
 .Story .red-girl-text {
@@ -3860,9 +3932,15 @@ button:hover #custom-cursor::after {
   /* 讓 padding 不影響容器的實際大小 */
   overflow: visible;
 }
-@media (max-width: 768px) {
+@media (max-width: 1439px) {
   .Story .story-item2 {
     background-position: 50% 0%;
+  }
+}
+@media (max-width: 480px) {
+  .Story .story-item2 {
+    background-position: 45% 90%;
+    background-size: 500%;
   }
 }
 .Story .yellow-peter-pan-container {
@@ -3896,12 +3974,18 @@ button:hover #custom-cursor::after {
     width: 45%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1439px) {
   .Story .yellow-peter-pan-container {
     padding: 0;
     margin-right: 5%;
     width: 60%;
     background: radial-gradient(#000000, rgba(0, 0, 0, 0));
+  }
+}
+@media (max-width: 480px) {
+  .Story .yellow-peter-pan-container {
+    width: 80%;
+    margin-right: 0;
   }
 }
 .Story .yellow-peter-pan {
@@ -3969,7 +4053,7 @@ button:hover #custom-cursor::after {
   box-sizing: border-box;
   /* 讓 padding 不影響容器的實際大小 */
 }
-@media (max-width: 768px) {
+@media (max-width: 1439px) {
   .Story .story-item3 {
     background-position: 65% 0%;
   }
@@ -4004,12 +4088,18 @@ button:hover #custom-cursor::after {
     width: 45%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1439px) {
   .Story .lantern-sister-container {
     padding: 0;
     margin-left: 5%;
     width: 60%;
     background: radial-gradient(#000000, rgba(0, 0, 0, 0));
+  }
+}
+@media (max-width: 480px) {
+  .Story .lantern-sister-container {
+    width: 80%;
+    margin: 0;
   }
 }
 .Story .lantern-sister-text {
@@ -4079,7 +4169,7 @@ button:hover #custom-cursor::after {
   /* 讓 padding 不影響容器的實際大小 */
   margin-bottom: 20%;
 }
-@media (max-width: 768px) {
+@media (max-width: 1439px) {
   .Story .story-item4 {
     background-position: 15% 0%;
   }
@@ -4115,12 +4205,18 @@ button:hover #custom-cursor::after {
     width: 45%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1439px) {
   .Story .goat-man-container {
     padding: 0;
     margin-right: 5%;
     width: 60%;
     background: radial-gradient(#000000, rgba(0, 0, 0, 0));
+  }
+}
+@media (max-width: 480px) {
+  .Story .goat-man-container {
+    width: 80%;
+    margin-right: 0;
   }
 }
 .Story .goat-man-title {
@@ -4173,37 +4269,21 @@ button:hover #custom-cursor::after {
   word-wrap: break-word;
   /* 當文字長度過長時換行 */
 }
-@media screen and (max-width: 1200px) {
-  .Story .feature-story-container {
-    padding: 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .Story .feature-story-container p {
-    font-size: 18px;
-  }
-}
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1439px) {
   .Story .feature-story .feature-story-container {
     display: flex;
     flex-direction: column;
     padding: 10% 5%;
-    /* 調整小視窗的邊距 */
   }
   .Story .feature-story-container p {
     font-size: 16px;
-    /* 進一步縮小文字 */
   }
 }
 @media screen and (max-width: 480px) {
-  .Story .feature-story-container {
-    padding: 10px;
-    /* 進一步調整小設備 */
-    background-size: contain;
-    /* 背景圖適應較小的裝置 */
+  .Story .feature-story .feature-story-container {
+    padding: 20% 5%;
   }
-  .Story .feature-story-container p {
+  .Story .feature-story .feature-story-container p {
     font-size: 14px;
     /* 手機視窗下文字更小 */
   }
