@@ -275,7 +275,7 @@ const Forum = () => {
                         {/* 發表文章按鈕 */}
                         <div className="PostModal-bar">
                           <img
-                            src="images/Forum/jam_write.png"
+                            src="images/Forum/jam_write.svg"
                             alt="撰寫文章"
                             style={{ cursor: "pointer", width: "50px" }}
                             onClick={() => setModalOpen(true)}

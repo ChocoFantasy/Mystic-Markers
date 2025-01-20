@@ -4898,6 +4898,11 @@ button:hover #custom-cursor::after {
             gap: 20px;
             padding: 20px;
             border-bottom: 1px solid $grey;
+            @media (max-width:480px) {
+              padding: 20px 0;
+              
+            }
+
 
             .article-content {
               flex: 1;
@@ -4919,6 +4924,18 @@ button:hover #custom-cursor::after {
                     width: 32px;
                     height: 32px;
                     border-radius: 50%;
+                  }
+                }
+
+                @media (max-width:480px) {
+                  .author-info .author-avatar{
+                    width: 24px;
+                    height: 24px;
+                  }
+                  span {
+              
+                    font-size: 14px;
+                    margin: 0;
                   }
                 }
 
@@ -4976,7 +4993,10 @@ button:hover #custom-cursor::after {
                     color: $primary-green;
                     font-size: 20px;
                     margin: 10px 0;
+
+
                   }
+
 
                   .article-preview {
                     color: $grey;
@@ -4990,6 +5010,20 @@ button:hover #custom-cursor::after {
                     overflow: hidden; // 超出部分隱藏
                     text-overflow: ellipsis; // 超出部分顯示省略號
                     white-space: normal; // 確保文本換行
+                  }
+
+                  @media (max-width:480px) {
+                    padding-right: 8px;
+
+                    .article-title {
+                      font-size: 14px;
+                      font-weight: 600;
+                    }
+
+                    .article-preview {
+                      font-size: 12px;
+
+                    }
                   }
 
                   .interaction-bar {
@@ -5014,6 +5048,11 @@ button:hover #custom-cursor::after {
                     border-radius: 5px;
                     object-fit: cover;
                   }
+
+                  @media (max-width:480px) {
+                    width: 60px;
+
+                  }
                 }
               }
 
@@ -5024,6 +5063,10 @@ button:hover #custom-cursor::after {
                 /* 增加段落之間的間距 */
                 line-height: 1.6;
                 /* 行距 */
+                @media (max-width:480px) {
+                  margin-bottom: 0;
+                  
+                }
               }
 
             }
@@ -5202,14 +5245,20 @@ button:hover #custom-cursor::after {
           }
 
         }
+
+        @media (max-width:1439px) {
+          width: calc(100% - 45px);
+          max-width: 100%;
+        }
       }
     }
-
   }
+
 }
 
+
 // Forum RWD
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1439px) {
   .forum-body {
     padding: 10% 2%;
     margin: 0;
@@ -5226,8 +5275,11 @@ button:hover #custom-cursor::after {
 
           .sidebar-content {
             flex-direction: row;
+            gap: 0;
 
             .category-board {
+              width: 100%;
+
               .category-list {
                 display: flex;
                 flex-direction: row;
@@ -5275,24 +5327,59 @@ button:hover #custom-cursor::after {
     flex-direction: column;
   }
 
-  .sidebar {
-    display: none;
-    /* 隱藏側邊欄 */
+  .forum-body .forum-container .forum-layout .sidebar .sidebar-content .category-board .category-list {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .forum-body .forum-container {
+    padding: 5px 5px;
+    width: 100%;
+
+    .forum-layout .main-content .top-bar .nav-buttons {
+      width: 100%;
+
+      .nav-button-container {
+        padding: 0;
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+    }
+
   }
 
   .top-bar {
     flex-direction: column;
-    gap: 15px;
-
-    .search-bar {
-      width: 100%;
-
-      input {
-        width: calc(100% - 60px);
-        /* 調整輸入框寬度 */
-      }
-    }
+    gap: 30px;
   }
+
+  .forum-body .forum-container .forum-layout .main-content .top-bar .right-bar {
+    .search-bar-container {
+      width: 260px;
+
+      .search-bar {
+        height: 30px;
+
+        .search-button {
+          width: 40px;
+          border: 2px solid $primary-green;
+          box-shadow: none;
+          outline: none;
+        }
+      }
+
+    }
+
+    .PostModal-bar {
+      padding: 10px;
+    }
+
+  }
+
 
   .article-list {
     .article-card {
@@ -5330,6 +5417,7 @@ button:hover #custom-cursor::after {
 
       .category-c {
         display: flex;
+
         .category-icon {
           width: 24px; // 設定圖片寬度
           height: 24px; // 設定圖片高度
@@ -5483,7 +5571,6 @@ button:hover #custom-cursor::after {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     /* 底部分隔線 */
     margin-bottom: 1rem;
-
     .interaction-items {
       display: flex;
       align-items: center;
@@ -5676,7 +5763,7 @@ button:hover #custom-cursor::after {
         justify-content: center;
         background-color: $primary-green;
         /* 頭像區背景色 */
-        flex: 0 0 120px;
+        
         /* 固定寬度讓區塊更大 */
         padding: 0 1rem;
         /* 左右填充 */
@@ -5751,17 +5838,29 @@ button:hover #custom-cursor::after {
 
     .article-header {
       .category-nav {
-        flex-direction: column;
-        align-items: center;
 
         .back-link {
           margin-top: 10px;
         }
       }
 
-      .meta-info {
-        flex-direction: column;
-        align-items: center;
+     
+      .author-info{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        .author-details{
+          flex-direction: column-reverse;
+          .meta-info {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .post-date{
+              margin: 0;
+            }
+          }
+
+        }
       }
     }
 
@@ -5797,20 +5896,29 @@ button:hover #custom-cursor::after {
   }
 }
 
-// 媒體查詢 - 480px 以下
+//  480px 以下
 @media screen and (max-width: 480px) {
   .article-view {
+    margin: 5%;
     .article-header {
-      h1.article-title {
-        font-size: 18px;
+      .author-info .author-details .article-title {
+        font-size: 20px;
+        margin-top: 20px;
       }
     }
 
     .interaction-bar {
+      display: flex;
+      justify-content: center;
+      width: 100%;
       .interaction-items {
-        flex-direction: column;
-        gap: 10px;
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        
       }
+  
     }
 
     .comments-section {
@@ -5829,7 +5937,22 @@ button:hover #custom-cursor::after {
     .comment-input {
       .input-container {
         width: 50%;
+        .user-info{
+          padding: 0.5rem 0;
+          width: 40px;
+          align-items: center;
+          justify-content: center;
+         
+          .user-name{
+         display: none;
+         
+          }
+          .user-avatar{
+            width: 24px;
+            height: 24px;
+          }
 
+        }
         input {
           font-size: 12px;
           /* 減小字體大小 */

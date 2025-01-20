@@ -4537,6 +4537,11 @@ button:hover #custom-cursor::after {
   padding: 20px;
   border-bottom: 1px solid #B3B3B3;
 }
+@media (max-width: 480px) {
+  .forum-body .forum-container .forum-layout .main-content .article-list .article-card {
+    padding: 20px 0;
+  }
+}
 .forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content {
   flex: 1;
 }
@@ -4555,6 +4560,16 @@ button:hover #custom-cursor::after {
   width: 32px;
   height: 32px;
   border-radius: 50%;
+}
+@media (max-width: 480px) {
+  .forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content .article-header .author-info .author-avatar {
+    width: 24px;
+    height: 24px;
+  }
+  .forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content .article-header span {
+    font-size: 14px;
+    margin: 0;
+  }
 }
 .forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content .article-header .delete-date-wrapper {
   display: flex;
@@ -4613,6 +4628,18 @@ button:hover #custom-cursor::after {
   text-overflow: ellipsis;
   white-space: normal;
 }
+@media (max-width: 480px) {
+  .forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content .article-Graphics-text .left {
+    padding-right: 8px;
+  }
+  .forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content .article-Graphics-text .left .article-title {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content .article-Graphics-text .left .article-preview {
+    font-size: 12px;
+  }
+}
 .forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content .article-Graphics-text .left .interaction-bar {
   display: flex;
   gap: 20px;
@@ -4632,6 +4659,11 @@ button:hover #custom-cursor::after {
   border-radius: 5px;
   object-fit: cover;
 }
+@media (max-width: 480px) {
+  .forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content .article-Graphics-text .right {
+    width: 60px;
+  }
+}
 .forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content span {
   display: block;
   /* 每行獨占一行 */
@@ -4639,6 +4671,11 @@ button:hover #custom-cursor::after {
   /* 增加段落之間的間距 */
   line-height: 1.6;
   /* 行距 */
+}
+@media (max-width: 480px) {
+  .forum-body .forum-container .forum-layout .main-content .article-list .article-card .article-content span {
+    margin-bottom: 0;
+  }
 }
 .forum-body .forum-container .forum-layout .main-content .post-modal {
   position: fixed;
@@ -4789,8 +4826,14 @@ button:hover #custom-cursor::after {
 .forum-body .forum-container .forum-layout .main-content .post-modal .modal-content .form-actions button:hover {
   opacity: 0.9;
 }
+@media (max-width: 1439px) {
+  .forum-body .forum-container .forum-layout .main-content {
+    width: calc(100% - 45px);
+    max-width: 100%;
+  }
+}
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1439px) {
   .forum-body {
     padding: 10% 2%;
     margin: 0;
@@ -4806,6 +4849,10 @@ button:hover #custom-cursor::after {
   }
   .forum-body .forum-container .forum-layout .sidebar .sidebar-content {
     flex-direction: row;
+    gap: 0;
+  }
+  .forum-body .forum-container .forum-layout .sidebar .sidebar-content .category-board {
+    width: 100%;
   }
   .forum-body .forum-container .forum-layout .sidebar .sidebar-content .category-board .category-list {
     display: flex;
@@ -4833,20 +4880,41 @@ button:hover #custom-cursor::after {
   .forum-container {
     flex-direction: column;
   }
-  .sidebar {
-    display: none;
-    /* 隱藏側邊欄 */
+  .forum-body .forum-container .forum-layout .sidebar .sidebar-content .category-board .category-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .forum-body .forum-container {
+    padding: 5px 5px;
+    width: 100%;
+  }
+  .forum-body .forum-container .forum-layout .main-content .top-bar .nav-buttons {
+    width: 100%;
+  }
+  .forum-body .forum-container .forum-layout .main-content .top-bar .nav-buttons .nav-button-container {
+    padding: 0;
+  }
+  .forum-body .forum-container .forum-layout .main-content .top-bar .nav-buttons .nav-button-container p {
+    font-size: 14px;
   }
   .top-bar {
     flex-direction: column;
-    gap: 15px;
+    gap: 30px;
   }
-  .top-bar .search-bar {
-    width: 100%;
+  .forum-body .forum-container .forum-layout .main-content .top-bar .right-bar .search-bar-container {
+    width: 260px;
   }
-  .top-bar .search-bar input {
-    width: calc(100% - 60px);
-    /* 調整輸入框寬度 */
+  .forum-body .forum-container .forum-layout .main-content .top-bar .right-bar .search-bar-container .search-bar {
+    height: 30px;
+  }
+  .forum-body .forum-container .forum-layout .main-content .top-bar .right-bar .search-bar-container .search-bar .search-button {
+    width: 40px;
+    border: 2px solid #acff6c;
+    box-shadow: none;
+    outline: none;
+  }
+  .forum-body .forum-container .forum-layout .main-content .top-bar .right-bar .PostModal-bar {
+    padding: 10px;
   }
   .article-list .article-card {
     flex: 1 1 100%;
@@ -5170,7 +5238,6 @@ button:hover #custom-cursor::after {
   justify-content: center;
   background-color: #acff6c;
   /* 頭像區背景色 */
-  flex: 0 0 120px;
   /* 固定寬度讓區塊更大 */
   padding: 0 1rem;
   /* 左右填充 */
@@ -5233,16 +5300,24 @@ button:hover #custom-cursor::after {
   .article-view {
     padding: 10px;
   }
-  .article-view .article-header .category-nav {
-    flex-direction: column;
-    align-items: center;
-  }
   .article-view .article-header .category-nav .back-link {
     margin-top: 10px;
   }
-  .article-view .article-header .meta-info {
+  .article-view .article-header .author-info {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .article-view .article-header .author-info .author-details {
+    flex-direction: column-reverse;
+  }
+  .article-view .article-header .author-info .author-details .meta-info {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+  }
+  .article-view .article-header .author-info .author-details .meta-info .post-date {
+    margin: 0;
   }
   .article-view .tags {
     justify-content: center;
@@ -5266,12 +5341,23 @@ button:hover #custom-cursor::after {
   }
 }
 @media screen and (max-width: 480px) {
-  .article-view .article-header h1.article-title {
-    font-size: 18px;
+  .article-view {
+    margin: 5%;
+  }
+  .article-view .article-header .author-info .author-details .article-title {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .article-view .interaction-bar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
   .article-view .interaction-bar .interaction-items {
-    flex-direction: column;
-    gap: 10px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
   }
   .article-view .comments-section h2 {
     font-size: 18px;
@@ -5282,6 +5368,19 @@ button:hover #custom-cursor::after {
   }
   .article-view .comment-input .input-container {
     width: 50%;
+  }
+  .article-view .comment-input .input-container .user-info {
+    padding: 0.5rem 0;
+    width: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+  .article-view .comment-input .input-container .user-info .user-name {
+    display: none;
+  }
+  .article-view .comment-input .input-container .user-info .user-avatar {
+    width: 24px;
+    height: 24px;
   }
   .article-view .comment-input .input-container input {
     font-size: 12px;
