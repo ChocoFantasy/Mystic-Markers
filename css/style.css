@@ -1931,6 +1931,7 @@ a {
     border-radius: 5px 5px;
     box-sizing: border-box;
     padding: 5px 10px;
+    border-right: #acff6c 1.5px solid;
   }
   .map .map-content .map-left .map-wrapper {
     width: 80%;
@@ -3947,17 +3948,12 @@ button:hover #custom-cursor::after {
 .Story .story-item2 {
   background-image: url("/images/Story/yellowman.png");
   background-size: cover;
-  /* 背景圖片自動調整大小以覆蓋容器 */
   background-repeat: no-repeat;
-  /* 防止背景圖片重複 */
   height: 115vh;
-  /* 設定容器高度為視窗高度 */
   display: flex;
   align-items: center;
-  /* 垂直居中 */
   padding: 20px;
   box-sizing: border-box;
-  /* 讓 padding 不影響容器的實際大小 */
   overflow: visible;
 }
 @media (max-width: 1439px) {
@@ -3980,28 +3976,18 @@ button:hover #custom-cursor::after {
 .Story .yellow-peter-pan-container {
   background-image: url("/images/Story/old-torn-paper-inksplash-2.png");
   background-size: contain;
-  /* 確保圖片完全顯示且不被裁切 */
   background-repeat: no-repeat;
-  /* 防止背景圖片重複 */
   background-position: right center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* 文字垂直居中 */
   align-items: center;
-  /* 文字水平居中 */
   width: 40%;
-  /* 根據視窗大小調整寬度 */
   height: 600px;
-  /* 自動調整高度 */
   padding: 100px 50px;
-  /* 內邊距，讓內容與背景保持距離 */
   box-sizing: border-box;
-  /* 確保 padding 不會影響總尺寸 */
   margin-left: auto;
-  /* 自動將容器推到右邊 */
   margin-right: 10%;
-  /* 控制容器與右邊界的距離 */
 }
 @media (max-width: 1440px) {
   .Story .yellow-peter-pan-container {
@@ -4075,17 +4061,13 @@ button:hover #custom-cursor::after {
   background-image: url("/images/Story/lightsis.png");
   background-position: right;
   background-size: cover;
-  /* 背景圖片自動調整大小以覆蓋容器 */
   background-repeat: no-repeat;
-  /* 防止背景圖片重複 */
   height: 100vh;
-  /* 設定容器高度為視窗高度 */
   display: flex;
   align-items: center;
   /* 垂直居中 */
   padding: 20px;
   box-sizing: border-box;
-  /* 讓 padding 不影響容器的實際大小 */
 }
 @media (max-width: 1439px) {
   .Story .story-item3 {
@@ -4095,27 +4077,17 @@ button:hover #custom-cursor::after {
 .Story .lantern-sister-container {
   background-image: url("/images/Story/old-torn-paper-inksplash-2.png");
   background-size: contain;
-  /* 確保圖片完全顯示且不被裁切 */
   background-repeat: no-repeat;
-  /* 防止背景圖片重複 */
   background-position: left center;
-  /* 圖片靠左並垂直居中 */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* 文字垂直居中 */
   align-items: center;
-  /* 文字水平居中 */
   width: 40%;
-  /* 根據視窗大小調整寬度 */
   height: 600px;
-  /* 自動調整高度 */
   padding: 100px 50px;
-  /* 內邊距，讓內容與背景保持距離 */
   box-sizing: border-box;
-  /* 確保 padding 不會影響總尺寸 */
   margin-left: 10%;
-  /* 確保容器靠左 */
 }
 @media (max-width: 1440px) {
   .Story .lantern-sister-container {
@@ -4139,10 +4111,8 @@ button:hover #custom-cursor::after {
 .Story .lantern-sister-text {
   display: flex;
   flex-direction: column;
-  /* margin-top: 20px; */
   margin-left: 10px;
   width: 95%;
-  /* 撐滿容器 */
   box-sizing: border-box;
 }
 .Story .lantern-sister-title h3 {
@@ -4189,18 +4159,13 @@ button:hover #custom-cursor::after {
 .Story .story-item4 {
   background-image: url("/images/Story/goatman.png");
   background-size: cover;
-  /* 背景圖片自動調整大小以覆蓋容器 */
   background-repeat: no-repeat;
-  /* 防止背景圖片重複 */
   height: 100vh;
-  /* 設定容器高度為視窗高度 */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* 垂直居中 */
   padding: 20px;
   box-sizing: border-box;
-  /* 讓 padding 不影響容器的實際大小 */
   margin-bottom: 20%;
 }
 @media (max-width: 1439px) {
@@ -4211,28 +4176,18 @@ button:hover #custom-cursor::after {
 .Story .goat-man-container {
   background-image: url("/images/Story/old-torn-paper-inksplash-2.png");
   background-size: contain;
-  /* 確保圖片完全顯示且不被裁切 */
   background-repeat: no-repeat;
-  /* 防止背景圖片重複 */
   background-position: right center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* 文字垂直居中 */
   align-items: center;
-  /* 文字水平居中 */
   width: 40%;
-  /* 根據視窗大小調整寬度 */
   height: 600px;
-  /* 自動調整高度 */
   padding: 100px 50px;
-  /* 內邊距，讓內容與背景保持距離 */
   box-sizing: border-box;
-  /* 確保 padding 不會影響總尺寸 */
   margin-left: auto;
-  /* 自動將容器推到右邊 */
   margin-right: 10%;
-  /* 控制容器與右邊界的距離 */
 }
 @media (max-width: 1440px) {
   .Story .goat-man-container {
@@ -4301,7 +4256,6 @@ button:hover #custom-cursor::after {
   line-height: 1.8;
   margin-bottom: 10px;
   word-wrap: break-word;
-  /* 當文字長度過長時換行 */
 }
 @media screen and (max-width: 1439px) {
   .Story .feature-story .feature-story-container {
@@ -4319,7 +4273,6 @@ button:hover #custom-cursor::after {
   }
   .Story .feature-story .feature-story-container p {
     font-size: 14px;
-    /* 手機視窗下文字更小 */
   }
 }
 @media screen and (max-height: 758px) {
@@ -4329,7 +4282,6 @@ button:hover #custom-cursor::after {
   }
   .Story .feature-story .feature-story-container p {
     font-size: 14px;
-    /* 手機視窗下文字更小 */
   }
 }
 
@@ -4394,7 +4346,6 @@ button:hover #custom-cursor::after {
 }
 .forum-body .forum-container .forum-layout .sidebar .sidebar-content .category-board .category-list .category-item:hover {
   background-color: #B595FF;
-  color: #acff6c;
 }
 .forum-body .forum-container .forum-layout .sidebar .sidebar-content .category-board .category-list .category-item:hover img {
   filter: brightness(0);
@@ -4512,13 +4463,9 @@ button:hover #custom-cursor::after {
 }
 .forum-body .forum-container .forum-layout .main-content .top-bar .right-bar .PostModal-bar {
   display: flex;
-  /* 使子元素水平排列 */
   align-items: center;
-  /* 垂直置中 */
   justify-content: flex-end;
-  /* 將按鈕向右對齊（可根據需求調整） */
   gap: 1rem;
-  /* 控制子元素之間的間距 */
   width: 35px;
   height: 35px;
 }
@@ -4889,10 +4836,16 @@ button:hover #custom-cursor::after {
     width: 100%;
   }
   .forum-body .forum-container .forum-layout .main-content .top-bar .nav-buttons {
+    display: flex;
+    justify-content: space-evenly;
     width: 100%;
   }
   .forum-body .forum-container .forum-layout .main-content .top-bar .nav-buttons .nav-button-container {
     padding: 0;
+  }
+  .forum-body .forum-container .forum-layout .main-content .top-bar .nav-buttons .nav-button-container .nav-button {
+    padding-block: 0;
+    padding-inline: 0;
   }
   .forum-body .forum-container .forum-layout .main-content .top-bar .nav-buttons .nav-button-container p {
     font-size: 14px;
